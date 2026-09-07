@@ -1,0 +1,56 @@
+{
+  "mode": "after",
+  "tests": [
+    {
+      "scene": "20",
+      "rays": false,
+      "frames": 389,
+      "fps": 60.008638775982774,
+      "p95": 18.09999990463257,
+      "p99": 18.399999976158142,
+      "worst": 19.299999952316284,
+      "over20ms": 0,
+      "simCpu": 0.1501285374011356,
+      "renderCpu": 1.3460154217742095
+    },
+    {
+      "scene": "20",
+      "rays": true,
+      "frames": 389,
+      "fps": 59.98457979953739,
+      "p95": 18,
+      "p99": 18.399999976158142,
+      "worst": 18.5,
+      "over20ms": 0,
+      "simCpu": 0.15655527415189768,
+      "renderCpu": 1.461953724564501
+    },
+    {
+      "scene": "21",
+      "rays": false,
+      "frames": 390,
+      "fps": 59.999076937057815,
+      "p95": 18,
+      "p99": 18.5,
+      "worst": 19.300000071525574,
+      "over20ms": 0,
+      "simCpu": 0.14692308046878913,
+      "renderCpu": 1.2817948698997497
+    },
+    {
+      "scene": "21",
+      "rays": true,
+      "frames": 390,
+      "fps": 60.003692534705124,
+      "p95": 18.09999990463257,
+      "p99": 18.59999990463257,
+      "worst": 19.100000023841858,
+      "over20ms": 0,
+      "simCpu": 0.1561538476210374,
+      "renderCpu": 1.4235897458516635
+    }
+  ],
+  "errors": [
+    "[vis] no se pudo abrir MIDI: NotAllowedError: Permission to use Web MIDI API was not granted."
+  ]
+}

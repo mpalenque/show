@@ -1,0 +1,21 @@
+{
+  "name": "poly",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Retopology / Voronoi polygonization of an image or video, rendered with WebGPU",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build --mode=production",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.3.1"
+  },
+  "dependencies": {
+    "@tweakpane/plugin-essentials": "^0.2.1",
+    "d3-delaunay": "^6.0.4",
+    "three": "^0.176.0",
+    "tweakpane": "^4.0.5"
+  }
+}

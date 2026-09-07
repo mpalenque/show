@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visuales LED — Editor</title>
+  <link rel="stylesheet" href="/src/editor/editor.css" />
+</head>
+<body>
+  <div id="waiting">Esperando la ventana de salida… abrí <a href="/" target="vis-salida">http://localhost:5173/</a> y dejala abierta.</div>
+  <div id="app">
+    <section class="col" id="col-scenes">
+      <h1>Escenas</h1>
+      <p><a href="./fluids.html" target="vis-fluids-editor">Abrir timeline Fluids · escena 24</a></p>
+      <div id="scenes-list" class="scenes-list"></div>
+      <label class="field">Transición (s)
+        <input type="number" id="transition" value="1" step="0.1" min="0" />
+      </label>
+
+      <h2>MIDI</h2>
+      <div id="midi-inputs" class="stack"></div>
+
+      <h2>OSC</h2>
+      <div id="osc-status" class="stack"></div>
+      <label class="field">Puerto UDP
+        <input type="number" id="osc-port" value="9000" min="1" max="65535" />
+      </label>
+
+      <h2>Estado</h2>
+      <div id="stats" class="stats">—</div>
+    </section>
+
+    <section class="col" id="col-params">
+      <h1>Parámetros</h1>
+      <div id="pane"></div>
+
+      <h2>Referencia y mapeo</h2>
+      <div class="toolbar">
+        <button id="reset-settings" class="danger">Restaurar ajustes de fábrica</button>
+        <span class="hint-inline">Los cambios de arriba se guardan solos</span>
+      </div>
+      <div class="toolbar">
+        <span class="hint-inline">Tocá <b>Learn</b> y después mové el fader o la tecla en Ableton. Escape cancela.</span>
+        <label class="chk"><input type="checkbox" id="ref-only-mapped" /> solo mapeados</label>
+      </div>
+      <input type="search" id="ref-filter" placeholder="Filtrar por id, etiqueta o grupo…" />
+      <div id="ref-list" class="ref-list"></div>
+    </section>
+
+    <section class="col" id="col-mappings">
+      <h1>Mapeos</h1>
+      <div class="toolbar">
+        <button id="add-mapping">+ mapeo</button>
+        <button id="save-mappings">Guardar</button>
+        <button id="export-mappings">Exportar JSON</button>
+        <button id="import-mappings">Importar JSON</button>
+        <button id="reset-mappings" class="danger">Restaurar default</button>
+        <button id="export-reference">Exportar hoja de referencia</button>
+      </div>
+      <div id="mappings-table" class="mappings"></div>
+
+      <h2>Monitor</h2>
+      <div id="monitor" class="monitor"></div>
+
+      <h2>Probar</h2>
+      <div class="test-row">
+        <select id="test-kind"><option value="note">Nota</option><option value="cc">CC</option><option value="osc">OSC</option></select>
+        <input type="number" id="test-channel" value="1" min="1" max="16" title="canal" />
+        <input type="number" id="test-num" value="36" min="0" max="127" title="nota / cc" />
+        <input type="number" id="test-value" value="127" min="0" max="127" title="velocidad / valor" />
+        <input type="text" id="test-address" placeholder="/touch/fader1" />
+        <button id="test-send">Enviar</button>
+      </div>
+    </section>
+  </div>
+  <script type="module" src="/src/editor/main.js"></script>
+</body>
+</html>

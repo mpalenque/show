@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, height=device-height, interactive-widget=resizes-content, shrink-to-fit=0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+  <meta property="og:title" content="Flow - ThreeJS WebGPU Experiment - holtsetio.com" />
+  <meta property="og:image" content="https://holtsetio.com/img/lab/flow.jpg" />
+  <title>Flow - ThreeJS WebGPU Experiment - holtsetio.com</title>
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    #container {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    #veil {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      opacity: 1;
+      pointer-events: none;
+      transition: opacity 1s ease-in-out;
+    }
+    #progress-bar {
+      position: absolute;
+      width: 200px;
+      height: 5px;
+      left: 50vw;
+      top: 50vh;
+      transition: opacity 0.2s ease;
+      transform: translateX(-50%) translateY(-50%);
+      background-color: #333;
+    }
+    #progress {
+      position: absolute;
+      width: 0px;
+      height: 5px;
+      left: 0px;
+      top: 0px;
+      transition: width 0.2s ease;
+      background-color: #848484;
+    }
+    #error {
+      position: absolute;
+      left: 50vw;
+      top: 50vh;
+      transform: translateX(-50%) translateY(-50%);
+      color: #FFFFFF;
+      visibility: hidden;
+    }
+    #image-upload-container {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #555;
+      max-width: 280px;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+    #image-upload-container::-webkit-scrollbar {
+      width: 6px;
+    }
+    #image-upload-container::-webkit-scrollbar-track {
+      background: #222;
+      border-radius: 3px;
+    }
+    #image-upload-container::-webkit-scrollbar-thumb {
+      background: #555;
+      border-radius: 3px;
+    }
+    #image-upload-container::-webkit-scrollbar-thumb:hover {
+      background: #777;
+    }
+    #settings-panel {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #444;
+    }
+    #settings-panel .tp-dfwv {
+      width: 100%;
+    }
+    #image-file-input {
+      display: none;
+    }
+    #upload-button {
+      padding: 8px 16px;
+      background-color: #444;
+      color: #fff;
+      border: 1px solid #666;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      margin-bottom: 10px;
+      width: 100%;
+      transition: background-color 0.2s;
+    }
+    #upload-button:hover {
+      background-color: #555;
+    }
+    #image-preview {
+      width: 120px;
+      height: 120px;
+      background-color: #222;
+      border: 1px solid #444;
+      border-radius: 4px;
+      overflow: hidden;
+      display: none;
+      margin-bottom: 10px;
+    }
+    #image-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #image-preview video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #preview-info {
+      font-size: 10px;
+      color: #aaa;
+      margin-top: 5px;
+    }
+    #reset-button {
+      padding: 6px 12px;
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 11px;
+      margin-top: 10px;
+      width: 100%;
+      transition: background-color 0.2s;
+      display: none;
+    }
+    #reset-button:hover {
+      background-color: #444;
+    }
+    #reset-button.active {
+      display: block;
+    }
+    #re-emit-button {
+      padding: 6px 12px;
+      background-color: #555;
+      color: #fff;
+      border: 1px solid #777;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 11px;
+      margin-top: 8px;
+      width: 100%;
+      transition: background-color 0.2s;
+      display: none;
+    }
+    #re-emit-button:hover {
+      background-color: #666;
+    }
+    #re-emit-button.active {
+      display: block;
+    }
+    #image-display-canvas {
+      max-width: 100%;
+      max-height: 150px;
+      border-radius: 4px;
+      border: 1px solid #333;
+      background: #000;
+      margin-bottom: 10px;
+    }
+    #image-display-info {
+      font-size: 9px;
+      color: #999;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    #toggle-image-button {
+      padding: 4px 8px;
+      background-color: #444;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+      transition: background-color 0.2s;
+    }
+    #toggle-image-button:hover {
+      background-color: #555;
+    }
+    #loader {
+      position: absolute;
+      left: 50vw;
+      top: 50vh;
+      transform: translateX(-50%) translateY(-50%);
+      color: #fff;
+      text-align: center;
+      display: none;
+      z-index: 200;
+    }
+    #loader.active {
+      display: block;
+    }
+  </style>
+  <script defer src="https://s.holtsetio.com/script.js" data-website-id="cb36fa92-2381-4031-8f81-f430a473156d"></script>
+</head>
+<body>
+<div id="container">
+  <div id="veil">
+    <div id="progress-bar"><div id="progress"></div></div>
+    <div id="error"></div>
+  </div>
+  <div id="image-upload-container">
+    <input type="file" id="image-file-input" accept="image/*,video/*" />
+    <button id="upload-button">📁 Upload Image/Video</button>
+    <div id="image-preview">
+      <img id="preview-img" style="display: none;" />
+      <video id="preview-video" style="display: none;" controls></video>
+    </div>
+    <div id="preview-info"></div>
+
+    <hr style="border: none; border-top: 1px solid #444; margin: 10px 0; opacity: 0.5;">
+
+    <div id="image-display-section" style="display: none;">
+      <canvas id="image-display-canvas"></canvas>
+      <div id="image-display-info"></div>
+      <button id="toggle-image-button">🔍 Hide Image Preview</button>
+      <hr style="border: none; border-top: 1px solid #444; margin: 10px 0; opacity: 0.5;">
+    </div>
+
+    <button id="reset-button">↻ Reset to Sphere</button>
+    <button id="re-emit-button">↻ Re-emit Particles</button>
+    <div id="settings-panel"></div>
+  </div>
+  <div id="loader">
+    <p>Loading image...</p>
+    <div id="progress-bar"><div id="progress"></div></div>
+  </div>
+  <script src="./index.js" type="module"></script>
+</body>
+</html>

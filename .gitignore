@@ -1,0 +1,11 @@
+# Dependencias y builds: se regeneran con `npm ci` y `npm run build`.
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+
+# Ruido del sistema y de las corridas.
+*.log
+nul
+.DS_Store
+Thumbs.db

@@ -1,0 +1,33 @@
+{
+  "verifiedAt": "2026-09-06T08:35:05.308Z",
+  "source": "C:/Users/mpale/OneDrive/Desktop/heidi/radiance-live-show",
+  "destination": "C:/Users/mpale/OneDrive/Desktop/PARTE 1/radiance-live-show",
+  "sourceCommit": "18998e4bd48558b88013c2242194001ed33923dc",
+  "copiedFiles": 6254,
+  "copiedBytes": 270335588,
+  "sha256VerifiedEveryCopiedFile": true,
+  "mismatches": 0,
+  "includes": [
+    ".git",
+    ".github",
+    "src",
+    "public",
+    "docs",
+    "tools",
+    "node_modules",
+    "dist",
+    "package-lock.json"
+  ],
+  "timelineExport": {
+    "source": "C:/Users/mpale/Downloads/fluids.show.json",
+    "destination": "radiance-live-show/public/show/fluids.show.json",
+    "sha256": "666bec48c4d0d6218e20ab6599e76ec1040502e633f825fc85614d8c803fe24d",
+    "bytes": 118841,
+    "duration": 152.694,
+    "events": 256,
+    "gestures": 0,
+    "curveKeys": 400,
+    "validatedWith": "src/fluids-show/show-doc.ts:parseShowDoc",
+    "latestBrowserEditsVerified": false
+  }
+}

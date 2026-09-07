@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.log
+nul
+performance-check/ray-lighting/
+performance-check/scene2/
+performance-check/grid-floor/

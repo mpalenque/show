@@ -1,0 +1,21 @@
+:root { color-scheme: dark; background: #000; }
+html, body, #root { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #000; }
+.output-shell { position: fixed; inset: 0; overflow: hidden; background: #000; }
+/* Cover the display with the fixed 3360x1008 (10:3) master. On ordinary
+   16:9 monitors the panorama is cropped horizontally instead of leaving most
+   of the screen black; the physical 10:3 output remains pixel-perfect. */
+.output-stage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100vw, 333.333333vh);
+  aspect-ratio: 10 / 3;
+  translate: -50% -50%;
+  overflow: hidden;
+  background: #000;
+}
+.output-stage canvas { position: absolute; inset: 0; width: 100% !important; height: 100% !important; display: block; }
+.output-fade { --master-dark: 0; position: fixed; inset: 0; z-index: 20; pointer-events: none; background: #000; opacity: var(--master-dark); transition: opacity 220ms ease; }
+.output-fade.is-dark, .output-fade.is-blackout { opacity: 1; }
+.output-boot { position: fixed; left: 50%; top: 50%; z-index: 30; translate: -50% -50%; color: #918f89; font: 500 11px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .22em; }
+.output-error { position: fixed; left: 50%; bottom: 2rem; z-index: 40; translate: -50% 0; max-width: min(80vw, 48rem); border: 1px solid #712f32; border-radius: .35rem; padding: .8rem 1rem; background: #16090be6; color: #ffb1b5; font: 12px/1.45 ui-monospace, SFMono-Regular, Consolas, monospace; }

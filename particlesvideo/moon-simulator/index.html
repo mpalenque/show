@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!--
+  Moon Phases Simulator — observer-only build (Moon from Earth, no stars, no UI)
+  Based on the simulator by Gustavo Adrián Salvini <guspatagonico@gmail.com>
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moon Phases — Observer</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23f6e4a6'/%3E%3Cpath d='M40 10c8 5 14 14 14 22S48 49 40 54c10 0 18-10 18-22S50 10 40 10Z' fill='%23c8b47a'/%3E%3C/svg%3E" />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { background: #000; overflow: hidden; }
+      #scene-canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; }
+    </style>
+  </head>
+  <body>
+    <canvas id="scene-canvas" aria-label="Moon changing phase, seen from Earth"></canvas>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "frames": 9187,
+    "fps": 60.00112334747494,
+    "p95": 16.80000000000291,
+    "p99": 16.900000000001455,
+    "worst": 17.5,
+    "over20ms": 0
+  },
+  "errors": [],
+  "logs": [
+    "[vite] connecting...",
+    "[vite] connected.",
+    "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+  ],
+  "snapshotsAffectTiming": true
+}

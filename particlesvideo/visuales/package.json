@@ -1,0 +1,27 @@
+{
+  "name": "visuales-led",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "npm ci --prefix vendor/radiance",
+    "check:radiance": "npm --prefix vendor/radiance run check && node --test tools/radiance-session.test.mjs tools/radiance-preview.test.mjs tools/radiance-mapping.test.mjs",
+    "test:rays": "node --test tools/rays.test.mjs",
+    "check:ray-lighting": "node tools/check-ray-lighting.mjs",
+    "dev": "vite --host --port 5173",
+    "build": "vite build",
+    "preview": "vite preview --port 5173",
+    "osc": "node tools/osc-bridge.mjs",
+    "start": "concurrently -k \"npm:dev\" \"npm:osc\""
+  },
+  "dependencies": {
+    "three": "0.176.0",
+    "tweakpane": "^4.0.5",
+    "@tweakpane/plugin-essentials": "^0.2.1"
+  },
+  "devDependencies": {
+    "vite": "^6.3.1",
+    "concurrently": "^9.0.0",
+    "osc": "^2.4.5",
+    "ws": "^8.18.0"
+  }
+}

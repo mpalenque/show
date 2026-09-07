@@ -1,0 +1,50 @@
+{
+  "tests": [
+    "pasada 1–23 sin errores ni activación de Radiance",
+    "línea vertical escena 2 y despliegue progresivo repetible de piso 7",
+    "rayos 0,014 m, torbellino inmediato y ningún frame Fluid en 1–23"
+  ],
+  "performance": [
+    {
+      "scene": "20",
+      "rays": false,
+      "frames": 601,
+      "fps": 60.00159738043914,
+      "p95": 16.90000009536743,
+      "p99": 17.100000023841858,
+      "worst": 18.5,
+      "over20ms": 0
+    },
+    {
+      "scene": "20",
+      "rays": true,
+      "frames": 601,
+      "fps": 60.001597379725034,
+      "p95": 17,
+      "p99": 17.200000047683716,
+      "worst": 18,
+      "over20ms": 0
+    },
+    {
+      "scene": "21",
+      "rays": false,
+      "frames": 601,
+      "fps": 60.002196420121315,
+      "p95": 17,
+      "p99": 17.299999952316284,
+      "worst": 17.899999976158142,
+      "over20ms": 0
+    },
+    {
+      "scene": "21",
+      "rays": true,
+      "frames": 601,
+      "fps": 60.00159738043914,
+      "p95": 17,
+      "p99": 17.100000023841858,
+      "worst": 17.300000071525574,
+      "over20ms": 0
+    }
+  ],
+  "errors": []
+}

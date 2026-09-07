@@ -1,0 +1,20 @@
+{
+  "tests": [
+    "editor carga documento y lanes completas sin segundo renderer",
+    "play/pause remoto gobierna reloj de salida",
+    "edición real, ACK y deshacer conservan el show completo",
+    "nota 25 y ráfaga MIDI funcionan sin escribir timeline",
+    "cancelar durante drenaje no muestra canvas tardío y permite reentrar",
+    "preview remota visible sin otro solver",
+    "Fluids conserva 2688×1008 físicos con DPR 1/1.3/1.5/2"
+  ],
+  "errors": [],
+  "previewPerformance": {
+    "frames": 426,
+    "fps": 59.85920440613567,
+    "p95": 17,
+    "p99": 23,
+    "worst": 44.39999997615814,
+    "over20ms": 8
+  }
+}

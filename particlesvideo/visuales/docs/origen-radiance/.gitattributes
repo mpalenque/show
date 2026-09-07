@@ -1,0 +1,7 @@
+# Preserve the original file bytes and SHA-256 values across Git checkouts.
+README.md -text
+ARCHITECTURE.md -text
+docs/plan-fluids-show.md -text
+docs/fluids-show-como-funciona.md -text
+public/fluid/NOTICE.md -text
+public/fluid/LICENSE -text

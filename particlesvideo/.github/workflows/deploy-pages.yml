@@ -1,0 +1,76 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install flow dependencies
+        run: npm ci
+
+      - name: Build flow
+        run: npm run build
+
+      - name: Install poly dependencies
+        run: npm ci
+        working-directory: poly
+
+      - name: Build poly
+        run: npm run build
+        working-directory: poly
+
+      - name: Merge poly build into flow's output
+        run: |
+          mkdir -p dist/poly
+          cp -r poly/dist/. dist/poly/
+
+      - name: Install moon simulator dependencies
+        run: npm ci
+        working-directory: moon-simulator
+
+      - name: Build moon simulator
+        run: npm run build
+        working-directory: moon-simulator
+
+      - name: Merge moon simulator build into flow's output
+        run: |
+          mkdir -p dist/moon-simulator
+          cp -r moon-simulator/dist/. dist/moon-simulator/
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

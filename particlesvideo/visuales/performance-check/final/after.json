@@ -1,0 +1,67 @@
+{
+  "mode": "after",
+  "tests": [
+    {
+      "scene": "20",
+      "rays": false,
+      "frames": 1500,
+      "fps": 60.00144003461805,
+      "p95": 17.90000009536743,
+      "p99": 18.299999952316284,
+      "worst": 18.899999976158142,
+      "over20ms": 0,
+      "simCpu": 0.14553333401679994,
+      "renderCpu": 1.3089999984900156,
+      "outliers": []
+    },
+    {
+      "scene": "20",
+      "rays": true,
+      "frames": 1499,
+      "fps": 60.00104071190417,
+      "p95": 17.899999976158142,
+      "p99": 18.299999952316284,
+      "worst": 18.700000047683716,
+      "over20ms": 0,
+      "simCpu": 0.14923282270832328,
+      "renderCpu": 1.3254169438822099,
+      "outliers": []
+    },
+    {
+      "scene": "21",
+      "rays": false,
+      "frames": 1500,
+      "fps": 60.00120002400048,
+      "p95": 17.90000009536743,
+      "p99": 18.299999952316284,
+      "worst": 19.399999976158142,
+      "over20ms": 0,
+      "simCpu": 0.14379999987284342,
+      "renderCpu": 1.2874000006516775,
+      "outliers": []
+    },
+    {
+      "scene": "21",
+      "rays": true,
+      "frames": 1500,
+      "fps": 60.00120002400048,
+      "p95": 18,
+      "p99": 18.399999976158142,
+      "worst": 19.399999976158142,
+      "over20ms": 0,
+      "simCpu": 0.14760000149408975,
+      "renderCpu": 1.2858666656812032,
+      "outliers": []
+    }
+  ],
+  "errors": [
+    "[vis] no se pudo abrir MIDI: NotAllowedError: Permission to use Web MIDI API was not granted."
+  ],
+  "particles": {
+    "count": 131072,
+    "finite": 131072,
+    "inside": 109920,
+    "meanSpeed": 14.150822297650516,
+    "axis": "x"
+  }
+}

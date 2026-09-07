@@ -1,0 +1,224 @@
+:root { color-scheme: dark; background: #000; }
+html, body, #root { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #000; }
+
+.fs-shell {
+  position: fixed; inset: 0; overflow: hidden; background: #050506;
+  display: flex; flex-direction: column;
+  color: #d9d8de;
+  font: 500 11px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .06em;
+}
+
+/* El master 8:3 presentado a su propia resolución. El tope tiene que estar en
+   píxeles de dispositivo, que CSS no sabe leer, así que la página escribe
+   --fs-max-width = 2688 / devicePixelRatio. Igual que en la página de Tres
+   Masas: un tope literal de 2688px agranda el cuadro en cualquier pantalla
+   escalada. Acá además compite con las lanes por el alto, así que el stage
+   cede primero. */
+.fs-stage {
+  position: relative;
+  flex: 0 0 auto;
+  align-self: center;
+  /* 122.667vh = 46vh de alto por 8/3: el stage nunca se come la timeline.
+     El modo SHOW sube el tope a la pantalla entera. */
+  width: min(100vw, var(--fs-stage-vh, 122.667vh), var(--fs-max-width, 2688px));
+  aspect-ratio: 8 / 3;
+  overflow: hidden;
+  background: #000;
+  touch-action: none;
+}
+.fs-stage canvas { position: absolute; inset: 0; width: 100% !important; height: 100% !important; display: block; }
+
+/* Captura de gestos a nivel página: el puntero del canvas sólo sabe hacer
+   drag, y el show necesita atraer, repeler y hacer vórtice. */
+.fs-capture { position: absolute; inset: 0; z-index: 5; cursor: crosshair; touch-action: none; }
+
+.fs-fade {
+  position: fixed; inset: 0; z-index: 20; pointer-events: none;
+  background: #000; transition: opacity 220ms ease;
+}
+
+.fs-boot {
+  position: fixed; left: 50%; top: 40%; z-index: 30; translate: -50% -50%;
+  color: #918f89; letter-spacing: .22em;
+}
+
+.fs-error {
+  position: fixed; left: 50%; top: 2rem; z-index: 40; translate: -50% 0;
+  max-width: min(80vw, 48rem); border: 1px solid #712f32; border-radius: .35rem;
+  padding: .8rem 1rem; background: #16090be6; color: #ffb1b5;
+  font: 12px/1.45 ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.fs-panel {
+  flex: 0 0 auto;
+  display: flex; flex-direction: column; gap: .45rem;
+  padding: .55rem .8rem;
+  background: rgb(7 8 10 / 92%);
+  border-top: 1px solid rgb(255 255 255 / 9%);
+  border-bottom: 1px solid rgb(255 255 255 / 7%);
+}
+
+.fs-transport { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.fs-clock { color: #9ce0b4; letter-spacing: .14em; min-width: 11ch; }
+.fs-scrub { flex: 1; min-width: 180px; accent-color: #9ce0b4; }
+
+.fs-btn {
+  border: 1px solid rgb(255 255 255 / 20%); border-radius: .3rem;
+  background: rgb(255 255 255 / 5%); color: #e6e5eb;
+  font: 600 10px/1 ui-monospace, Consolas, monospace; letter-spacing: .14em;
+  padding: .5rem .75rem; cursor: pointer;
+}
+.fs-btn:hover { border-color: rgb(255 255 255 / 40%); }
+.fs-btn:disabled { opacity: .35; cursor: default; }
+.fs-btn.fs-btn-on { border-color: #9ce0b4; background: rgb(80 205 130 / 14%); color: #eafbef; }
+.fs-btn.fs-btn-danger { border-color: #a04046; }
+.fs-btn.fs-btn-danger.fs-btn-on { border-color: #ff7b82; background: rgb(200 60 66 / 20%); color: #ffd8da; }
+.fs-btn.fs-btn-arm { border-color: #d8b45a; color: #ffe6a8; background: rgb(180 140 60 / 16%); }
+.fs-btn.fs-btn-rec { border-color: #a04046; color: #ffd8da; }
+.fs-btn.fs-btn-rec.fs-btn-on { border-color: #ff4d6d; background: rgb(200 40 70 / 26%); }
+
+.fs-slider { display: flex; align-items: center; gap: .5rem; min-width: 170px; }
+.fs-slider span { color: #8f8d97; letter-spacing: .14em; white-space: nowrap; }
+.fs-slider b { color: #f2f1f5; min-width: 3.2em; text-align: right; }
+.fs-slider input[type='range'] { flex: 1; accent-color: #9ce0b4; min-width: 70px; }
+
+.fs-stats { display: flex; align-items: center; gap: 1rem; color: #8f8d97; flex-wrap: wrap; }
+.fs-warn { color: #ffb1b5; }
+.fs-hint { color: #6f6d78; letter-spacing: .1em; margin-left: auto; }
+
+/* Modo SHOW: se va el editor y queda el stage con una barra mínima. El
+   blackout nunca se persiste — el show tiene que volver siempre visible. */
+.fs-shell.fs-perform { justify-content: center; background: #000; }
+.fs-shell.fs-perform .fs-stage { --fs-stage-vh: 266.667vh; }
+.fs-shell.fs-perform .fs-editor-only { display: none; }
+.fs-panel-min {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 25;
+  flex-direction: row; align-items: center; gap: .8rem;
+  border-top: 1px solid rgb(255 255 255 / 9%);
+}
+
+/* HUD del stage: lo mínimo para operar sin mirar la timeline. */
+.fs-hud {
+  position: absolute; left: 12px; bottom: 10px; z-index: 6;
+  display: flex; gap: .9rem; pointer-events: none;
+  color: rgb(155 153 163 / 85%); text-transform: uppercase;
+  font: 500 10px/1 ui-monospace, Consolas, monospace; letter-spacing: .14em;
+}
+.fs-hud-warn { color: #ffb1b5; }
+.fs-hud-rec { color: #ff4d6d; }
+/* La pantalla completa se pide sobre el stage: el canvas tiene que llenar
+   el monitor sin la barra ni las lanes alrededor. */
+.fs-stage:fullscreen { width: 100vw; height: 100vh; aspect-ratio: auto; }
+.fs-stage:fullscreen canvas {
+  position: absolute; left: 50%; top: 50%; translate: -50% -50%;
+  width: min(100vw, 266.666667vh) !important;
+  height: min(37.5vw, 100vh) !important;
+}
+
+/* ------------------------------------------------------------------ timeline
+
+   Todas las lanes comparten el canal de rótulos de 132 px y el mismo mapeo
+   tiempo -> píxel, así que el playhead cae en la misma columna en todas. */
+.fs-timeline {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #08080a;
+  overscroll-behavior: contain;
+}
+/* El contexto de posición es este, no el contenedor que scrollea: si el
+   playhead colgara del scroller, su altura sería la de la ventana visible y
+   dejaría sin línea a las lanes de abajo apenas se scrollea. */
+.fs-lanes { position: relative; }
+
+.fs-lane { display: flex; align-items: stretch; border-bottom: 1px solid rgb(255 255 255 / 6%); }
+.fs-lane-label {
+  flex: 0 0 132px;
+  display: flex; flex-direction: column; justify-content: center; gap: .12rem;
+  padding: .25rem .5rem;
+  border-right: 1px solid rgb(255 255 255 / 8%);
+  background: rgb(255 255 255 / 2%);
+  overflow: hidden;
+}
+.fs-lane-label b { font-size: 9.5px; letter-spacing: .14em; color: #cfced6; white-space: nowrap; }
+.fs-lane-label span {
+  font-size: 8.5px; letter-spacing: .04em; color: #6f6d78;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.fs-lane-body { flex: 1 1 auto; min-width: 0; height: 52px; }
+.fs-lane-wave-row .fs-lane-body { height: 104px; }
+/* La onda queda PEGADA arriba mientras el timeline scrollea: es el mapa del
+   track y desde ella se scrubbea, así que tiene que estar siempre a mano.
+   Fondo opaco para tapar las lanes que pasan por debajo, y el playhead va
+   con z-index mayor para seguir cruzándola. */
+.fs-lane-wave-row {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: #08080a;
+}
+.fs-playhead-track { z-index: 4; }
+.fs-lane-events .fs-lane-body { height: 58px; }
+.fs-lane-canvas { display: block; width: 100%; height: 100%; cursor: crosshair; touch-action: none; }
+.fs-lane-wave { cursor: text; }
+
+.fs-select {
+  border: 1px solid rgb(255 255 255 / 18%); border-radius: .25rem;
+  background: rgb(10 11 14 / 90%); color: #cfced6;
+  font: 600 9px/1 ui-monospace, Consolas, monospace; letter-spacing: .08em;
+  padding: .25rem .2rem; width: 100%;
+}
+
+/* El playhead vive en su propia capa sobre las lanes y se mueve con un
+   transform: es lo único que cambia a 60 fps y no tiene que repintar nada. */
+.fs-playhead-track {
+  position: absolute; left: 132px; right: 0; top: 0; bottom: 0;
+  pointer-events: none; overflow: hidden;
+}
+.fs-playhead {
+  position: absolute; top: 0; bottom: 0; left: 0; width: 1px;
+  background: #ffd166; box-shadow: 0 0 6px rgb(255 209 102 / 55%);
+  will-change: transform;
+}
+
+.fs-inspector {
+  flex: 0 0 auto;
+  display: flex; flex-direction: column; gap: .4rem;
+  padding: .5rem .8rem .6rem;
+  border-top: 1px solid rgb(255 255 255 / 10%);
+  background: rgb(7 8 10 / 94%);
+}
+.fs-inspector-head { display: flex; align-items: center; gap: .8rem; }
+.fs-inspector-head strong { color: #f2f1f5; font-size: 10.5px; letter-spacing: .18em; }
+.fs-inspector-head span { color: #9ce0b4; letter-spacing: .12em; }
+.fs-inspector-head button { margin-left: auto; }
+.fs-inspector-params {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .25rem .8rem;
+}
+.fs-inspector-params label { display: flex; flex-direction: column; gap: .1rem; }
+.fs-inspector-params label span {
+  display: flex; justify-content: space-between; gap: .5rem;
+  color: #8f8d97; letter-spacing: .1em; font-size: 9px;
+}
+.fs-inspector-params label span b { color: #f2f1f5; }
+.fs-inspector-params input[type='range'] { width: 100%; accent-color: #9ce0b4; }
+
+/* El input de archivo vive escondido detrás del botón IMPORTAR. */
+.fs-file { display: none; }
+
+.fs-modes { display: flex; gap: .25rem; }
+.fs-lane-gestures .fs-lane-body { height: 46px; }
+
+/* Paleta: un color por material, y el que está emitiendo se marca. */
+.fs-label { color: #8f8d97; letter-spacing: .14em; }
+.fs-swatch {
+  display: flex; align-items: center; gap: .25rem;
+  padding: .15rem .2rem; border: 1px solid transparent; border-radius: .3rem;
+}
+.fs-swatch-on { border-color: #9ce0b4; background: rgb(80 205 130 / 10%); }
+.fs-swatch input[type='color'] {
+  width: 30px; height: 24px; padding: 0; cursor: pointer;
+  border: 1px solid rgb(255 255 255 / 25%); border-radius: .25rem; background: none;
+}
+.fs-swatch .fs-btn { padding: .35rem .45rem; letter-spacing: .1em; }

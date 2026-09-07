@@ -1,0 +1,47 @@
+﻿{
+    "capturedAtUtc":  "2026-09-06T15:41:06.4203721Z",
+    "purpose":  "Documentación histórica del proyecto Radiance; la operación vigente está en ../CONTEXTO-ACTUAL.md",
+    "original":  "C:/Users/mpale/OneDrive/Desktop/heidi/radiance-live-show",
+    "copiedFrom":  "C:/Users/mpale/OneDrive/Desktop/PARTE 1/radiance-live-show",
+    "originalCommit":  "18998e4bd48558b88013c2242194001ed33923dc",
+    "siblingSnapshotCommit":  "e91ec3b",
+    "destination":  "C:/Users/mpale/OneDrive/Desktop/PARTE 1/particlesvideo/visuales/docs/origen-radiance",
+    "files":  [
+                  {
+                      "path":  "README.md",
+                      "bytes":  2142,
+                      "sha256":  "15e4041acd33e5bfaa60465da8a56d9c40c4c1099c5d7735142c243d14d08ae8",
+                      "sourceAndSiblingAndVersionedCopyMatch":  true
+                  },
+                  {
+                      "path":  "ARCHITECTURE.md",
+                      "bytes":  4333,
+                      "sha256":  "931f6ca30586de8487d4a6fccdfdea886cb07fece121ee6da7e85e1687928dbe",
+                      "sourceAndSiblingAndVersionedCopyMatch":  true
+                  },
+                  {
+                      "path":  "docs/plan-fluids-show.md",
+                      "bytes":  50576,
+                      "sha256":  "0471e668f35ddff0cb306120fb6c42515a7477c1c51f74d2a8fa602102b5e5dc",
+                      "sourceAndSiblingAndVersionedCopyMatch":  true
+                  },
+                  {
+                      "path":  "docs/fluids-show-como-funciona.md",
+                      "bytes":  43649,
+                      "sha256":  "8c7242cbba1e4bba64398d2340a47b715b3eeb6782f538572081d75541948b49",
+                      "sourceAndSiblingAndVersionedCopyMatch":  true
+                  },
+                  {
+                      "path":  "public/fluid/NOTICE.md",
+                      "bytes":  993,
+                      "sha256":  "98da72e05de4ab99c6101d97fb64188693ad2a6f242bd4901bd371345be2d53c",
+                      "sourceAndSiblingAndVersionedCopyMatch":  true
+                  },
+                  {
+                      "path":  "public/fluid/LICENSE",
+                      "bytes":  1248,
+                      "sha256":  "a87ff750a47612859d897a0bd9d3ba57f390aa47a8559d49cba6909617941493",
+                      "sourceAndSiblingAndVersionedCopyMatch":  true
+                  }
+              ]
+}

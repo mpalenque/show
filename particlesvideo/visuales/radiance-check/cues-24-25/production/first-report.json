@@ -1,0 +1,581 @@
+{
+  "production": true,
+  "tests": [
+    "cancelar 24 pendiente conserva escena 1",
+    "24 espera en cero con física vacía detenida y motor anterior suspendido",
+    "nota MIDI 25 inicia timeline alineado al cue y notas repetidas no reinician; comandos viejos no habilitan audio",
+    "25→24 limpia partículas y vuelve a la previa sin reproducir",
+    "volver a Parte 1 suspende Worker; entrada directa 25 inicia secuencia",
+    "final mantiene cuadro y escena 25"
+  ],
+  "performance": [
+    {
+      "frames": 467,
+      "fps": 58.24976300918306,
+      "p95": 24.5,
+      "p99": 39.700000047683716,
+      "worst": 83.60000002384186,
+      "over20ms": 45,
+      "maxWorkerMs": 217,
+      "maxSnapshotAge": 215.29999995231628,
+      "outliers": [
+        {
+          "dt": 22.399999976158142,
+          "render": 1.7999999523162842,
+          "time": 0.4141999999284742,
+          "solverFrame": 20,
+          "solverMs": 0,
+          "age": 32.5,
+          "particles": 0
+        },
+        {
+          "dt": 66,
+          "render": 2.4000000953674316,
+          "time": 1.1991000000238419,
+          "solverFrame": 64,
+          "solverMs": 2.100000023841858,
+          "age": 82.20000004768372,
+          "particles": 2736
+        },
+        {
+          "dt": 20.5,
+          "render": 2,
+          "time": 1.2538999999761593,
+          "solverFrame": 69,
+          "solverMs": 2.5999999046325684,
+          "age": 17.600000023841858,
+          "particles": 2754
+        },
+        {
+          "dt": 20.5,
+          "render": 1.899999976158142,
+          "time": 1.2885000000000009,
+          "solverFrame": 70,
+          "solverMs": 1.899999976158142,
+          "age": 34,
+          "particles": 2754
+        },
+        {
+          "dt": 23.800000071525574,
+          "render": 3.5,
+          "time": 1.7601999999284743,
+          "solverFrame": 94,
+          "solverMs": 9.299999952316284,
+          "age": 98.5,
+          "particles": 5202
+        },
+        {
+          "dt": 23.600000023841858,
+          "render": 4.100000023841858,
+          "time": 1.7961000000238414,
+          "solverFrame": 94,
+          "solverMs": 9.299999952316284,
+          "age": 134.40000009536743,
+          "particles": 5202
+        },
+        {
+          "dt": 21.299999952316284,
+          "render": 23.300000071525574,
+          "time": 2.0921000000238426,
+          "solverFrame": 111,
+          "solverMs": 4.899999976158142,
+          "age": 54.800000071525574,
+          "particles": 5400
+        },
+        {
+          "dt": 32.200000047683716,
+          "render": 3.6999999284744263,
+          "time": 2.1046999999284743,
+          "solverFrame": 112,
+          "solverMs": 19.700000047683716,
+          "age": 8.299999952316284,
+          "particles": 5400
+        },
+        {
+          "dt": 83.60000002384186,
+          "render": 3.200000047683716,
+          "time": 2.2521000000238427,
+          "solverFrame": 116,
+          "solverMs": 7.900000095367432,
+          "age": 95.5,
+          "particles": 5400
+        },
+        {
+          "dt": 20.899999976158142,
+          "render": 3.799999952316284,
+          "time": 2.5389999999999997,
+          "solverFrame": 129,
+          "solverMs": 28.600000023841858,
+          "age": 27,
+          "particles": 5400
+        },
+        {
+          "dt": 22.399999976158142,
+          "render": 34.300000071525574,
+          "time": 2.605199999928475,
+          "solverFrame": 129,
+          "solverMs": 28.600000023841858,
+          "age": 93.19999992847443,
+          "particles": 5400
+        },
+        {
+          "dt": 39.700000047683716,
+          "render": 11.5,
+          "time": 2.622,
+          "solverFrame": 129,
+          "solverMs": 28.600000023841858,
+          "age": 110,
+          "particles": 5400
+        },
+        {
+          "dt": 23.299999952316284,
+          "render": 7.299999952316284,
+          "time": 2.654699999928475,
+          "solverFrame": 129,
+          "solverMs": 28.600000023841858,
+          "age": 142.69999992847443,
+          "particles": 5400
+        },
+        {
+          "dt": 29.100000023841858,
+          "render": 36.09999990463257,
+          "time": 2.712699999928475,
+          "solverFrame": 129,
+          "solverMs": 28.600000023841858,
+          "age": 200.69999992847443,
+          "particles": 5400
+        },
+        {
+          "dt": 47.299999952316284,
+          "render": 3.5,
+          "time": 2.727299999952317,
+          "solverFrame": 129,
+          "solverMs": 28.600000023841858,
+          "age": 215.29999995231628,
+          "particles": 5400
+        },
+        {
+          "dt": 25.800000071525574,
+          "render": 2.1999999284744263,
+          "time": 2.892299999952316,
+          "solverFrame": 140,
+          "solverMs": 5.5,
+          "age": 20.899999976158142,
+          "particles": 5400
+        },
+        {
+          "dt": 29.100000023841858,
+          "render": 12.700000047683716,
+          "time": 2.974,
+          "solverFrame": 143,
+          "solverMs": 7.100000023841858,
+          "age": 49.700000047683716,
+          "particles": 5400
+        },
+        {
+          "dt": 22,
+          "render": 5.799999952316284,
+          "time": 3.002899999976158,
+          "solverFrame": 143,
+          "solverMs": 7.100000023841858,
+          "age": 78.70000004768372,
+          "particles": 5400
+        },
+        {
+          "dt": 29.100000023841858,
+          "render": 17.200000047683716,
+          "time": 3.1181000000238424,
+          "solverFrame": 146,
+          "solverMs": 7.299999952316284,
+          "age": 88,
+          "particles": 5400
+        },
+        {
+          "dt": 20.299999952316284,
+          "render": 3.899999976158142,
+          "time": 3.2546999999284747,
+          "solverFrame": 153,
+          "solverMs": 7.899999976158142,
+          "age": 32,
+          "particles": 5400
+        },
+        {
+          "dt": 20.100000023841858,
+          "render": 2.799999952316284,
+          "time": 3.370399999976158,
+          "solverFrame": 161,
+          "solverMs": 6.100000023841858,
+          "age": 15.299999952316284,
+          "particles": 5400
+        },
+        {
+          "dt": 21.299999952316284,
+          "render": 3.100000023841858,
+          "time": 3.871600000023843,
+          "solverFrame": 191,
+          "solverMs": 4.100000023841858,
+          "age": 19.90000009536743,
+          "particles": 5400
+        },
+        {
+          "dt": 28.600000023841858,
+          "render": 12.799999952316284,
+          "time": 4.688899999976158,
+          "solverFrame": 239,
+          "solverMs": 4.600000023841858,
+          "age": 36.10000002384186,
+          "particles": 7974
+        },
+        {
+          "dt": 36.200000047683716,
+          "render": 1.9000000953674316,
+          "time": 4.785600000023841,
+          "solverFrame": 244,
+          "solverMs": 5.5,
+          "age": 48.700000047683716,
+          "particles": 8118
+        },
+        {
+          "dt": 24.100000023841858,
+          "render": 4.899999976158142,
+          "time": 4.909500000000001,
+          "solverFrame": 253,
+          "solverMs": 3.8000000715255737,
+          "age": 24.899999976158142,
+          "particles": 8154
+        },
+        {
+          "dt": 21.200000047683716,
+          "render": 1.5,
+          "time": 5.086699999928474,
+          "solverFrame": 263,
+          "solverMs": 4.100000023841858,
+          "age": 34.60000002384186,
+          "particles": 8154
+        },
+        {
+          "dt": 29.199999928474426,
+          "render": 30.600000023841858,
+          "time": 6.042000000000002,
+          "solverFrame": 315,
+          "solverMs": 15.399999976158142,
+          "age": 83,
+          "particles": 8154
+        },
+        {
+          "dt": 32.60000002384186,
+          "render": 11,
+          "time": 6.055,
+          "solverFrame": 315,
+          "solverMs": 15.399999976158142,
+          "age": 96,
+          "particles": 8154
+        },
+        {
+          "dt": 26.59999990463257,
+          "render": 4.799999952316284,
+          "time": 6.1296999999284765,
+          "solverFrame": 318,
+          "solverMs": 24.399999976158142,
+          "age": 26.199999928474426,
+          "particles": 8154
+        },
+        {
+          "dt": 26.100000023841858,
+          "render": 2.1999999284744263,
+          "time": 6.159699999928474,
+          "solverFrame": 319,
+          "solverMs": 27.100000023841858,
+          "age": 2.5,
+          "particles": 8154
+        },
+        {
+          "dt": 31.400000095367435,
+          "render": 9.399999976158142,
+          "time": 6.375,
+          "solverFrame": 327,
+          "solverMs": 5.899999976158142,
+          "age": 80.20000004768372,
+          "particles": 8172
+        },
+        {
+          "dt": 31.89999997615814,
+          "render": 2.6999999284744263,
+          "time": 6.434299999952316,
+          "solverFrame": 328,
+          "solverMs": 109.59999990463257,
+          "age": 3.299999952316284,
+          "particles": 8172
+        },
+        {
+          "dt": 37.199999928474426,
+          "render": 2.5,
+          "time": 6.639299999952318,
+          "solverFrame": 330,
+          "solverMs": 28.700000047683716,
+          "age": 64.5,
+          "particles": 8172
+        },
+        {
+          "dt": 21.100000023841858,
+          "render": 17.299999952316284,
+          "time": 6.703199999928476,
+          "solverFrame": 333,
+          "solverMs": 25.399999976158142,
+          "age": 18.899999976158142,
+          "particles": 8172
+        },
+        {
+          "dt": 21.799999952316284,
+          "render": 31.399999976158142,
+          "time": 6.833799999952316,
+          "solverFrame": 337,
+          "solverMs": 6.400000095367432,
+          "age": 41.39999997615814,
+          "particles": 8172
+        },
+        {
+          "dt": 32.800000071525574,
+          "render": 4.299999952316284,
+          "time": 6.839500000000001,
+          "solverFrame": 337,
+          "solverMs": 6.400000095367432,
+          "age": 47.10000002384186,
+          "particles": 8172
+        },
+        {
+          "dt": 20.600000023841858,
+          "render": 3.200000047683716,
+          "time": 6.871100000023841,
+          "solverFrame": 337,
+          "solverMs": 6.400000095367432,
+          "age": 78.70000004768372,
+          "particles": 8172
+        },
+        {
+          "dt": 27.899999976158142,
+          "render": 4.399999976158142,
+          "time": 7.229799999952316,
+          "solverFrame": 349,
+          "solverMs": 8.100000023841858,
+          "age": 93.89999997615814,
+          "particles": 9144
+        },
+        {
+          "dt": 52.90000009536743,
+          "render": 7.299999952316284,
+          "time": 7.340899999976159,
+          "solverFrame": 352,
+          "solverMs": 15.600000023841858,
+          "age": 53.299999952316284,
+          "particles": 9756
+        },
+        {
+          "dt": 24.5,
+          "render": 5.600000023841858,
+          "time": 7.394600000023843,
+          "solverFrame": 352,
+          "solverMs": 15.600000023841858,
+          "age": 107,
+          "particles": 9756
+        },
+        {
+          "dt": 22.299999952316284,
+          "render": 4,
+          "time": 7.443299999952316,
+          "solverFrame": 352,
+          "solverMs": 15.600000023841858,
+          "age": 155.69999992847443,
+          "particles": 9756
+        },
+        {
+          "dt": 21.600000023841858,
+          "render": 3.299999952316284,
+          "time": 7.472299999952316,
+          "solverFrame": 352,
+          "solverMs": 15.600000023841858,
+          "age": 184.69999992847443,
+          "particles": 9756
+        },
+        {
+          "dt": 33.799999952316284,
+          "render": 4.300000071525574,
+          "time": 7.619600000023841,
+          "solverFrame": 354,
+          "solverMs": 45,
+          "age": 70.20000004768372,
+          "particles": 9828
+        },
+        {
+          "dt": 20.800000071525574,
+          "render": 4.100000023841858,
+          "time": 7.722600000023842,
+          "solverFrame": 359,
+          "solverMs": 27.899999976158142,
+          "age": 17.700000047683716,
+          "particles": 9828
+        },
+        {
+          "dt": 35.200000047683716,
+          "render": 3,
+          "time": 7.9190000000000005,
+          "solverFrame": 363,
+          "solverMs": 22.699999928474426,
+          "age": 40.5,
+          "particles": 9828
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "boot": {
+    "loaded": true,
+    "loading": false,
+    "revision": 1,
+    "time": 0,
+    "playing": false,
+    "duration": 152.694,
+    "audioMode": "external",
+    "audioReady": false,
+    "audioDecoded": true,
+    "waveformReady": true,
+    "transportReady": true,
+    "loop": {
+      "from": 0,
+      "to": 152.694,
+      "on": false
+    },
+    "error": null,
+    "audioError": null,
+    "storageError": null,
+    "ownerId": "9220430e-d645-4059-a660-c122361cf5ab",
+    "status": "suspended",
+    "scene": "1",
+    "pendingScene": null,
+    "mode": null,
+    "master": 1,
+    "blackout": false,
+    "stats": {
+      "mode": "idle",
+      "standbyPrepared": false,
+      "suspended": true,
+      "renderedFrames": 0,
+      "particles": 0,
+      "solverFrame": 0,
+      "pps": 0,
+      "capped": false,
+      "scale": 1,
+      "solverMs": 0,
+      "roundTripMs": 0,
+      "snapshotAgeMs": 1270,
+      "stepInFlight": false,
+      "stepQueued": false,
+      "pendingInteractions": 0,
+      "drawCalls": 90,
+      "memoryMb": 287.96875,
+      "radianceResolution": 1024,
+      "activeEvents": 0,
+      "activeGestures": 0,
+      "renderer": "WebGL2 · Radiance HRC",
+      "warning": null,
+      "fps": 0
+    },
+    "preview": {
+      "requested": 1,
+      "completed": 1,
+      "dropped": 0,
+      "captureCpuMs": 0.3999999761581421,
+      "lastCaptureCpuMs": 0.3999999761581421,
+      "maxCaptureCpuMs": 0.3999999761581421,
+      "totalCaptureCpuMs": 0.3999999761581421,
+      "transferCpuMs": 0.10000002384185791,
+      "maxTransferCpuMs": 0.10000002384185791,
+      "lastLatencyMs": 85.79999995231628,
+      "encodeMs": 84,
+      "error": null,
+      "busy": false,
+      "disabled": false,
+      "width": 672,
+      "height": 252
+    }
+  },
+  "standbyPixels": {
+    "lit": 2552,
+    "colored": 0,
+    "width": 320,
+    "height": 8,
+    "minX": 1184,
+    "minY": 500
+  },
+  "state": {
+    "loaded": true,
+    "loading": false,
+    "revision": 1,
+    "time": 8.195799999952317,
+    "playing": true,
+    "duration": 152.694,
+    "audioMode": "external",
+    "audioReady": false,
+    "audioDecoded": true,
+    "waveformReady": true,
+    "transportReady": true,
+    "loop": {
+      "from": 0,
+      "to": 152.694,
+      "on": false
+    },
+    "error": null,
+    "audioError": null,
+    "storageError": null,
+    "ownerId": "9220430e-d645-4059-a660-c122361cf5ab",
+    "status": "active",
+    "scene": "25",
+    "pendingScene": null,
+    "mode": "timeline",
+    "master": 1,
+    "blackout": false,
+    "stats": {
+      "mode": "timeline",
+      "standbyPrepared": false,
+      "suspended": false,
+      "renderedFrames": 711,
+      "particles": 9828,
+      "solverFrame": 379,
+      "pps": 2.312066001407621,
+      "capped": false,
+      "scale": 1,
+      "solverMs": 12,
+      "roundTripMs": 33.799999952316284,
+      "snapshotAgeMs": 5.200000047683716,
+      "stepInFlight": true,
+      "stepQueued": true,
+      "pendingInteractions": 10,
+      "drawCalls": 87,
+      "memoryMb": 287.96875,
+      "radianceResolution": 1024,
+      "activeEvents": 0,
+      "activeGestures": 0,
+      "renderer": "WebGL2 · Radiance HRC",
+      "warning": null,
+      "fps": 60
+    },
+    "preview": {
+      "requested": 1,
+      "completed": 1,
+      "dropped": 0,
+      "captureCpuMs": 0.3999999761581421,
+      "lastCaptureCpuMs": 0.3999999761581421,
+      "maxCaptureCpuMs": 0.3999999761581421,
+      "totalCaptureCpuMs": 0.3999999761581421,
+      "transferCpuMs": 0.10000002384185791,
+      "maxTransferCpuMs": 0.10000002384185791,
+      "lastLatencyMs": 85.79999995231628,
+      "encodeMs": 84,
+      "error": null,
+      "busy": false,
+      "disabled": false,
+      "width": 672,
+      "height": 252
+    }
+  }
+}

@@ -1,0 +1,11 @@
+node_modules/
+.env
+.env.*
+!.env.example
+!.env*.example
+*.local
+**/*.local
+**/auth*
+**/credentials*
+**/secrets*
+**/token*

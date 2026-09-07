@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Visuales LED</title>
+  <style>
+    html, body { margin: 0; padding: 0; background: #000; overflow: hidden; height: 100%; }
+    #stage { position: absolute; top: 0; left: 0; }
+    #stage canvas { display: block; }
+    #fps { position: absolute; top: 4px; left: 4px; font: 12px monospace; color: #0f0; pointer-events: none; z-index: 10; }
+    #fatal { position: absolute; inset: 0; background: #000; color: #f55; font: 16px monospace; padding: 24px; white-space: pre-wrap; }
+
+    /* Botonera de escenas: solo para probar. En la LED se apaga con S o abriendo con ?clean. */
+    #scenebar {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+      display: flex; flex-wrap: wrap; gap: 4px; align-items: center;
+      padding: 8px 10px; background: rgba(12, 14, 18, .92); border-top: 1px solid #2c313a;
+      font: 12px system-ui, -apple-system, "Segoe UI", sans-serif; color: #d8dce3;
+    }
+    #scenebar[hidden] { display: none; }
+    #scenebar .sb-title { text-transform: uppercase; letter-spacing: .08em; color: #8a919e; margin-right: 6px; }
+    #scenebar .sb-hint { color: #6b7280; margin-left: auto; font-size: 11px; }
+    #scenebar button {
+      display: flex; flex-direction: column; align-items: flex-start; gap: 1px;
+      background: #262b33; color: #d8dce3; border: 1px solid #2c313a; border-radius: 4px;
+      padding: 4px 8px; cursor: pointer; font: inherit; line-height: 1.15; min-width: 58px;
+    }
+    #scenebar button b { font-size: 13px; }
+    #scenebar button span { font-size: 10px; color: #8a919e; max-width: 96px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    #scenebar button:hover { background: #2f3540; }
+    #scenebar button.active { background: #4a9eff; border-color: #4a9eff; color: #06131f; }
+    #scenebar button.active span { color: #0a2540; }
+  </style>
+</head>
+<body>
+  <div id="stage"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
