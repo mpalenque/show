@@ -254,6 +254,15 @@ Requieren `npm run dev` corriendo.
 | `node tools/smoke-io.mjs` | prueba MIDI/OSC/mapper/editor de punta a punta |
 | `node tools/gen-reference.mjs` | regenera `REFERENCIA-MIDI-OSC.md` y `.csv` |
 
+Fuera de esa lista, y sin Chrome ni `npm run dev`, está el respaldo de los medios de Parte 2:
+
+| Comando | Para qué |
+|---|---|
+| `node tools/backup-parte2-media.mjs <destino> [--zip]` | copia los 50,19 GB de DDS y tinta de `E:` a un disco externo (espejo) o a la nube (un zip por secuencia), con manifiesto de SHA-256 |
+| `node tools/backup-parte2-media.mjs <destino> --verify` | rehashea el respaldo y lo compara contra su manifiesto |
+
+Los medios no van a GitHub: [por qué, y cómo se restaura](docs/integracion-parte2/RESPALDO-MEDIOS.md).
+
 ---
 
 ## 9. OneDrive

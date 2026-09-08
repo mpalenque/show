@@ -9,5 +9,6 @@ El plan vigente está en [PLAN-INTEGRACION-PARTE2.md](particlesvideo/visuales/do
 - [Inventario de código, medios y hashes](particlesvideo/visuales/docs/integracion-parte2/inventario-2026-09-07.json).
 - [Comprobación final de medios exclusivamente en E:](particlesvideo/visuales/docs/integracion-parte2/medios-e-2026-09-07.json).
 - [Cues y routing leídos de Ableton](particlesvideo/visuales/docs/integracion-parte2/ableton-cues-2026-09-07.json).
+- [Respaldo de los medios fuera de GitHub](particlesvideo/visuales/docs/integracion-parte2/RESPALDO-MEDIOS.md): por qué los 50,19 GB de DDS no van al repo, y la herramienta que los copia con manifiesto de hashes.
 
 Las escenas actuales, incluida la 26 como final reactivo de Fluids, conservan el contrato del [contexto vigente](particlesvideo/visuales/docs/CONTEXTO-ACTUAL.md).

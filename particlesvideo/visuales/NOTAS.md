@@ -2440,3 +2440,43 @@ LA NOTA, EN 1 SEGUNDO VUELVE A SU VALOR MINIMO"*.
 - **Trampa de la prueba:** el bloque de losetas de `check-radiance` empezó a fallar al espaciar los
   golpes 210 ms: con la vida de fábrica (4 negras = 1,7 s) las losetas se morían a mitad de la
   tanda y no quedaba nada que mirar. La prueba ahora les pone vida larga y coloca dos antes.
+
+## Todo a GitHub y respaldo de los medios de Parte 2 (2026-09-08)
+
+Manuel, textual: *"NECESITO Q SUBAS LA VERSION ACTUAL Q TIENE TODAS LAS VISUALES y confirmame q
+tenes aca las visuales dds de la parte 2 del pryoecto porq eso l otenes q haber agregado quiero
+todo subido en el github"*, y después *"ACA EN LOCAL ARMASTE TODO LO NUEVO, YO TE DIJE Q COMITEES
+ESO A SHOW ASI DE OTRA PC PUEDO BAJARME ESTA UTLIMA VERSION"*.
+
+- **Lo que faltaba subir no era el código de este repo.** `particlesvideo` rama `visuales` ya
+  estaba al día en `origin` (`84d9932`, Parte 2 y placeholders). Lo que estaba sin subir era
+  `radiance-live-show` con **44 commits** locales (todo el documento de show de Fluids: fractura,
+  malacate, lápiz, timeline exportado): empujado a `origin/main` (`1effcc0..e91ec3b`).
+- **`mpalenque/show` refrescado** (`4211382..1738d2e`): es el snapshot de toda la carpeta `PARTE 1`
+  y estaba en el estado del 6/9, sin la escena 26 ni Parte 2. Ahora tiene 789 archivos (237 nuevos,
+  43 modificados, ninguno borrado). Ese repo **no tiene clon local**: se actualiza clonándolo,
+  copiando `PARTE 1` sin `node_modules`, `dist` ni los `.git` anidados, y haciendo commit + push.
+  Es el que hay que clonar desde otra PC para bajarse la última versión.
+- **Los DDS no pueden ir a GitHub y no fueron.** Medidos: **50,19 GB en 48.104 archivos**
+  (`dds` 36,72 GB, `dds2` 8,61 GB, `resize` 3,89 GB, `ink` 0,97 GB). El límite de GitHub es 100 MB
+  por archivo y 1 GB de LFS gratis. Lo que sí está versionado son los 69 MB de
+  `placeholder/parte2/`: un frame real por secuencia, con los que el proyecto abre en una máquina
+  sin `E:`.
+- **Respaldo elegido: fuera de GitHub.** Nueva herramienta `tools/backup-parte2-media.mjs` con
+  manifiesto de SHA-256 por archivo, agrupado por secuencia, y
+  [su documento](docs/integracion-parte2/RESPALDO-MEDIOS.md). Dos modos: **espejo** (para el disco
+  externo `F:`, se puede apuntar directo con `parte2-media.local.json` sin restaurar nada) y
+  **`--zip`** (un zip por secuencia: 71 archivos en vez de 48.104, que es lo que hace falta para
+  Drive). `--verify` rehashea el destino contra el manifiesto.
+- **Probado de punta a punta contra la raíz `ink` real** (0,97 GB, 2.134 archivos) en los dos
+  modos: verificación limpia, reanudación que saltea todo, y detección de daño real —cambié un byte
+  de un JPG y borré un DDS, y marcó exactamente esos dos (`HASH` y `FALTA`)—. **El respaldo completo
+  de los 50 GB todavía no se corrió**: falta que Manuel elija el destino.
+- **Bug encontrado al escribir la herramienta:** la tinta son **dos** carpetas. El show lee
+  `ink/DDS/` (943 MB, `media-server.mjs:161`) y la primera versión copiaba sólo los JPG de la raíz,
+  50 MB. Además el `stemOf` del servicio de medios sólo saca la extensión `.dds`, así que agrupando
+  la tinta por stem cada JPG caía como una "secuencia" propia: 1.068 secuencias de un frame. Por eso
+  la herramienta agrupa la tinta con su propio stem.
+- **Trampa de Windows:** el `tar` del PATH en Git Bash es GNU tar y toma `-f C:/...` como un host
+  remoto (*"Cannot connect to C: resolve failed"*). El zip lo tiene que armar el `bsdtar` de
+  `System32`, llamado por ruta absoluta.
