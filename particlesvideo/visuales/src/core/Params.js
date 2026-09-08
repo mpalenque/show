@@ -29,6 +29,8 @@ export class Params {
       label: def.label ?? def.id,
       group: def.group ?? def.id.split('.')[0],
       sceneReset: def.sceneReset !== false,
+      transient: def.transient === true,
+      retrigger: def.retrigger === true,
       options: def.options,
       value: def.default,
       target: def.default,
@@ -72,7 +74,7 @@ export class Params {
     const changed = p.target !== v;
     p.target = v;
     if (immediate || p.smooth <= 0 || !this._isInterpolable(p)) p.value = v;
-    if (changed) this._notifyChange(p);
+    if (changed || p.retrigger) this._notifyChange(p);
   }
 
   // Cambia el valor de fábrica de un param. Lo usa Settings para que un ajuste hecho en el
@@ -152,7 +154,7 @@ export class Params {
   list() {
     const params = [...this.defs.values()].map((p) => ({
       id: p.id, type: p.type, min: p.min, max: p.max, step: p.step, default: p.default,
-      label: p.label, group: p.group, options: p.options, sceneReset: p.sceneReset, isAction: false,
+      label: p.label, group: p.group, options: p.options, sceneReset: p.sceneReset, transient: p.transient, retrigger: p.retrigger, isAction: false,
     }));
     const actions = [...this.actions.values()].map((a) => ({
       id: a.id, type: 'action', label: a.label, group: a.group, argHint: a.argHint, isAction: true,

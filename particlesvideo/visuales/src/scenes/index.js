@@ -745,31 +745,15 @@ export const SCENES = [
   { id: '24', name: 'Fluids · previa', transition: 0, params: {}, mainAction: 'fluids.play' },
   { id: '25', name: 'Fluids · secuencia', transition: 0, params: {}, mainAction: 'fluids.play' },
   {
-    // El mismo motor de la 25 pero sin documento: no hay timeline ni audio, sólo
-    // el fluido y los diez controles de `fluids.live.*` para tocar por MIDI.
-    // Los valores de acá son el punto de partida al entrar; a partir de ahí
-    // mandan los CC. La transición es 0 porque el motor arranca de cero y un
-    // fundido de la emisión sólo demora la primera masa.
-    id: '26', name: 'Fluids · live', transition: 0,
-    params: {
-      // ESTOS TRES VAN JUNTOS: emisión, gravedad y luz. La luz del motor libre
-      // se reparte entre todas las partículas y además sube con la velocidad,
-      // así que sólo se ve una población CHICA y en MOVIMIENTO. Probado con
-      // ocho juegos de valores: con emisión 0,2-0,35 la pantalla se llena de
-      // masa azul apagada; con 0,018 y algo de gravedad quedan gotas luminosas
-      // que caen, tiran halo y sombra, y a los 20 s se sigue leyendo igual.
-      // Subir la emisión sin bajar la población apaga el cuadro.
-      'fluids.live.emission': 0.018, 'fluids.live.gravity': 0.32, 'fluids.live.light': 2.4,
-      // El emisor arriba del centro: deja caída suficiente para que se vea la
-      // gota viajando antes de llegar al charco.
-      'fluids.live.x': 0.5, 'fluids.live.y': 0.32,
-      'fluids.live.hue': 0.58,
-      // Viscosidad y cohesión van juntas: con esta cohesión la gota se sostiene
-      // entera mientras cae en vez de deshacerse en polvo.
-      'fluids.live.viscosity': 0.3, 'fluids.live.cohesion': 0.5,
-      'fluids.live.forceX': 0, 'fluids.live.forceY': 0,
-    },
-    mainAction: 'fluids.live.burst',
+    // EL FINAL DE LA 25, no una escena nueva (Manuel: *"va a partir de la escena
+    // 25 solo q ahora va a reaccionar a midis de mi ableton"*). Hereda el fluido,
+    // el director y el documento tal como quedaron, y desde la nota 26 lo que
+    // manda son las notas de JEJE FLUID (`fluids.seq.*`, mapeadas en
+    // `mappings.default.json`) y los faders `fluids.seq.*`, que al entrar se
+    // cargan con lo que las curvas del documento valen en ese instante. Por eso
+    // no lista params: nada de acá puede pisar el estado que trae la 25.
+    id: '26', name: 'Fluids · final reactivo', transition: 0, params: {},
+    mainAction: 'fluids.seq.pulse',
   },
   ...Array.from({ length: 3 }, (_, i) => ({
     id: String(27 + i), name: `Libre ${i + 4}`, transition: 1.0, params: {},

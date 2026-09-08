@@ -1,6 +1,6 @@
-# Operación de Fluids — previa 24, PLAY 25 y live 26
+# Operación de Fluids — previa 24, PLAY 25 y final reactivo 26
 
-**Decisión vigente, 2026-09-06: 24 prepara; 25 reproduce la secuencia; 26 es el fluido libre que se toca por MIDI. El audio sale de la página.** Esta guía reemplaza tanto la operación «24 PLAY / 25 live / WAV local» como la de audio siempre externo. [Contexto actual](../CONTEXTO-ACTUAL.md) · [Configuración completa](../CONFIGURACION.md) · [Sistemas](../ARQUITECTURA-Y-SISTEMAS.md).
+**Decisión vigente, 2026-09-07: 24 prepara; 25 reproduce la secuencia; 26 es el final de la 25 —el mismo fluido— reaccionando a las notas y faders de Ableton. El audio de la 25 sale de la página; en la 26 la música es la de Ableton.** Esta guía reemplaza tanto la operación «24 PLAY / 25 live / WAV local» como la de audio siempre externo. [Contexto actual](../CONTEXTO-ACTUAL.md) · [Configuración completa](../CONFIGURACION.md) · [Sistemas](../ARQUITECTURA-Y-SISTEMAS.md).
 
 ## Abrir el programa y el timeline
 
@@ -27,30 +27,44 @@ El editor general tiene enlace al timeline. **ABRIR SALIDA** en el timeline reut
 2. Iniciar el audio desde Ableton y enviar **Note On canal 10, nota 25** en el punto de arranque: comienza desde cero la **secuencia completa del timeline**, de 152,694 s en el documento incluido.
 3. Para repetir, usar **REINICIAR** / `fluids.restart`, o volver a la previa y entrar nuevamente en 25. Las notas repetidas de la misma escena activa no reinician.
 4. Al final se mantiene la escena 25: el reloj del timeline se detiene, **el fluido sigue corriendo** y no avanza a otra escena automáticamente.
-5. **Note On canal 10, nota 26**: entra el fluido libre. No hay timeline ni audio; manda `fluids.live.*`.
+5. **Note On canal 10, nota 26** (el clip "26" del slot JEJE FLUID del track "scene" la manda solo al disparar esa escena de Session): **el mismo fluido sigue**, el timeline deja de mandar y mandan las notas de los canales 1 y 2 y los faders `fluids.seq.*`. El track de la página queda pausado.
 
 La previa deja el estado de comienzo listo. El paso 24→25 usa ese estado preparado para iniciar el reloj sin un nuevo reset o espera del Worker en el cue. La entrada directa en 25 tiene su propia preparación y arranque desde cero. Si se pide otra escena mientras hay una preparación pendiente, esa solicitud anterior se cancela.
 
 Las escenas **27–29 siguen libres**.
 
-## Fluids live — escena 26
+## Final reactivo — escena 26
 
-El mismo solver y el mismo render, sin documento ni reloj: no hay secuencia que seguir ni audio que reproducir. Al entrar, la escena fija su punto de partida —gotas azules que caen desde arriba del centro— y de ahí en más mandan los diez controles de `fluids.live.*`, pensados para mapear a faders.
+**Es la 25 que sigue viva.** No se reinicia nada: mismo solver, mismas partículas, mismo director con una copia mutable del documento y el reloj siguiendo desde donde quedó. Lo que cambia es quién manda: las notas de JEJE FLUID y los faders, no el timeline. Al entrar, la lámpara pasa a los materiales que de verdad quedaron, la masa toma cuerpo (`bodies` 0,15) y la paleta funde a blanco y negro en 3 s.
+
+Las notas ya vienen mapeadas (`mappings.default.json` v13, sólo activas en la 26):
+
+| Nota | Sonido en JEJE FLUID | Acción | Qué se ve |
+|---|---|---|---|
+| Ch1 n0 | **primer kick** ("deep dark kick", cada negra) | `fluids.seq.pulse` | flash de exposición y empujón desde el centro de masa; cada cuarto kick tira para adentro (respiración). **Todas las losetas dan su paso** por su eje (pistones hacia la masa, patrullas que doblan para esquivar; nunca se pisan) y las lámparas pulsan; cada cuatro kicks se sortea si las partículas blancas emiten quietas o sólo en movimiento. Con la viscosidad del documento el fluido está clavado y **salta** con cada golpe; el primer kick abre la masa del cierre en un anillo |
+| Ch1 n2 | **segundo kick** ("Instrument Rack" → Cymatics Kick, en el contratiempo) | `fluids.seq.strobe` + `fluids.seq.step` | el relámpago (sortea cuántas, 1 a 3, y cuáles losetas de 50 cm emiten, y las hace destellar ×2 durante 120 ms; las de 1 m nunca emiten) **y otro paso de todas las losetas, cruzado**: con los dos kicks avanzan en corcheas |
+| Ch1 n4 | 808 (cada 2 negras) | `fluids.seq.tile` | una loseta nueva (50 cm o 1 m según la serie). Nace negra; las lámparas las elige el sorteo. **Es un obstáculo**: el fluido choca contra sus lados y rebota, lo que tenía adentro sale expulsado y en marcha arrastra el fluido |
+| Ch2 n38 | alarm keypad | `fluids.seq.sweep` + `fluids.seq.flip` | una banda de 1 m cruza la pared en 0,8 s **invirtiendo la iluminación** de todo lo que pasa por debajo (blanco ↔ negro, azul → rojo), y otro sorteo de lámparas |
+| Ch2 n39 · n49 | alarm keypad · fx_powered | `fluids.seq.crack` | fractura en el centro de masa |
+| Ch2 n47 | waaaeey | `fluids.seq.dark` | apagón 0,3 s |
+| Ch2 n45 | sci-fi button | `fluids.seq.freeze` | stutter: el fluido y las losetas quedan como foto fija `tileLife` negras y se sueltan |
+| **Ch11 cualquier nota** | **amb 1** (por la pista de envío AMB1) | `fluids.seq.amb` (gate) | mientras hay una nota sostenida, un cuarto de las partículas sube desde su mínimo hasta el doble de potencia en azul, aunque esté quieto, en 0,7 s y temblando; al soltar vuelve al mínimo en 1 s. En JEJE FLUID la nota dura 32 negras: mientras ese clip suene, el azul está casi siempre arriba |
+| **Ch3 cualquier nota** | **atractor** (la pista de envío de las otras escenas) | `fluids.seq.attract` (gate) | mientras la nota está apretada, un atractor tira del fluido (una nota) o lo hace girar (la siguiente) desde un punto del centro; al soltar se apaga en 0,3 s |
+| Ch2 n40 | bowl ride | `fluids.seq.tileBig` | loseta de 1 m |
+| — | — | `fluids.seq.clear` / `fluids.seq.reset` | borrar losetas / vaciar el fluido (sin mapeo: asignarlos desde el editor si hacen falta) |
+
+Los faders, pensados para CCs libres (todos estado vivo, no se resetean con la escena):
 
 | Control | Para qué |
 |---|---|
-| `fluids.live.emission` | Cuánto fluido sale por segundo. **Rango 0..0,25**, no 0..1: la luz se reparte entre todas las partículas, así que con la población alta la imagen se apaga sola. Todo el recorrido del fader cae dentro de lo que se ve. |
-| `fluids.live.x` / `.y` | Dónde está el emisor, en fracciones del cuadro. |
-| `fluids.live.hue` | Color del fluido. |
-| `fluids.live.gravity` | Negativo sube, positivo cae. |
-| `fluids.live.viscosity` / `.cohesion` | **Van juntos.** La cohesión sostiene la gota entera; la viscosidad la frena. |
-| `fluids.live.light` | Luz del fluido, 0..3. |
-| `fluids.live.forceX` / `.forceY` | Empuje sostenido sobre toda la masa. |
-| `fluids.live.burst` | Ráfaga de partículas en el emisor (barra espaciadora). Acepta la cantidad como argumento. |
-| `fluids.live.attractor` | Atrae la masa hacia el emisor. |
-| `fluids.live.reset` | Vacía el fluido. |
+| `fluids.seq.gravity` / `.cohesion` / `.viscosity` / `.light` / `.exposure` / `.bodies` | **Son las curvas del documento**: mover uno escribe una key en el instante actual y el director la sigue. Arrancan donde la 25 las dejó (gravedad 0, cohesión 0,62, viscosidad 1, luz 1, exposición 1,2) salvo `bodies` (0,15). **Viscosidad 1 = fluido quieto que salta con el kick; 0,5 = agua que fluye sola y el kick deja de leerse.** |
+| `fluids.seq.tileLife` | Unidad de vida de las losetas y del stutter, en negras a 140 (4 por defecto). **Crece sola con la cuenta**: la loseta 24 vive el doble, la 48 el triple; así la pared se llena de cuadrados sin tocar nada. `clear` vuelve la cuenta a cero. |
+| `fluids.seq.grid` | Por encima de 0,5 todas las losetas nuevas son de 50 cm. |
+| `fluids.seq.mono` | Cuánto se va al monocromo. Arranca en 1. |
+| `fluids.seq.amb` | La compuerta de amb 1 (0/1). La mueve el MIDI del canal 11; desde el editor sirve para probar el glow sin Ableton. |
+| `fluids.seq.attract` | La compuerta del atractor (0/1). La mueve el MIDI del canal 3; desde el editor sirve para probar sin Ableton. |
 
-**Lo que se ve necesita población chica y movimiento.** La luz del motor libre se reparte entre las partículas y además sube con la velocidad: una masa grande y quieta se lee como una mancha azul apagada. Si el cuadro se apaga, bajar la emisión o vaciar con `fluids.live.reset` antes que subir la luz.
+`fluids.gain` sigue por encima de todo. La escena 26 en `scenes/index.js` no lista params: la barra espaciadora dispara el pulso. **En Ableton**, la pista **AMB1** (la última) toma el MIDI de "amb 1" (Post FX, monitor In) y lo saca por RTX3090 Port 2, canal 11, igual que DRUM (Ch 1) y PERC (Ch 2) sacan el de sus instrumentos. Si se agrega otro envío, el canal 11 ya está tomado. La 26 acepta la nota **antes** de que la 25 termine: el timeline se detiene ahí y la 26 toma el fluido como está. Para volver a la secuencia, nota 24 y después 25. El motor libre anterior (`fluids.live.*`) sigue existiendo como capacidad sin escena.
 
 ## Audio desde la página
 
@@ -71,7 +85,7 @@ El armado del audio **no demora el arranque**: se hace en segundo plano. Si el c
 | `fluids.pause` | Pausa el reloj visual y el track mientras está en 25. La física conserva la semántica del motor original y sigue moviéndose. |
 | `fluids.restart` / reinicio del editor | Reinicia explícitamente la secuencia 25 desde cero, incluso si ya estaba seleccionada. |
 | `fluids.seek` con segundos | Busca dentro del timeline de 25 para ensayo; el track salta con él. |
-| `fluids.live` | Selecciona la 26, el fluido libre. |
+| `fluids.live` | Selecciona la 26, el final reactivo (el nombre de la acción es histórico). |
 | Loop del editor | Sólo para ensayo visual. Entrar en 24 o 25 lo desactiva para ejecutar la secuencia completa. El audio externo no recibe ese loop automáticamente. |
 | Master / blackout | Modifican la imagen; no silencian el track. Para bajar el sonido, `fluids.volume`. |
 | `fluids.gain` | Ganancia de luz de todo Fluids, sin tocar el documento. Arranca en 1,25. |

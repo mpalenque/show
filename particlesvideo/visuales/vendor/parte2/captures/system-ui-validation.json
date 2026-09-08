@@ -1,0 +1,57 @@
+{
+  "bootstrap": "Unmodified system/app.js",
+  "initial": {
+    "parameters": 444,
+    "inputs": 910,
+    "decks": 7,
+    "mappings": 490,
+    "overflow": false,
+    "gpuErrors": []
+  },
+  "defaultMappings": {
+    "total": 490,
+    "web": 444,
+    "targets": 444
+  },
+  "osc": {
+    "udpPort": 1002,
+    "path": "UDP → SSE → Mapper → public parameter",
+    "value": 0.375
+  },
+  "learn": {
+    "id": "learn.1788749842130.oop7o",
+    "target": "final.fx1",
+    "source": {
+      "kind": "cc",
+      "channel": 2,
+      "cc": 17
+    },
+    "mode": "range",
+    "label": "FX1 · deriva X / anillo",
+    "output": "control",
+    "min": 0,
+    "max": 1,
+    "learned": true,
+    "enabled": false
+  },
+  "png": [
+    1920,
+    600
+  ],
+  "mobile": {
+    "width": 390,
+    "scrollWidth": 390,
+    "canvas": {
+      "x": 13,
+      "y": 336.5,
+      "width": 364,
+      "height": 112.375,
+      "top": 336.5,
+      "right": 377,
+      "bottom": 448.875,
+      "left": 13
+    }
+  },
+  "errors": [],
+  "gpuErrors": []
+}

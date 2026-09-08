@@ -1,0 +1,435 @@
+{
+  "bootstrap": "system/app.js real, sin interceptar",
+  "output": [
+    2688,
+    1008
+  ],
+  "blockSize": [
+    448,
+    1008
+  ],
+  "migration": {
+    "parameters": {
+      "output.resolution": "2688x1008",
+      "output.preview": "composition",
+      "composition.stripes.x": 0,
+      "composition.stripes.y": 0.8057,
+      "composition.stripes.width": 2,
+      "composition.stripes.stripWidth": 0.3333333333333333,
+      "composition.stripes.height": 0.7061,
+      "composition.stripes.rotation": 0,
+      "composition.view.mode": "show-strip",
+      "composition.view.x": 0,
+      "composition.view.y": -0.82,
+      "composition.view.scaleX": 1,
+      "composition.view.scaleY": 1.57,
+      "composition.view.outputX": 0,
+      "composition.view.outputY": -0.43,
+      "composition.view.outputScaleX": 1,
+      "composition.view.outputScaleY": 1,
+      "scene.current": 69,
+      "scene.automation": false,
+      "transport.playing": false,
+      "player.full.clip": 4,
+      "players.2.clip": 7,
+      "final.fx1": 0.23,
+      "final.fx2": 0.41,
+      "final.flash": false
+    },
+    "scene": {
+      "output.resolution": "2688x1008",
+      "output.preview": "composition",
+      "composition.stripes.x": 0,
+      "composition.stripes.y": 0.8057,
+      "composition.stripes.width": 2,
+      "composition.stripes.stripWidth": 0.3333333333333333,
+      "composition.stripes.height": 0.7061,
+      "composition.stripes.rotation": 0,
+      "composition.view.mode": "show-strip",
+      "composition.view.x": 0,
+      "composition.view.y": -0.82,
+      "composition.view.scaleX": 1,
+      "composition.view.scaleY": 1.57,
+      "composition.view.outputX": 0,
+      "composition.view.outputY": -0.43,
+      "composition.view.outputScaleX": 1,
+      "composition.view.outputScaleY": 1,
+      "players.2.clip": 8,
+      "final.fx1": 0.68,
+      "final.fx2": 0.52,
+      "composition.fullVideo.x": 0,
+      "composition.fullVideo.y": 0.8057,
+      "composition.fullVideo.width": 2,
+      "composition.fullVideo.height": 0.7061,
+      "composition.fullVideo.rotation": 0,
+      "composition.fullMilky.x": 0,
+      "composition.fullMilky.y": 0.8057,
+      "composition.fullMilky.width": 2,
+      "composition.fullMilky.height": 0.7061,
+      "composition.fullMilky.rotation": 0
+    },
+    "profile": "led-2688x1008-v1",
+    "mapping": {
+      "id": "user.preserved-led-test",
+      "label": "Control personalizado que debe conservarse",
+      "source": {
+        "kind": "cc",
+        "channel": 3,
+        "cc": 91
+      },
+      "target": "final.fx1",
+      "mode": "range",
+      "output": "control",
+      "min": -0.2,
+      "max": 0.8,
+      "enabled": true
+    },
+    "width": 2688,
+    "height": 1008,
+    "warnings": []
+  },
+  "sceneRecall": {
+    "resolution": "2688x1008",
+    "preview": "composition",
+    "clip": 8,
+    "fx1": 0.68
+  },
+  "bands": {
+    "width": 2688,
+    "height": 1008,
+    "pixelsChecked": 2709504,
+    "mismatchCount": 0,
+    "blackCount": 0,
+    "transparentCount": 0,
+    "failures": [],
+    "topRow": [
+      {
+        "x": 0,
+        "color": [
+          255,
+          0,
+          0,
+          255
+        ]
+      },
+      {
+        "x": 447,
+        "color": [
+          255,
+          0,
+          0,
+          255
+        ]
+      },
+      {
+        "x": 448,
+        "color": [
+          0,
+          255,
+          0,
+          255
+        ]
+      },
+      {
+        "x": 895,
+        "color": [
+          0,
+          255,
+          0,
+          255
+        ]
+      },
+      {
+        "x": 896,
+        "color": [
+          0,
+          0,
+          255,
+          255
+        ]
+      },
+      {
+        "x": 1343,
+        "color": [
+          0,
+          0,
+          255,
+          255
+        ]
+      },
+      {
+        "x": 1344,
+        "color": [
+          255,
+          255,
+          0,
+          255
+        ]
+      },
+      {
+        "x": 1791,
+        "color": [
+          255,
+          255,
+          0,
+          255
+        ]
+      },
+      {
+        "x": 1792,
+        "color": [
+          0,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "x": 2239,
+        "color": [
+          0,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "x": 2240,
+        "color": [
+          255,
+          0,
+          255,
+          255
+        ]
+      },
+      {
+        "x": 2687,
+        "color": [
+          255,
+          0,
+          255,
+          255
+        ]
+      }
+    ],
+    "bottomRow": [
+      {
+        "x": 0,
+        "color": [
+          255,
+          0,
+          0,
+          255
+        ]
+      },
+      {
+        "x": 447,
+        "color": [
+          255,
+          0,
+          0,
+          255
+        ]
+      },
+      {
+        "x": 448,
+        "color": [
+          0,
+          255,
+          0,
+          255
+        ]
+      },
+      {
+        "x": 895,
+        "color": [
+          0,
+          255,
+          0,
+          255
+        ]
+      },
+      {
+        "x": 896,
+        "color": [
+          0,
+          0,
+          255,
+          255
+        ]
+      },
+      {
+        "x": 1343,
+        "color": [
+          0,
+          0,
+          255,
+          255
+        ]
+      },
+      {
+        "x": 1344,
+        "color": [
+          255,
+          255,
+          0,
+          255
+        ]
+      },
+      {
+        "x": 1791,
+        "color": [
+          255,
+          255,
+          0,
+          255
+        ]
+      },
+      {
+        "x": 1792,
+        "color": [
+          0,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "x": 2239,
+        "color": [
+          0,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "x": 2240,
+        "color": [
+          255,
+          0,
+          255,
+          255
+        ]
+      },
+      {
+        "x": 2687,
+        "color": [
+          255,
+          0,
+          255,
+          255
+        ]
+      }
+    ],
+    "geometry": [
+      [
+        0.08333333333333331,
+        0.5,
+        0.16666666666666666,
+        1
+      ],
+      [
+        0.25,
+        0.5,
+        0.16666666666666666,
+        1
+      ],
+      [
+        0.4166666666666667,
+        0.5,
+        0.16666666666666666,
+        1
+      ],
+      [
+        0.5833333333333334,
+        0.5,
+        0.16666666666666666,
+        1
+      ],
+      [
+        0.75,
+        0.5,
+        0.16666666666666666,
+        1
+      ],
+      [
+        0.9166666666666666,
+        0.5,
+        0.16666666666666666,
+        1
+      ]
+    ]
+  },
+  "png": [
+    2688,
+    1008
+  ],
+  "cleanOutput": {
+    "video": [
+      2688,
+      1008
+    ],
+    "tracks": [
+      {
+        "aspectRatio": 2.6666666666666665,
+        "deviceId": "EGjXtE8i9eqNbrq2DFN1zOnvVOvtfZkresP+88eGvfRxLNQqY6pXFZnjMqWuae0PVVbPASNNNeyq/7VWup9Cpw==",
+        "frameRate": 60,
+        "height": 1008,
+        "resizeMode": "none",
+        "width": 2688
+      }
+    ],
+    "messageHidden": true,
+    "bodyChildren": 4
+  },
+  "realDDS": {
+    "blocks": [
+      {
+        "index": 0,
+        "clip": "drone abajo fabric",
+        "frame": 107,
+        "nonBlack": 451584,
+        "max": 255
+      },
+      {
+        "index": 1,
+        "clip": "drone arriba bosque IZ",
+        "frame": 50,
+        "nonBlack": 451584,
+        "max": 218
+      },
+      {
+        "index": 2,
+        "clip": "drone arriba ciudad di",
+        "frame": 81,
+        "nonBlack": 451584,
+        "max": 255
+      },
+      {
+        "index": 3,
+        "clip": "drone arriba incendi",
+        "frame": 56,
+        "nonBlack": 451584,
+        "max": 255
+      },
+      {
+        "index": 4,
+        "clip": "drone arriba mar piedr",
+        "frame": 149,
+        "nonBlack": 451584,
+        "max": 255
+      },
+      {
+        "index": 5,
+        "clip": "drone arriba molino camp",
+        "frame": 49,
+        "nonBlack": 451584,
+        "max": 255
+      }
+    ],
+    "mappedSourcesUnchanged": true
+  },
+  "errors": [],
+  "gpuErrors": []
+}

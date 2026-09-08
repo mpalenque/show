@@ -1,0 +1,557 @@
+{
+  "generatedAt": "2026-09-08T17:20:52.752Z",
+  "purpose": "Versioned test placeholders. Each DDS source clip is represented by one original frame and must not be used as show media.",
+  "catalog": {
+    "clips": 68,
+    "copied": 63,
+    "unavailable": 5
+  },
+  "dds": [
+    {
+      "id": "clip-00",
+      "index": 0,
+      "name": "drone abajo fabric",
+      "frame": 0,
+      "filename": "003 drone abajo fabrica000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-01",
+      "index": 1,
+      "name": "drone arriba bosque IZ",
+      "frame": 0,
+      "filename": "004 drone arriba bosque IZQ000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-02",
+      "index": 2,
+      "name": "drone arriba ciudad di",
+      "frame": 0,
+      "filename": "004 drone arriba ciudad dia000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-03",
+      "index": 3,
+      "name": "drone arriba incendi",
+      "frame": 0,
+      "filename": "004 drone arriba incendio000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-04",
+      "index": 4,
+      "name": "drone arriba mar piedr",
+      "frame": 0,
+      "filename": "004 drone arriba mar piedra000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-05",
+      "index": 5,
+      "name": "drone arriba molino camp",
+      "frame": 0,
+      "filename": "004 drone arriba molino campo000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-06",
+      "index": 6,
+      "name": "drone arriba playa rio marro",
+      "frame": 0,
+      "filename": "004 drone arriba playa rio marron000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-07",
+      "index": 7,
+      "name": "drone arriba rio bosque verd",
+      "frame": 0,
+      "filename": "004 drone arriba rio bosque verde000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-08",
+      "index": 8,
+      "name": "drone arriba rio bosqu",
+      "frame": 0,
+      "filename": "004 drone arriba rio bosque000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-09",
+      "index": 9,
+      "name": "reactor nuclea",
+      "frame": 0,
+      "filename": "011 reactor nuclear000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-10",
+      "index": 10,
+      "name": "drone arriba rio montañ",
+      "frame": 0,
+      "filename": "004 drone arriba rio montaña000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-11",
+      "index": 11,
+      "name": "drone arriba rio niev",
+      "frame": 0,
+      "filename": "004 drone arriba rio nieve000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-12",
+      "index": 12,
+      "name": "drone arriba tractor campo",
+      "frame": 0,
+      "filename": "004 drone arriba tractor campo0000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-13",
+      "index": 13,
+      "name": "drone frente  bosque musg",
+      "frame": 0,
+      "filename": "005 drone frente  bosque musgo000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-14",
+      "index": 14,
+      "name": "drone frente bosque verd",
+      "frame": 0,
+      "filename": "005 drone frente bosque verde000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-15",
+      "index": 15,
+      "name": "drone frente ciudad noch",
+      "frame": 0,
+      "filename": "005 drone frente ciudad noche000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-16",
+      "index": 16,
+      "name": "drone frente fabrica",
+      "frame": 0,
+      "filename": "005 drone frente fabrica-000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-17",
+      "index": 17,
+      "name": "drone frente montaña lago basur",
+      "frame": 0,
+      "filename": "005 drone frente montaña lago basura000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-18",
+      "index": 18,
+      "name": "drone frente rio montaña de",
+      "frame": 0,
+      "filename": "005 drone frente rio montaña de-000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-19",
+      "index": 19,
+      "name": "drone diag bosque niebl",
+      "frame": 0,
+      "filename": "006 drone diag bosque niebla000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-20",
+      "index": 20,
+      "name": "drone diag ciudad noch",
+      "frame": 0,
+      "filename": "006 drone diag ciudad noche000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-21",
+      "index": 21,
+      "name": "drone diag fabria-",
+      "frame": 0,
+      "filename": "006 drone diag fabria-0000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-22",
+      "index": 22,
+      "name": "drone diag fabrica",
+      "frame": 0,
+      "filename": "006 drone diag fabrica0000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-23",
+      "index": 23,
+      "name": "drone diag nuclear arriba",
+      "frame": 0,
+      "filename": "006 drone diag nuclear arriba0000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-24",
+      "index": 24,
+      "name": "drone diag ciudad H",
+      "frame": 0,
+      "filename": "007 drone diag ciudad HK000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-25",
+      "index": 25,
+      "name": "drone gira ciudad noche le",
+      "frame": 0,
+      "filename": "007 drone gira ciudad noche led000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-26",
+      "index": 26,
+      "name": "drone gira edificio noche le",
+      "frame": 0,
+      "filename": "007 drone gira edificio noche led000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-27",
+      "index": 27,
+      "name": "drone arriba fabrica gri",
+      "frame": 0,
+      "filename": "004 drone arriba fabrica gris003.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\resize"
+    },
+    {
+      "id": "clip-28",
+      "index": 28,
+      "name": "drone arriba niev",
+      "frame": 0,
+      "filename": "004 drone arriba nieve000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\resize"
+    },
+    {
+      "id": "clip-29",
+      "index": 29,
+      "name": "drone arriba playa verde aren",
+      "frame": 0,
+      "filename": "004 drone arriba playa verde arena000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\resize"
+    },
+    {
+      "id": "clip-30",
+      "index": 30,
+      "name": "drone frente bosque verde",
+      "frame": 0,
+      "filename": "005 drone frente bosque verde2000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\resize"
+    },
+    {
+      "id": "clip-31",
+      "index": 31,
+      "name": "drone frente desierto roj",
+      "frame": 0,
+      "filename": "005 drone frente desierto rojo000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\resize"
+    },
+    {
+      "id": "clip-32",
+      "index": 32,
+      "name": "1",
+      "frame": 0,
+      "filename": "NY 1 001.DDS",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds2"
+    },
+    {
+      "id": "clip-33",
+      "index": 33,
+      "name": "arata",
+      "frame": 0,
+      "filename": "catarata 0001.DDS",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds2"
+    },
+    {
+      "id": "clip-34",
+      "index": 34,
+      "name": "e 1",
+      "frame": 0,
+      "filename": "mede 1 001.DDS",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds2"
+    },
+    {
+      "id": "clip-35",
+      "index": 35,
+      "name": "e 2",
+      "frame": 0,
+      "filename": "mede 2 001.DDS",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds2"
+    },
+    {
+      "id": "clip-36",
+      "index": 36,
+      "name": "e 4",
+      "frame": 0,
+      "filename": "mede 4 001.DDS",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds2"
+    },
+    {
+      "id": "clip-37",
+      "index": 37,
+      "name": "ino",
+      "frame": 0,
+      "filename": "Molino 001.DDS",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds2"
+    },
+    {
+      "id": "clip-38",
+      "index": 38,
+      "name": "ion",
+      "frame": 0,
+      "filename": "camion 001.DDS",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds2"
+    },
+    {
+      "id": "clip-39",
+      "index": 39,
+      "name": "opista circular dia",
+      "frame": 0,
+      "filename": "autopista circular dia 0001.DDS",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds2"
+    },
+    {
+      "id": "clip-40",
+      "index": 40,
+      "name": "opista circular noche",
+      "frame": 0,
+      "filename": "autopista circular noche 001.DDS",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds2"
+    },
+    {
+      "id": "clip-41",
+      "index": 41,
+      "name": "opista tarde",
+      "frame": 0,
+      "filename": "autopista tarde 001.DDS",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds2"
+    },
+    {
+      "id": "clip-42",
+      "index": 42,
+      "name": "te dia",
+      "frame": 0,
+      "filename": "punte dia 001.DDS",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds2"
+    },
+    {
+      "id": "clip-43",
+      "index": 43,
+      "name": "tpista noche 2",
+      "frame": 0,
+      "filename": "auotpista noche 2 001.DDS",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds2"
+    },
+    {
+      "id": "clip-44",
+      "index": 44,
+      "name": "y noche",
+      "frame": 0,
+      "filename": "city noche 001.DDS",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds2"
+    },
+    {
+      "id": "clip-45",
+      "index": 45,
+      "name": "tinta amarillo naranj",
+      "frame": 0,
+      "filename": "012 tinta amarillo naranja000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-46",
+      "index": 46,
+      "name": "tinta cyan violet",
+      "frame": 0,
+      "filename": "012 tinta cyan violeta000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-47",
+      "index": 47,
+      "name": "tinta espesa",
+      "frame": 0,
+      "filename": "012 tinta espesa-000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-48",
+      "index": 48,
+      "name": "tinta negra ce",
+      "frame": 0,
+      "filename": "012 tinta negra cel000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-49",
+      "index": 49,
+      "name": "tinta aceite metalic",
+      "frame": 0,
+      "filename": "012 tinta aceite metalico000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\resize"
+    },
+    {
+      "id": "clip-50",
+      "index": 50,
+      "name": "NV autopist",
+      "frame": 0,
+      "filename": "009 NV autopista000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-51",
+      "index": 51,
+      "name": "NV autos tel",
+      "frame": 0,
+      "filename": "009 NV autos tele000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-52",
+      "index": 52,
+      "name": "2 globulo roj",
+      "frame": 0,
+      "filename": "001 2 globulo rojo000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-53",
+      "index": 53,
+      "name": "bacteria naranja",
+      "frame": 0,
+      "filename": "002 bacteria naranja0000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-54",
+      "index": 54,
+      "name": "bacteria negro",
+      "frame": 0,
+      "filename": "002 bacteria negro0000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-55",
+      "index": 55,
+      "name": "celula blanco verd",
+      "frame": 0,
+      "filename": "001 celula blanco verde000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-56",
+      "index": 56,
+      "name": "celula burbuja blanc",
+      "frame": 0,
+      "filename": "001 celula burbuja blanco000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-57",
+      "index": 57,
+      "name": "celula descargand",
+      "frame": 0,
+      "filename": "001 celula descargando000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-58",
+      "index": 58,
+      "name": "celula rotand",
+      "frame": 0,
+      "filename": "001 celula rotando000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-59",
+      "index": 59,
+      "name": "celula verde blanco",
+      "frame": 0,
+      "filename": "001 celula verde blanco0000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-60",
+      "index": 60,
+      "name": "celul",
+      "frame": 0,
+      "filename": "001 celula000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-61",
+      "index": 61,
+      "name": "celulas ocr",
+      "frame": 0,
+      "filename": "001 celulas ocre000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    },
+    {
+      "id": "clip-62",
+      "index": 62,
+      "name": "celulas rojo crec",
+      "frame": 0,
+      "filename": "001 celulas rojo crece000.dds",
+      "sourceRoot": "E:\\PARTE2-MEDIA\\dds"
+    }
+  ],
+  "unavailable": [
+    {
+      "id": "clip-63",
+      "index": 63,
+      "name": "INCENDIO00",
+      "reason": "No hay frames en las raíces configuradas."
+    },
+    {
+      "id": "clip-64",
+      "index": 64,
+      "name": "bosqu",
+      "reason": "No hay frames en las raíces configuradas."
+    },
+    {
+      "id": "clip-65",
+      "index": 65,
+      "name": "LOMBRIZ0",
+      "reason": "No hay frames en las raíces configuradas."
+    },
+    {
+      "id": "clip-66",
+      "index": 66,
+      "name": "capulloalien0",
+      "reason": "No hay frames en las raíces configuradas."
+    },
+    {
+      "id": "clip-67",
+      "index": 67,
+      "name": "mariposa",
+      "reason": "No hay frames en las raíces configuradas."
+    }
+  ],
+  "ink": [
+    {
+      "source": "DDS/INK000000.DDS",
+      "destination": "ink/DDS/INK000000.DDS"
+    },
+    {
+      "source": "INK000000.jpg",
+      "destination": "ink/INK000000.jpg"
+    }
+  ]
+}

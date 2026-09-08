@@ -1,0 +1,18 @@
+{
+  "name": "milky-webgpu",
+  "description": "PARTE 2 del show en la web: port WebGPU del patch vvvv (players DDS, Milky, FINAL, INK, composición, MIDI/OSC). Leer ENTREGA_PARTE2_WEBGPU.md.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test system/*.test.mjs",
+    "test:system": "node system/system-test.mjs",
+    "test:ui": "node system/ui-test.mjs",
+    "test:led": "node system/led-output-test.mjs",
+    "test:live": "node system/live-system-test.mjs",
+    "test:milky": "node smoke-test.mjs",
+    "test:midi": "node --test system/midi-mappings.test.mjs system/midi-port.test.mjs",
+    "test:midi-show": "node system/midi-show-test.mjs",
+    "test:midi-port": "node system/midi-native-probe.mjs"
+  }
+}

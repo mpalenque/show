@@ -1,0 +1,137 @@
+{
+  "checks": [
+    "FINAL selection, five presets, contextual controls and resolution labels",
+    "Paused playback stays stopped; 36 deterministic frames and reset reproduce pixels",
+    "FX controls and feedback/loop/contrast toggles update engine settings in pause",
+    "Paused scrub loads frame 298; ink/distort/output views update with nonempty textures",
+    "Resume tint transport, explosion resets its frame, kick changes geometry",
+    "90 native frames at 3840×1200, visible screenshot, exported PNG dimensions",
+    "390px mobile layout without horizontal overflow and visible ink render",
+    "Original JPEG fallback decodes and uploads to WebGPU without BC compression"
+  ],
+  "images": {
+    "initial": {
+      "size": [
+        1920,
+        600
+      ],
+      "frame": 36,
+      "inkFrame": 157,
+      "mean": 125.70903327546085,
+      "variance": 15614.520953236959,
+      "lit": 0.5200060763888888,
+      "hash": 1070646147
+    },
+    "reset": {
+      "size": [
+        1920,
+        600
+      ],
+      "frame": 36,
+      "inkFrame": 157,
+      "mean": 125.70903327546085,
+      "variance": 15614.520953236959,
+      "lit": 0.5200060763888888,
+      "hash": 1070646147
+    },
+    "ink": {
+      "size": [
+        640,
+        360
+      ],
+      "frame": 50,
+      "inkFrame": 298,
+      "mean": 19.34103298611111,
+      "variance": 3192.986474280162,
+      "lit": 0.14336805555555557,
+      "hash": 3280655909
+    },
+    "distort": {
+      "size": [
+        640,
+        360
+      ],
+      "frame": 51,
+      "inkFrame": 298,
+      "mean": 60.9437731481551,
+      "variance": 11035.153673997349,
+      "lit": 0.2678689236111111,
+      "hash": 2841792478
+    },
+    "native": {
+      "size": [
+        3840,
+        1200
+      ],
+      "frame": 90,
+      "inkFrame": 319,
+      "mean": 38.1225638744211,
+      "variance": 7740.288987283443,
+      "lit": 0.18890559895833334,
+      "hash": 897972336
+    },
+    "mobile": {
+      "size": [
+        1920,
+        600
+      ],
+      "frame": 75,
+      "inkFrame": 274,
+      "mean": 147.29092332175853,
+      "variance": 15310.77909095542,
+      "lit": 0.6012152777777777,
+      "hash": 1432175169
+    },
+    "jpegFallback": {
+      "size": [
+        640,
+        360
+      ],
+      "frame": 1,
+      "inkFrame": 298,
+      "mean": 19.344609375,
+      "variance": 3192.8714700731066,
+      "lit": 0.14342013888888888,
+      "hash": 697118325
+    }
+  },
+  "layout": {
+    "width": 390,
+    "scrollWidth": 390,
+    "stage": {
+      "x": 16,
+      "y": 135,
+      "width": 358,
+      "height": 111.875,
+      "top": 135,
+      "right": 374,
+      "bottom": 246.875,
+      "left": 16
+    }
+  },
+  "diagnostics": {
+    "gpu": "nvidia",
+    "size": [
+      640,
+      360
+    ],
+    "preset": "final",
+    "frames": 1,
+    "states": [
+      {
+        "id": "final",
+        "frames": 1,
+        "inkFrame": 298
+      }
+    ],
+    "errors": [],
+    "fps": 0,
+    "lostSteps": 0,
+    "stats": {
+      "frames": 1,
+      "passes": 1,
+      "cpuMs": 0.30000007152557373
+    }
+  },
+  "errors": []
+}

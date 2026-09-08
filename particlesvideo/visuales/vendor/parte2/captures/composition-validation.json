@@ -1,0 +1,261 @@
+{
+  "results": {
+    "fullMilky": {
+      "center": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "left": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "stripe": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "hash": 4089654725,
+      "passes": 4,
+      "intermediate": [
+        768,
+        240
+      ]
+    },
+    "fullVideo": {
+      "center": [
+        0,
+        0,
+        255,
+        255
+      ],
+      "left": [
+        0,
+        0,
+        255,
+        255
+      ],
+      "stripe": [
+        0,
+        0,
+        255,
+        255
+      ],
+      "hash": 389995973,
+      "passes": 5,
+      "intermediate": [
+        768,
+        240
+      ]
+    },
+    "alpha": {
+      "center": [
+        128,
+        0,
+        127,
+        255
+      ],
+      "left": [
+        128,
+        0,
+        127,
+        255
+      ],
+      "stripe": [
+        128,
+        0,
+        127,
+        255
+      ],
+      "hash": 3875462597,
+      "passes": 5,
+      "intermediate": [
+        768,
+        240
+      ]
+    },
+    "stripes": {
+      "center": [
+        0,
+        0,
+        255,
+        255
+      ],
+      "left": [
+        0,
+        0,
+        255,
+        255
+      ],
+      "stripe": [
+        0,
+        0,
+        255,
+        255
+      ],
+      "hash": 389995973,
+      "passes": 16,
+      "intermediate": [
+        768,
+        240
+      ]
+    },
+    "warp": {
+      "center": [
+        61,
+        61,
+        61,
+        255
+      ],
+      "left": [
+        26,
+        26,
+        26,
+        255
+      ],
+      "stripe": [
+        26,
+        26,
+        26,
+        255
+      ],
+      "hash": 3902101244,
+      "passes": 12,
+      "intermediate": [
+        768,
+        240
+      ]
+    },
+    "mask": {
+      "center": [
+        26,
+        26,
+        26,
+        255
+      ],
+      "left": [
+        26,
+        26,
+        26,
+        255
+      ],
+      "stripe": [
+        168,
+        168,
+        168,
+        255
+      ],
+      "hash": 3107840524,
+      "passes": 20,
+      "intermediate": [
+        768,
+        240
+      ]
+    },
+    "reference": {
+      "center": [
+        26,
+        26,
+        26,
+        255
+      ],
+      "left": [
+        26,
+        26,
+        26,
+        255
+      ],
+      "stripe": [
+        230,
+        230,
+        230,
+        255
+      ],
+      "hash": 2727679682,
+      "passes": 20,
+      "intermediate": [
+        768,
+        432
+      ]
+    }
+  },
+  "scopes": [
+    {
+      "scene": 64,
+      "warpEnabled": false,
+      "inkEnabled": false,
+      "outputEnabled": true,
+      "activeScene": true,
+      "windowExpanded": true,
+      "fullVideoFadeTrigger": false,
+      "fullVideoAttackSeconds": 60
+    },
+    {
+      "scene": 65,
+      "warpEnabled": true,
+      "inkEnabled": false,
+      "outputEnabled": true,
+      "activeScene": true,
+      "windowExpanded": true,
+      "fullVideoFadeTrigger": false,
+      "fullVideoAttackSeconds": 60
+    },
+    {
+      "scene": 66,
+      "warpEnabled": true,
+      "inkEnabled": true,
+      "outputEnabled": true,
+      "activeScene": true,
+      "windowExpanded": true,
+      "fullVideoFadeTrigger": false,
+      "fullVideoAttackSeconds": 60
+    },
+    {
+      "scene": 68,
+      "warpEnabled": true,
+      "inkEnabled": false,
+      "outputEnabled": true,
+      "activeScene": true,
+      "windowExpanded": true,
+      "fullVideoFadeTrigger": true,
+      "fullVideoAttackSeconds": 60
+    },
+    {
+      "scene": 69,
+      "warpEnabled": false,
+      "inkEnabled": false,
+      "outputEnabled": true,
+      "activeScene": true,
+      "windowExpanded": true,
+      "fullVideoFadeTrigger": true,
+      "fullVideoAttackSeconds": 60
+    },
+    {
+      "scene": 80,
+      "warpEnabled": false,
+      "inkEnabled": false,
+      "outputEnabled": true,
+      "activeScene": true,
+      "windowExpanded": true,
+      "fullVideoFadeTrigger": true,
+      "fullVideoAttackSeconds": 60
+    },
+    {
+      "scene": 81,
+      "warpEnabled": false,
+      "inkEnabled": false,
+      "outputEnabled": true,
+      "activeScene": false,
+      "windowExpanded": false,
+      "fullVideoFadeTrigger": true,
+      "fullVideoAttackSeconds": 60
+    }
+  ],
+  "parameters": 123,
+  "parameterErrors": [],
+  "errors": []
+}

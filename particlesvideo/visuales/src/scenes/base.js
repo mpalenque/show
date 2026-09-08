@@ -103,18 +103,4 @@ export const BASE = {
   'box.wallBounce': 0.2,
   'box.wallMaxPush': 1.0,
   'box.hardClamp': false,
-
-  // Motor libre de Fluids (escena 26). En reposo no emite y no empuja: acá está
-  // para que sea la escena la que fija su punto de partida y para que los CC que
-  // Manuel mueva en vivo no queden pegados al volver a entrar.
-  'fluids.live.emission': 0,
-  'fluids.live.x': 0.5,
-  'fluids.live.y': 0.5,
-  'fluids.live.hue': 0,
-  'fluids.live.gravity': 0,
-  'fluids.live.viscosity': 0.5,
-  'fluids.live.cohesion': 0.5,
-  'fluids.live.light': 2.4,
-  'fluids.live.forceX': 0,
-  'fluids.live.forceY': 0,
 };

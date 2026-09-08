@@ -1,0 +1,36 @@
+{
+  "result": {
+    "gpu": "nvidia",
+    "size": [
+      3840,
+      1200
+    ],
+    "preset": "final",
+    "frames": 694,
+    "states": [
+      {
+        "id": "final",
+        "frames": 693,
+        "inkFrame": 508
+      }
+    ],
+    "errors": [],
+    "fps": 60,
+    "lostSteps": 0,
+    "stats": {
+      "frames": 694,
+      "passes": 78,
+      "cpuMs": 1.2000000476837158
+    },
+    "elapsedSeconds": 10.011299999952316,
+    "simulatedFrames": 600,
+    "simulationFps": 59.93227652780936,
+    "rafP50ms": 16.699999999999818,
+    "rafP95ms": 16.799999999999727,
+    "compressed": true,
+    "cacheFrames": 48,
+    "loadedFrames": 527,
+    "inkFrame": 508
+  },
+  "note": "Chrome headless, FINAL individual a 3840x1200, INK a 1280x720, ring a 960x320. FPS calculados con pasos efectivos del preset, incluyendo esperas DDS. rAF no es tiempo aislado de GPU. No es una comparación con vvvv."
+}

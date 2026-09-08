@@ -70,7 +70,12 @@ export class Engine {
     try {
       this.params.update(dt);
       this.scenes.update(dt);
-      if (this.ctx.radiance?.ownsFrame) {
+      if (this.ctx.parte2?.ownsFrame) {
+        this.simMs = 0;
+        const tRender = performance.now();
+        this.ctx.parte2.frame(t0, elapsed);
+        this.renderMs = performance.now() - tRender;
+      } else if (this.ctx.radiance?.ownsFrame) {
         this.simMs = 0;
         const tRender = performance.now();
         this.ctx.radiance.frame(t0, dt);

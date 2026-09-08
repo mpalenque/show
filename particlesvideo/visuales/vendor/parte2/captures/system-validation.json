@@ -1,0 +1,684 @@
+{
+  "kind": "actual GPU / original local DDS",
+  "started": "2026-09-07T03:09:17.381Z",
+  "stages": {
+    "initialize": {
+      "gpu": "nvidia",
+      "features": [
+        "core-features-and-limits",
+        "texture-compression-bc"
+      ],
+      "catalog": {
+        "clips": 68,
+        "expectedFrames": 48030,
+        "availableFrames": 42395,
+        "missingFrames": 5635,
+        "completeClips": 63,
+        "partialClips": 0
+      },
+      "firstHeader": {
+        "id": "clip-00",
+        "index": 0,
+        "name": "drone abajo fabric",
+        "frameCount": 536,
+        "fps": 30,
+        "startGlobal": 0,
+        "endGlobal": 535,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 536,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            535
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "package",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      "registryCount": 430,
+      "deckCount": 7,
+      "size": [
+        1920,
+        600
+      ]
+    },
+    "midi-and-seven-dds": {
+      "wrongChannelMatches": 0,
+      "clips": [
+        {
+          "index": 0,
+          "velocity": 2,
+          "clip": 1,
+          "gate": 1,
+          "fired": 2
+        },
+        {
+          "index": 1,
+          "velocity": 4,
+          "clip": 2,
+          "gate": 1,
+          "fired": 2
+        },
+        {
+          "index": 2,
+          "velocity": 6,
+          "clip": 3,
+          "gate": 1,
+          "fired": 2
+        },
+        {
+          "index": 3,
+          "velocity": 8,
+          "clip": 4,
+          "gate": 1,
+          "fired": 2
+        },
+        {
+          "index": 4,
+          "velocity": 10,
+          "clip": 5,
+          "gate": 1,
+          "fired": 2
+        },
+        {
+          "index": 5,
+          "velocity": 12,
+          "clip": 6,
+          "gate": 1,
+          "fired": 2
+        }
+      ],
+      "fullClip": 0,
+      "deckObjects": 7,
+      "textureIds": [
+        "dds1/clip-00/0",
+        "dds1/clip-01/0",
+        "dds1/clip-02/0",
+        "dds1/clip-03/0",
+        "dds1/clip-04/0",
+        "dds1/clip-05/0",
+        "dds1/clip-06/0"
+      ],
+      "samples": [
+        {
+          "id": "clip-00",
+          "frame": 0,
+          "format": "bc1-rgba-unorm",
+          "hash": 2161608932,
+          "min": 0,
+          "max": 255,
+          "mean": 63.85433246527778,
+          "nonzero": 639600,
+          "pixels": 1152000
+        },
+        {
+          "id": "clip-01",
+          "frame": 0,
+          "format": "bc1-rgba-unorm",
+          "hash": 2625116420,
+          "min": 0,
+          "max": 214,
+          "mean": 34.3415083912037,
+          "nonzero": 639600,
+          "pixels": 1152000
+        },
+        {
+          "id": "clip-02",
+          "frame": 0,
+          "format": "bc1-rgba-unorm",
+          "hash": 2759617131,
+          "min": 0,
+          "max": 255,
+          "mean": 76.68434953703704,
+          "nonzero": 639600,
+          "pixels": 1152000
+        },
+        {
+          "id": "clip-03",
+          "frame": 0,
+          "format": "bc1-rgba-unorm",
+          "hash": 649870483,
+          "min": 0,
+          "max": 255,
+          "mean": 52.4200162037037,
+          "nonzero": 639600,
+          "pixels": 1152000
+        },
+        {
+          "id": "clip-04",
+          "frame": 0,
+          "format": "bc1-rgba-unorm",
+          "hash": 3162995579,
+          "min": 0,
+          "max": 255,
+          "mean": 60.26161689814815,
+          "nonzero": 639600,
+          "pixels": 1152000
+        },
+        {
+          "id": "clip-05",
+          "frame": 0,
+          "format": "bc1-rgba-unorm",
+          "hash": 1285324709,
+          "min": 0,
+          "max": 255,
+          "mean": 57.296136574074076,
+          "nonzero": 639596,
+          "pixels": 1152000
+        },
+        {
+          "id": "clip-06",
+          "frame": 0,
+          "format": "bc1-rgba-unorm",
+          "hash": 2841025586,
+          "min": 0,
+          "max": 255,
+          "mean": 78.12371903935185,
+          "nonzero": 639600,
+          "pixels": 1152000
+        }
+      ],
+      "frames": [
+        6,
+        6,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "beforeSeek": [
+        0.01121495327102804,
+        0.023715415019762837,
+        0.013546798029556651,
+        0.021428571428571432,
+        0.008042895442359251,
+        0.024291497975708495,
+        0.009132420091324202
+      ],
+      "afterSeek": [
+        0.01121495327102804,
+        0.023715415019762837,
+        0.013546798029556651,
+        0.3,
+        0.008042895442359251,
+        0.024291497975708495,
+        0.009132420091324202
+      ],
+      "milky": [
+        {
+          "index": 0,
+          "preset": 0,
+          "gate": 1
+        },
+        {
+          "index": 1,
+          "preset": 1,
+          "gate": 1
+        },
+        {
+          "index": 2,
+          "preset": 2,
+          "gate": 1
+        },
+        {
+          "index": 3,
+          "preset": 3,
+          "gate": 1
+        },
+        {
+          "index": 4,
+          "preset": 0,
+          "gate": 1
+        },
+        {
+          "index": 5,
+          "preset": 1,
+          "gate": 1
+        }
+      ],
+      "fullSelections": [
+        "full1",
+        "full3",
+        "full2",
+        "fullsplash",
+        "final"
+      ],
+      "gatesAfterRelease": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "cache": {
+        "loads": 73,
+        "hits": 754,
+        "failures": 0,
+        "bytes": 75686400,
+        "cached": 73
+      }
+    },
+    "midi-clock-and-learn": {
+      "start": {
+        "playing": true,
+        "bpm": 96,
+        "frame": 0
+      },
+      "runningFrames": 9,
+      "stoppedFrames": 9,
+      "continuedFrames": 15,
+      "playing": false,
+      "learn": {
+        "before": 1,
+        "consumed": 1,
+        "after": 64,
+        "engineValue": 64,
+        "source": {
+          "kind": "cc",
+          "channel": 7,
+          "cc": 11
+        }
+      }
+    },
+    "missing-clip": {
+      "missing": 63,
+      "strict": {
+        "status": "missing",
+        "clip": "clip-63",
+        "error": "Falta «INCENDIO00», frame 2.",
+        "phase": 0.011415525114155252,
+        "hasTexture": false,
+        "systemFailed": false,
+        "frames": 16
+      },
+      "substitute": {
+        "requested": 63,
+        "clip": "clip-00",
+        "substituteFor": 63,
+        "expected": "clip-00",
+        "status": "playing",
+        "hasTexture": true,
+        "systemFailed": false
+      }
+    },
+    "independent-ink-dripping": {
+      "before": {
+        "inkFrame": 10,
+        "finalFrame": 10,
+        "finalInkTime": 0.16666666666666666,
+        "time": 0.16666666666666666
+      },
+      "afterTrigger": {
+        "sameState": true,
+        "verticalIds": [
+          56,
+          57
+        ],
+        "inkFrame": 10,
+        "finalFrame": 10,
+        "finalInkTime": 0.16666666666666666,
+        "resetSeconds": 0.1
+      },
+      "verticalIds": [
+        56,
+        57
+      ],
+      "previousVertical": 56,
+      "verticalSources": [
+        56,
+        57,
+        56,
+        57,
+        56,
+        57,
+        56,
+        57,
+        56,
+        57
+      ],
+      "growthReset": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "separateHistories": true,
+      "after": {
+        "inkFrame": 20,
+        "finalFrame": 20,
+        "inkDDS": 65,
+        "finalDDS": 109,
+        "envelope": 0.011111111111111112
+      }
+    },
+    "full-legacy": [
+      {
+        "id": "full1",
+        "frame": 30,
+        "resolution": [
+          1920,
+          640
+        ],
+        "graph": "1a",
+        "fullLegacy": true,
+        "hash": 1138888295,
+        "min": 0,
+        "max": 255,
+        "mean": 51.17396180555556,
+        "nonzero": 591790,
+        "pixels": 1152000
+      },
+      {
+        "id": "full3",
+        "frame": 30,
+        "resolution": [
+          1920,
+          640
+        ],
+        "graph": "3a",
+        "fullLegacy": true,
+        "hash": 107045978,
+        "min": 0,
+        "max": 255,
+        "mean": 81.45700954861111,
+        "nonzero": 772414,
+        "pixels": 1152000
+      },
+      {
+        "id": "full2",
+        "frame": 30,
+        "resolution": [
+          1920,
+          640
+        ],
+        "graph": "full2",
+        "fullLegacy": true,
+        "hash": 308718238,
+        "min": 0,
+        "max": 239,
+        "mean": 4.5789852430555555,
+        "nonzero": 819646,
+        "pixels": 1152000
+      },
+      {
+        "id": "fullsplash",
+        "frame": 30,
+        "resolution": [
+          1920,
+          640
+        ],
+        "graph": "splash",
+        "fullLegacy": true,
+        "hash": 2494835960,
+        "min": 0,
+        "max": 255,
+        "mean": 97.51863454861112,
+        "nonzero": 525985,
+        "pixels": 1152000
+      }
+    ],
+    "four-a-presets": [
+      {
+        "id": "1a",
+        "frame": 20,
+        "resolution": [
+          400,
+          640
+        ],
+        "hash": 3646562615,
+        "min": 0,
+        "max": 255,
+        "mean": 23.72833333333333,
+        "nonzero": 192187,
+        "pixels": 1152000
+      },
+      {
+        "id": "3a",
+        "frame": 20,
+        "resolution": [
+          400,
+          640
+        ],
+        "hash": 2573197194,
+        "min": 0,
+        "max": 254,
+        "mean": 12.1451953125,
+        "nonzero": 157950,
+        "pixels": 1152000
+      },
+      {
+        "id": "2a",
+        "frame": 20,
+        "resolution": [
+          400,
+          640
+        ],
+        "hash": 3034504692,
+        "min": 0,
+        "max": 255,
+        "mean": 36.01658478009259,
+        "nonzero": 217127,
+        "pixels": 1152000
+      },
+      {
+        "id": "splash",
+        "frame": 20,
+        "resolution": [
+          400,
+          640
+        ],
+        "hash": 3153162842,
+        "min": 0,
+        "max": 255,
+        "mean": 35.22420920138889,
+        "nonzero": 169763,
+        "pixels": 1152000
+      }
+    ],
+    "manual-composition-mask-warp": {
+      "plain": {
+        "hash": 2058456656,
+        "min": 0,
+        "max": 255,
+        "mean": 115.94148119212963,
+        "nonzero": 1152000,
+        "pixels": 1152000
+      },
+      "warped": {
+        "hash": 1934105,
+        "min": 0,
+        "max": 255,
+        "mean": 112.56706886574074,
+        "nonzero": 1152000,
+        "pixels": 1152000
+      },
+      "masked": {
+        "hash": 3074214350,
+        "min": 0,
+        "max": 255,
+        "mean": 113.0396796875,
+        "nonzero": 1152000,
+        "pixels": 1152000
+      },
+      "parameters": {
+        "enabled": true,
+        "amount": -0.31,
+        "directionX": 1,
+        "directionY": 1,
+        "depth": 1,
+        "shape": 0,
+        "radius": 1,
+        "full": false,
+        "mask": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "maskMode": "stripes"
+      }
+    },
+    "native-final": {
+      "outputSize": [
+        3840,
+        1200
+      ],
+      "effectSize": [
+        3840,
+        1200
+      ],
+      "frame": 60,
+      "inkFrame": 229,
+      "compressedInk": true,
+      "inkCache": 48,
+      "effect": {
+        "hash": 161594123,
+        "min": 0,
+        "max": 255,
+        "mean": 95.53649363425926,
+        "nonzero": 1824862,
+        "pixels": 4608000
+      },
+      "composition": {
+        "hash": 161594123,
+        "min": 0,
+        "max": 255,
+        "mean": 95.53649363425926,
+        "nonzero": 1824862,
+        "pixels": 4608000
+      },
+      "diagnostics": {
+        "fps": 0.13265414411504262,
+        "frame": 297,
+        "gpu": "nvidia",
+        "cpuMs": 0.2999999523162842,
+        "passes": 7,
+        "pending": 0,
+        "size": [
+          3840,
+          1200
+        ],
+        "media": {
+          "loads": 1058,
+          "hits": 14712,
+          "failures": 0,
+          "bytes": 132710400,
+          "cached": 128
+        },
+        "effects": [
+          {
+            "id": "final",
+            "frames": 60
+          }
+        ],
+        "decks": [
+          {
+            "clip": "clip-00",
+            "frame": 148,
+            "position": 0.2775700934579455,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 0,
+            "substitute": false
+          },
+          {
+            "clip": "clip-01",
+            "frame": 148,
+            "position": 0.5869565217391279,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 1,
+            "substitute": false
+          },
+          {
+            "clip": "clip-02",
+            "frame": 148,
+            "position": 0.36576354679803175,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 2,
+            "substitute": false
+          },
+          {
+            "clip": "clip-03",
+            "frame": 148,
+            "position": 0.5303571428571413,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 3,
+            "substitute": false
+          },
+          {
+            "clip": "clip-04",
+            "frame": 148,
+            "position": 0.19906166219839153,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 4,
+            "substitute": false
+          },
+          {
+            "clip": "clip-05",
+            "frame": 148,
+            "position": 0.5991902834008098,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 5,
+            "substitute": false
+          },
+          {
+            "clip": "clip-06",
+            "frame": 140,
+            "position": 0.21308980213089804,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 6,
+            "substitute": false
+          }
+        ],
+        "errors": [],
+        "warnings": [],
+        "scene": 69,
+        "registryCount": 430,
+        "mappingCount": 490,
+        "catalog": {
+          "clips": 68,
+          "expectedFrames": 48030,
+          "availableFrames": 42395,
+          "missingFrames": 5635,
+          "completeClips": 63,
+          "partialClips": 0
+        },
+        "midiInputs": []
+      }
+    }
+  },
+  "errors": [],
+  "note": "Deterministic stepping and readback validate integration. This is not a FPS benchmark or pixel comparison against vvvv.",
+  "passed": true,
+  "finished": "2026-09-07T03:09:45.628Z"
+}

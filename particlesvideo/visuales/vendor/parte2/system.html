@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111310">
+  <title>Parte 2 · Visuales en vivo</title>
+  <link rel="stylesheet" href="./system/system.css">
+  <link rel="stylesheet" href="./system/midi-status.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./system.html" aria-label="Parte 2, inicio"><span class="brand-mark">Ⅱ</span><span>PARTE 2<small>VISUALES EN VIVO</small></span></a>
+    <div class="transport" aria-label="Transporte principal">
+      <button id="system-play" class="primary" type="button">Pausar</button>
+      <button id="system-reset" type="button" title="Reiniciar efectos y reproducción">Reiniciar</button>
+      <button id="system-blackout" class="blackout-button" type="button" aria-pressed="false">Blackout</button>
+      <label class="inline-field">Escena <input id="system-scene" type="number" min="0" max="127" step="1" value="69"></label>
+      <label class="inline-field">BPM <input id="system-bpm" type="number" min="20" max="300" step="0.1" value="120"></label>
+    </div>
+    <div class="topbar-actions"><button id="system-capture" type="button">Capturar PNG</button><button id="system-output" type="button">Abrir salida ↗</button></div>
+  </header>
+
+  <section class="midi-live-bar" aria-label="Conexión MIDI del show">
+    <span id="midi-live-led" class="midi-live-led" aria-hidden="true"></span>
+    <div class="midi-live-connection"><strong id="midi-live-port">loopMIDI Port</strong><span id="midi-live-status" role="status">Preparando MIDI…</span></div>
+    <div class="midi-live-activity"><span id="midi-live-mode">Show MIDI vvvv</span><span id="midi-live-last">Todavía no llegaron notas.</span></div>
+    <button id="midi-use-vvvv" type="button">Usar MIDI de vvvv</button>
+    <button id="midi-live-connect" type="button" class="primary">Permitir MIDI</button>
+  </section>
+
+  <main class="workspace">
+    <section class="performance-area" aria-label="Salida y mezclador">
+      <div class="stage-heading"><div><span class="eyebrow">SALIDA PRINCIPAL</span><span id="output-size">2688 × 1008</span></div><div class="metrics"><span><b id="system-fps">—</b> fps</span><span id="system-frame">Frame —</span><span id="system-gpu">GPU</span></div></div>
+      <div class="stage" id="system-stage">
+        <canvas id="system-canvas" width="2688" height="1008" aria-label="Composición de visuales en vivo"></canvas>
+        <div id="system-loading" class="stage-message"><span class="loading-orbit"></span><strong>Preparando visuales</strong><span>Iniciando la salida.</span></div>
+        <div id="system-error" class="stage-message error" hidden><strong>No se pudo iniciar la salida</strong><span id="system-error-message"></span></div>
+        <span id="blackout-indicator" class="blackout-indicator" hidden>BLACKOUT</span>
+      </div>
+      <div class="stage-bottom"><span id="system-status" role="status">Iniciando…</span><button id="system-fullscreen" type="button" class="quiet">Pantalla completa ⛶</button></div>
+
+      <section class="looks-panel" aria-label="Composiciones rápidas">
+        <span class="eyebrow">COMPOSICIONES</span>
+        <div class="look-buttons"><button data-look="final" type="button">Milky FINAL</button><button data-look="fullDDS" type="button">DDS completo</button><button data-look="sixDDS" type="button">6 × DDS</button><button data-look="sixMilky" type="button">6 × Milky</button><button data-look="mixed" type="button">Mezcla</button></div>
+        <div class="impulse-buttons"><button data-action="final.explode" type="button">Explosión</button><button data-action="kick" type="button">Kick <kbd>K</kbd></button><button data-action="snare" type="button">Snare <kbd>S</kbd></button><button data-action="ink.trigger" type="button">INK</button><button data-action="milky.seed" type="button">Semilla</button></div>
+      </section>
+
+      <section class="mixer-section" aria-labelledby="mixer-heading">
+        <div class="section-heading"><h1 id="mixer-heading">Mezclador</h1><span>Una capa completa + seis bloques</span></div>
+        <div id="deck-mixer" class="deck-mixer"></div>
+      </section>
+      <div class="session-bar"><div><span class="eyebrow">SESIÓN</span><span id="media-summary">Leyendo catálogo DDS…</span></div><div><button id="session-export" type="button">Exportar sesión</button><button id="session-import" type="button">Importar sesión</button><input id="session-file" class="visually-hidden" type="file" accept="application/json,.json" aria-label="Importar archivo de sesión"></div></div>
+      <p class="project-note">Parte 2 · Recreación del patch vvvv beta. Los medios conservan sus nombres y su estado de disponibilidad. <a href="./index.html">Abrir laboratorio Milky ↗</a></p>
+    </section>
+
+    <aside class="inspector" aria-label="Inspector de parámetros y conexiones">
+      <div class="inspector-heading"><h2>Control</h2><span id="parameter-count"></span></div>
+      <div class="inspector-tabs" role="tablist" aria-label="Secciones de control"><button type="button" role="tab" id="tab-effects" data-tab="effects" aria-controls="panel-effects" aria-selected="true">Efectos</button><button type="button" role="tab" id="tab-transform" data-tab="transform" aria-controls="panel-transform" aria-selected="false">Transform.</button><button type="button" role="tab" id="tab-midi" data-tab="midi" aria-controls="panel-midi" aria-selected="false">MIDI</button><button type="button" role="tab" id="tab-media" data-tab="media" aria-controls="panel-media" aria-selected="false">Medios</button><button type="button" role="tab" id="tab-scenes" data-tab="scenes" aria-controls="panel-scenes" aria-selected="false">Escenas</button></div>
+      <div class="parameter-search"><input id="parameter-search" type="search" placeholder="Buscar cualquier parámetro…" aria-label="Buscar todos los parámetros"><button id="parameter-search-clear" class="quiet" type="button" aria-label="Limpiar búsqueda">×</button></div>
+      <div id="search-feedback" class="search-feedback" hidden></div>
+      <div class="inspector-content">
+        <section id="panel-effects" class="inspector-panel parameter-panel" role="tabpanel" aria-labelledby="tab-effects"><div id="effects-parameters"></div></section>
+        <section id="panel-transform" class="inspector-panel parameter-panel" role="tabpanel" aria-labelledby="tab-transform" hidden><p class="panel-note">Posición, escala, recorte, mezcla y deformación de cada capa. El encuadre de referencia conserva la geometría original del patch.</p><div id="transform-parameters"></div></section>
+        <section id="panel-midi" class="inspector-panel" role="tabpanel" aria-labelledby="tab-midi" hidden>
+          <div class="panel-section"><div class="section-heading"><h3>Entradas MIDI</h3><button id="midi-connect" type="button">Conectar</button></div><p class="panel-note">Puerto del patch: <b>loopMIDI Port</b>. Sus notas ya están mapeadas; no hace falta MIDI Learn. La barra superior muestra el puerto abierto y lo que recibe.</p><div id="midi-devices" class="device-list"><p class="muted">Solicitando entradas MIDI…</p></div><div id="midi-clock-controls"></div></div>
+          <div class="panel-section"><div class="section-heading"><h3>OSC</h3><button id="osc-connect" type="button">Conectar</button></div><div class="osc-settings"><label>Puerto UDP <input id="osc-port" type="number" min="1024" max="65535" value="4444"></label><button id="osc-apply" type="button">Aplicar</button></div><p id="osc-status" class="muted">Control por /fx1, /fx2, /fx4 y destinos públicos.</p></div>
+          <div class="panel-section"><div class="section-heading"><h3>Mapeos</h3><span id="mapping-count"></span></div><p class="mapping-profile-note">El perfil conserva los mapeos vvvv y agrega controles públicos editables: CC en canales 11, 12, 14, 15 y 16; acciones con notas del canal 16. Estos bancos están identificados como <b>Ampliación web</b>.</p><div class="mapping-toolbar"><button id="mapping-add" type="button">+ Mapeo</button><button id="mapping-learn" class="primary" type="button">MIDI Learn</button><button id="mapping-export" type="button">JSON</button><button id="mapping-csv" type="button">CSV de controles</button><button id="mapping-import" type="button">Importar</button><button id="mapping-reset" type="button">Restaurar perfil</button><input id="mapping-file" class="visually-hidden" type="file" accept="application/json,.json" aria-label="Importar mapeos"></div><div class="learn-target"><label for="mapping-target">Destino para nuevo mapeo</label><select id="mapping-target"></select></div><div id="learn-status" class="learn-status" hidden><span>Esperando un control MIDI…</span><button id="mapping-cancel-learn" type="button">Cancelar</button></div><div class="mapping-filters"><input id="mapping-search" type="search" placeholder="Buscar destino, nota, CC…" aria-label="Filtrar mapeos"><select id="mapping-profile-filter" aria-label="Filtrar por perfil MIDI"><option value="all">Todos los perfiles</option><option value="native">Patch vvvv</option><option value="web">Ampliación web</option><option value="custom">Personalizados</option></select></div><div id="mapping-pagination" class="mapping-pagination"><button id="mapping-prev" type="button" aria-label="Página anterior de mapeos">←</button><span id="mapping-page-info"></span><button id="mapping-next" type="button" aria-label="Página siguiente de mapeos">→</button></div><div id="mapping-list" class="mapping-list"></div></div>
+          <div class="panel-section"><div class="section-heading"><h3>Monitor de entrada</h3><button id="midi-monitor-clear" type="button" class="quiet">Limpiar</button></div><ol id="midi-monitor" class="midi-monitor" aria-label="Últimos 50 mensajes MIDI y OSC"></ol><details class="midi-test"><summary>Enviar mensaje de prueba</summary><p class="muted">Pasa por los mismos mapeos que una entrada MIDI.</p><div class="test-message-fields"><label>Tipo<select id="test-midi-kind"><option value="note">Nota</option><option value="cc">CC</option></select></label><label>Canal<input id="test-midi-channel" type="number" min="1" max="16" value="1"></label><label>Nota / CC<input id="test-midi-number" type="number" min="0" max="127" value="36"></label><label>Valor<input id="test-midi-value" type="number" min="0" max="127" value="100"></label></div><button id="test-midi-send" type="button">Enviar</button></details></div>
+        </section>
+        <section id="panel-media" class="inspector-panel" role="tabpanel" aria-labelledby="tab-media" hidden>
+          <div class="panel-section"><h3>Biblioteca DDS</h3><p id="catalog-summary" class="panel-note">Leyendo secuencias…</p><div id="media-fallback-control" class="media-fallback-control"></div><p id="media-fallback-note" class="panel-note">Medida temporal mientras faltan secuencias del catálogo: una secuencia sin medios completos reproduce otra disponible, elegida de forma fija por su número. El selector MIDI y la sesión conservan la secuencia pedida.</p><input id="catalog-search" type="search" placeholder="Buscar secuencia…" aria-label="Buscar en catálogo"><label class="check-field"><input id="catalog-missing" type="checkbox"> Mostrar solo secuencias incompletas</label><div id="catalog-list" class="catalog-list"></div></div>
+          <div class="panel-section"><h3>Localizar medios</h3><p class="panel-note">Asigná una carpeta a una secuencia o a todo el catálogo. Los nombres originales permanecen en el mezclador.</p><label class="stack-field">Secuencia<select id="remap-clip"><option value="">Todo el catálogo</option></select></label><label class="stack-field">Carpeta registrada<select id="remap-root"></select></label><label class="stack-field">O una carpeta dentro del proyecto<input id="remap-directory" type="text" placeholder="Ruta local de la carpeta DDS"></label><button id="media-remap" type="button" class="primary">Examinar y asignar carpeta</button><p id="remap-status" class="muted" role="status"></p></div>
+        </section>
+        <section id="panel-scenes" class="inspector-panel" role="tabpanel" aria-labelledby="tab-scenes" hidden>
+          <div class="panel-section"><h3>Escena actual</h3><div id="scene-controls"></div><p class="panel-note">La automatización del patch modifica el desplazamiento entre escenas 65–68 y activa INK en la 66. Desactivala para ajustar esas capas manualmente.</p><div class="scene-grid" id="scene-grid"></div><div class="scene-actions"><button id="scene-save" type="button" class="primary">Guardar escena actual</button><button id="scene-recall" type="button">Recuperar escena</button></div><p id="scene-status" class="muted" role="status">Guardá una combinación de controles para recuperarla en vivo.</p></div>
+          <div class="panel-section"><h3>Atajos</h3><dl class="shortcuts"><div><dt><kbd>Espacio</kbd></dt><dd>Reproducir / pausar</dd></div><div><dt><kbd>K</kbd> / <kbd>S</kbd></dt><dd>Kick / snare</dd></div><div><dt><kbd>B</kbd></dt><dd>Inyectar semilla</dd></div><div><dt><kbd>F</kbd></dt><dd>Pantalla completa</dd></div></dl></div>
+        </section>
+      </div>
+    </aside>
+  </main>
+  <div id="system-notification" class="notification" role="status" hidden><span></span><button type="button" aria-label="Cerrar aviso">×</button></div>
+  <script type="module" src="./system/app.js"></script>
+</body>
+</html>

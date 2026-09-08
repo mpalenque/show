@@ -1,5 +1,7 @@
 # Fluids: audio propio, imagen sin rayado y escena 26 — 2026-09-06
 
+> **Nota 2026-09-07:** la escena 26 descrita acá (motor libre con gotas) fue reemplazada por el final reactivo de la 25; ver [VALIDACION-FLUIDS-26-2026-09-07.md](VALIDACION-FLUIDS-26-2026-09-07.md). El resto del informe conserva su alcance histórico.
+
 Alcance: supersampling y ganancia de luz de Fluids, reproducción del track desde la salida, final de secuencia que ya no congela, y escena 26 como motor libre por MIDI. [Decisión vigente](CONTEXTO-ACTUAL.md) · [Operación](integracion-radiance/OPERACION.md) · [Detalle de la vuelta](../NOTAS.md).
 
 ## Qué se cambió

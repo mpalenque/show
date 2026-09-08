@@ -1,0 +1,111 @@
+{
+  "results": [
+    {
+      "id": "1a",
+      "mean": 128.87419921875,
+      "variance": 9433.542928069688,
+      "lit": 0.7476015625,
+      "hash": 1865253167
+    },
+    {
+      "id": "3a",
+      "mean": 51.77265234375,
+      "variance": 7936.172934136946,
+      "lit": 0.3183046875,
+      "hash": 554301107
+    },
+    {
+      "id": "2a",
+      "mean": 180.61865494791707,
+      "variance": 11509.804661453818,
+      "lit": 0.79057421875,
+      "hash": 2789146227
+    },
+    {
+      "id": "splash",
+      "mean": 72.75000390625,
+      "variance": 13149.25080273436,
+      "lit": 0.289796875,
+      "hash": 3899113107
+    },
+    {
+      "id": "final",
+      "mean": 124.71073206018501,
+      "variance": 15752.938141381546,
+      "lit": 0.5100642361111111,
+      "hash": 2130375522
+    }
+  ],
+  "diagnostics": {
+    "gpu": "nvidia",
+    "size": [
+      400,
+      640
+    ],
+    "preset": "1a",
+    "frames": 120,
+    "states": [
+      {
+        "id": "1a",
+        "frames": 120
+      },
+      {
+        "id": "3a",
+        "frames": 120
+      },
+      {
+        "id": "2a",
+        "frames": 120
+      },
+      {
+        "id": "splash",
+        "frames": 120
+      },
+      {
+        "id": "final",
+        "frames": 120,
+        "inkFrame": 409
+      }
+    ],
+    "errors": [],
+    "fps": 0,
+    "lostSteps": 0,
+    "stats": {
+      "frames": 120,
+      "passes": 5,
+      "cpuMs": 0.20000004768371582
+    }
+  },
+  "final": {
+    "gpu": "nvidia",
+    "size": [
+      800,
+      1280
+    ],
+    "preset": "3a",
+    "frames": 120,
+    "states": [
+      {
+        "id": "3a",
+        "frames": 120
+      }
+    ],
+    "errors": [],
+    "fps": 0,
+    "lostSteps": 0,
+    "stats": {
+      "frames": 120,
+      "passes": 1,
+      "cpuMs": 0.19999992847442627
+    }
+  },
+  "checks": [
+    "WebGPU shader compilation",
+    "five nonuniform images",
+    "temporal evolution",
+    "deterministic reset",
+    "preset selection",
+    "kick/snare",
+    "original resolution"
+  ]
+}

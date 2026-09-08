@@ -2048,3 +2048,395 @@ Probado y descartado en el camino:
   acaba de aprender. **Sin tocar**: es de ese trabajo.
 - `walk-scenes.mjs` esperaba 8 s fijos al arrancar. Se cambió por esperar a que `vis` exista, que
   es lo que hace que la herramienta no dependa de cuánto tarde la máquina.
+
+## Vigésima vuelta: la 26 es el final de la 25, reactivo a JEJE FLUID (2026-09-07)
+
+Pedido de Manuel, textual: *"EL ESCENA 26 TIENE Q SER EL FINAL DE LA ESCENA 25, NO UNA ESCENA NUEVA.
+CORREGI ESO. PORQ VA A PARITR DE LA ESCENA 25 SOLO Q AHORA VA A REACCIONAR A MIDIS DE MI ABLETON
+LIVE. [...] QUIERO TENER ALGO COMO BIEN MATEMATICO ONDA SINCRONICO GEOMETRICO QUE ALTERE LOS
+FLUIDOS PERO COMBINADO CON LOS FLUIDOS. MUSCHA DINAMICA RITMICA [...] PRIMERO Q MEEPICE MAS
+FLUIDO PERO AL FINAL COMO Q HAYA PONELE CUADRADOS Y COSAS CON O SIN EMISSIVE Q NO SOLO GENERAN
+SOMBRAS E ILUMINACION SINO Q INTERACTUAN CON EL FLUIDO Y A SU VEZ EL FLUIDO TMB TIENE Q CAMBIAR
+[...] TMB ANTES Q NADA CORREGI Q TODA LA ILUMINACION QUEDO MAS BAJO EN LO DE LOS LFUIDOS Q EN EL
+ORGIINAL Q YO TENIA [...] ONDA RYOJI IKEDA EL SHOW"*. El plan está en `PARTE 1/PLAN-ESCENA-26.md`.
+
+### Antes que nada: la luz. Tres mediciones, dos equivocadas
+
+1. La medición de la vuelta anterior comparaba cuadros a los 40 s o más: el fluido es caótico y
+   las dos corridas ya habían divergido. No decía nada. Se pasó a los primeros 8 s.
+2. Ahí la página original **sí** se veía más clara (brillo medio 18-21 constante contra 21-24 con
+   caídas a 2,6 y 0,2). El original crea el solver con 20 000 partículas (`[6666, 6666, 6666, 2]`)
+   y la integración con cero: parecía la causa. Se implementó esa población en la 25 y **la
+   integración quedó más oscura**: las 6 666 blancas tapaban la línea emisora en vez de sumarle.
+   Revertido. `SHOW_INITIAL_POPULATION` quedó sólo para entrar en 26 sin venir de la 25.
+3. Lo que pasa de verdad: la página original tiene un bug de arranque. `useShowDoc()` empieza con
+   el documento **vacío**, adopta el real de forma asíncrona, y el director sólo recibe el
+   documento nuevo cuando hay una edición. Una carga fresca del original corre el documento vacío:
+   sin curvas de emisión ni exposición, sin `reset-fluid`, con las 20 000 partículas blancas
+   alumbrando todo el tiempo. **Eso es lo que Manuel recuerda como "el original más brillante".**
+   Forzando el documento real en la página original (import por CDP), original e integración dan
+   lo mismo: 21,4 contra 21,9 a los 6 s.
+
+Conclusión: la integración es fiel. La oscuridad de la 25 es la que el documento escribe (cierre con
+lámpara sobre el material 0 y viscosidad 1). La palanca sin tocar el documento sigue siendo
+`fluids.gain` (1,25). Si Manuel quiere el look del original vacío —todo blanco, sin dramaturgia—,
+es otro show, no un bug.
+
+### La 26 como continuación: el modo `sequel`
+
+La 26 anterior (motor libre con gotas azules) era una escena nueva. Ahora `FluidRuntime` tiene un
+cuarto modo, `sequel`: al llegar la nota 26 no se resetea nada. El director sigue con un **clon
+mutable** del documento (`sequelDoc`), el reloj sigue desde donde quedó la 25 (`sequelTime`; la
+nota puede llegar antes del final y el timeline se detiene ahí), y:
+
+- las **notas inyectan eventos** del show con `t = ahora` e id único (`flash`+`burst` el kick,
+  `strobe-lines` el contratiempo, `shadow-bar`, `fracture`, `blackout`, `set-lamp` al entrar);
+- los **faders escriben keys `hold`** en las curvas del clon, en el instante actual, borrando las
+  keys futuras: desde ahí la curva vale lo que dice el CC. El documento guardado no se toca;
+- las **losetas** van encima de `out.geometry` (dibujo y luz) y de `out.interactions` (fuerza);
+- la sesión (transporte y WAV) queda pausada: en la 26 la música es la de Ableton.
+
+Los faders son `fluids.seq.gravity/cohesion/viscosity/light/exposure/bodies` (curvas del
+documento), `grid`, `mono`, `tileLife`; las acciones `pulse/strobe/tile/tileBig/sweep/crack/dark/
+freeze/clear/reset`. Todo `sceneReset: false`: al entrar se cargan con lo que las curvas valen en
+ese instante, así que no son preset de nadie. `fluids.live.*` volvió a ser capacidad sin escena y
+salió del `BASE`.
+
+### La propuesta Ikeda, como quedó después de mirar
+
+Grilla de celdas cuadradas de 1 m (8 × 3, 336 px), con subdivisiones ×2 y ×4. Losetas colocadas
+por la secuencia de van der Corput (cubre pareja, sin agrupar, determinista), alternando **blanca**
+(lámpara: emite, expulsa el fluido con `repel`, proyecta sombras duras de la masa) y **negra**
+(agujero: absorbe, tapa con máscara, congela lo que tiene dentro con `lock`; al morir, `unlock`).
+Serie de strobes 1·2·4·8·12. Monocromo en 3 s. Todo cae en la grilla y en el pulso.
+
+Lo que dijeron las capturas (tres ensayos con el patrón de JEJE FLUID simulado a 140 BPM dentro
+de la página, y una tanda alrededor de un kick):
+
+- **Ensayo 1, negro entre golpes.** El final de la 25 deja la lámpara sobre el material 0 (unas
+  burbujas), viscosidad 1 y `bodies` 0. A los 12 s el cuadro era negro salvo la loseta. Arreglo:
+  al entrar, `set-lamp` a los dos materiales con más partículas (histograma de `materialIds`) y
+  `bodies` 0,15 escrito de una, para que la masa heredada sea un cuerpo gris con borde punteado.
+- **La lámpara a 1,25 inundaba medio cuadro** de gris plano. A 0,9 el cuadrado sigue blanco y la
+  masa hace sombra dura detrás. Con varias, la emisión se divide por √cantidad, y encima va una
+  máscara blanca (`top: true`, dibujo puro) para que el cuadrado no se vea gris cuando alumbra poco.
+- **La loseta negra no existía**: negro sobre negro. Marco blanco de 4 px de máscara.
+- **El congelado era un toggle** y el botón que lo dispara llega una vez por vuelta de 29 negras:
+  el fluido quedaba quieto 12 s de cada 25 (ensayo 1, `frozen: true` a los 12 y a los 20 s). Pasó
+  a **stutter**: foto fija durante `tileLife` negras y suelta sola.
+- **Vida fija de 2 negras con el 808 cada 2 negras = una sola loseta viva, siempre.** Nunca se
+  acumulaban. Ahora la vida es `tileLife` (4) × (1 + n/24): la loseta 24 vive el doble, la 48 el
+  triple. Ensayo 3: 2 losetas a los 5 s, 5 a los 30, 8 al minuto, 10 con la grilla ya en ×2 a los
+  95 s. "Primero fluido, al final cuadrados" sin CC.
+- **La viscosidad del documento es la buena para el ritmo.** Medido (desplazamiento medio de las
+  partículas en 350 ms): con viscosidad 1, 6,8 px sin golpe y 22,9 con kick; con 0,5, 16,6 y 14,5.
+  O sea: quieta, la masa salta con cada golpe y se enciende al moverse (la emisión va con la
+  velocidad y el freno del cierre la apaga en medio segundo); suelta, fluye sola y el kick no se
+  lee. El primer kick sobre la masa compacta del cierre midió 246 px: la abre en un **anillo
+  encendido**, que es la entrada de la 26. Los faders bajan la viscosidad si Manuel quiere agua.
+
+### Ableton
+
+Leído con el MCP: escena 37 de Session "JEJE FLUID", 140 BPM. DRUM sale por el canal 1 (kick n0
+cada negra, contratiempo n2, 808 n4 cada 2), PERC por el canal 2 (n38, n39, n49, n47, n45, n40 en
+sus posiciones del loop de 29 negras); SINUS/PAD/raro/amb 1 no salen por MIDI. Se agregó el clip
+"26" en el track "scene" (pista 31), slot 37: medio compás con cuatro notas de pitch 26. Disparar
+la escena de Session entra en la 26. Los mapeos (`mappings.default.json` v13) son sólo para la 26,
+así el kick sigue tirando rayos en la 16-23.
+
+### Verificación
+
+- TypeScript del paquete Radiance; 16 tests de sesión.
+- `check-radiance.mjs`: 8 comprobaciones con la de la 26 nueva (hereda partículas ±200, sesión
+  pausada, faders en los valores del documento, `sequelTime` sigue, 2 losetas con dos 808, evento
+  con el kick, stutter que se suelta solo, el fader no toca el documento guardado, el solver avanza,
+  vuelta a la 1). 481 frames a 60 FPS, en desarrollo y sobre el build de producción.
+- Ensayos y medición de dinámica, arriba. Capturas conservadas en `radiance-check/seq/ensayo3/` y
+  `radiance-check/seq/kick/`.
+- `walk-scenes`: 29 escenas a 60 fps, 0,5-1,9 ms. Referencia MIDI/OSC regenerada. Build aprobado.
+- `tools/tmp-seq.mjs`, `tmp-dyn.mjs` y las herramientas de la medición de luz se borraron.
+
+### Trampas nuevas
+
+- **Los faders llegan al runtime en el frame siguiente**: `RadianceController.frame()` los junta
+  y los pasa con el frame. Una acción disparada en el mismo tick que un `params.set` ve el valor
+  viejo (la prueba del stutter fijaba `tileLife` 1 y disparaba junto: duró 4 negras).
+- **`lock` es un círculo**, no un cuadrado: la loseta negra congela el círculo inscripto y la
+  máscara tapa el resto. No hizo falta compensar esquinas.
+- **El primer kick de la 26 abre la masa del cierre.** Es lo buscado, pero si alguna vez la 26
+  tiene que entrar quieta, el pulso no puede ir al kick en los primeros compases.
+
+### Corrección del mismo día: las losetas son obstáculos: el fluido choca y rebota
+
+Manuel, textual: *"esta bien pero falta q esos cuadrados que creas interacuten con las particulas
+osea q estas choquen ahi y reboten"*. Tenía razón: la blanca repelía con un radio y la negra
+congelaba lo de adentro; ninguna era un cuerpo contra el que chocar.
+
+- **El WASM ya tenía un colisionador rectangular** (`_pvfs_collide_particles_rect`) que el worker
+  nunca cableó: sólo usaba el círculo (`collide`, con el que rebota la línea del show y la cuña de
+  las fracturas). Sus cuatro números son **dos esquinas** (x0, y0, x1, y1): se probaron las tres
+  lecturas posibles sobre un cuadrado de 1 m con ~3 000 partículas adentro y sólo ésa lo vacía
+  (0 adentro a los 120 ms); centro+medios lados y centro+lados no mueven nada. Modo nuevo
+  `collide-rect` en `kot-fluid.worker.js`, con `hw`/`hh` en fracción del alto que el runtime pasa a
+  px. El cliente tiraba interacciones a partir de 32 por frame (tope pensado para punteros): con
+  48 losetas más los 13 círculos de la línea las viejas dejaban de chocar sin aviso. Tope en 128.
+- **Un obstáculo que aparece entero sobre la masa es una bomba.** El solver proyecta afuera en un
+  subpaso todo lo que encuentra adentro: sobre la masa compacta del cierre (3 500 adentro) la
+  pantalla entera se llenó de partículas voladas a los 120 ms y a los 2 s la masa estaba pegada a
+  las paredes del dominio. El obstáculo **crece en 0,4 s** (`TILE_GROW`); el cuadrado se dibuja de
+  golpe igual. En la condición real de la 26 (después de los primeros kicks, masa repartida) el
+  cuadrado más denso tenía 1 090 adentro: 109 a los 120 ms, 0 a los 2,5 s, nada al borde.
+- **Cicatrices.** El obstáculo aprieta las partículas contra su borde en una línea de un punto de
+  grosor y, con la viscosidad del cierre, al morir la loseta la línea se queda recta donde estuvo
+  el borde (diez a los 60 s, vistas ampliando la captura: cadenas de puntos con su sombra). Un
+  `repel` de 6 frames desde el centro de la loseta al morir las desarma. Ya no hay `lock`/`unlock`
+  de losetas; el congelado global del stutter sigue igual.
+- **La masa se iba a las paredes.** Con el kick siempre hacia afuera, las partículas pegadas al
+  borde del dominio iban 14 → 167 → 320 a los 8 / 30 / 60 s. Ahora **cada cuarto kick contrae**
+  (`attractor` modo atraer, radio 0,9, fuerza 2, 0,3 s): 27 → 67 → 240 → 4 a los 8 / 30 / 60 /
+  90 s. Y de paso la respiración —tres afuera, una adentro— es un compás que se ve.
+- Ensayo de 90 s con el patrón de JEJE FLUID: 0 partículas adentro de toda loseta que pasó los
+  0,4 s; 19 interacciones por frame con 10 losetas; solver 3-5 ms; 60 FPS. En las capturas la masa
+  envuelve el cuadrado negro del centro y se aplasta contra su lado, hay fluido apoyado sobre el
+  borde superior de una loseta, y con la grilla en 50 cm las masas quedan achatadas contra las
+  lámparas. Capturas en `radiance-check/seq/obstaculos2/`.
+- `check-radiance` suma la comprobación «las losetas llegan al solver como colisionadores».
+
+### Tercer pedido del día: losetas que se mueven, vida con techo y el glow azul de amb 1
+
+Manuel, textual: *"NO ESTA INTERACTUANDO EL FLUIDO CON LOS CUADRADOS ARREGLAO YA. TAMBIEN QUIERO Q
+SEA MAS DINAMICO PORQ AHORA VEO Q LOS CUADRADOS PRIMERO CAMBIABAN PERO AL FINAL QUEDARON COMO
+COLGADOS Y QUEDARON FIJOS. TIENE Q SEGUIR CAMBIANDO. Y SUMA OTRA DINAMICA QUE LOS CUADRADOS NO
+SOLO APAREZCAN Y DESAPAREZCAN SINO Q TAMBIEN SE MUEVAN EN EL ESPACIO EN X O EN Y DE MANERA
+GEOMETRICA EN BASE A LOS MIDIS [...] EL SINTE AMB1 ESE TIENE QUE GENERAR COMO QUE CREZCA UN POCO
+LA LUZ [...] QUE SE PRENDAN UNAS DE LAS PARTICULAS EMISSIVE AZULES QUE VAYA AUMENTANDO SU
+EMISSIVENESS CDO SUENA LA NOTA Y CDO NO SUENA Q SE APAGUE, CON UN POCO DE DECAY [...] TENES Q
+CREAR UNO DE ESOS CANALES QUE MANDAN MIDI [...] HACELO BIEN NO ROMPAS NADA"*.
+
+- **"No interactúa":** la ventana que tenía abierta corría el worker viejo. Un Worker en memoria no
+  se recarga con el HMR de Vite, y el worker viejo no conoce `collide-rect`: la interacción llegaba
+  y no hacía nada. Se abrió una ventana nueva; con recargar alcanza. Es una trampa para anotar:
+  **después de tocar `kot-fluid.worker.js` hay que recargar la salida.**
+- **Colgados y fijos:** la vida crecía sin techo con la cuenta (a los cinco minutos, medio minuto
+  por loseta). Techo ×4 (16 negras con el fader en 4). La grilla ya no se subdivide por losetas
+  vivas (que ahora tienen techo) sino por colocadas: ×2 desde la 48.ª, ×4 desde la 120.ª.
+- **Se mueven:** con cada 808, todas las losetas vivas avanzan una celda —las blancas en x, las
+  negras en y, signo alternado por la cuenta— deslizándose una negra (`stepTiles`/`tilePos`), y en
+  el borde rebotan. El colisionador viaja con el dibujo: una loseta en marcha arrastra el fluido y
+  deja estela (capturas en `radiance-check/seq/movimiento2/`). La nueva no da el paso hasta el 808
+  siguiente. Y n38 (alarm keypad), además del barrido, **invierte** el color de todas (`flip`).
+- **Lo que se rompió y se arregló en el mismo ensayo:** al salir del stutter había 370, 636 y
+  1 154 partículas adentro de losetas en marcha. El `lock` global gana al colisionador: la loseta
+  seguía deslizándose sobre partículas trabadas y al soltar el rectángulo expulsaba todo de golpe.
+  Ahora las losetas viven en `tileClock` = tiempo de la 26 menos lo congelado: durante el stutter
+  no se deslizan, no nacen ni mueren, y el 808 no coloca nada. Time stop de verdad.
+- **El estrobo de 12 líneas** a intensidad plena dejaba la pared entera blanca (t = 19 s). Ahora
+  la intensidad baja ÷√n desde 4 líneas y las orientaciones alternan horizontal/vertical.
+- **amb 1:** el instrumento (pista 19, Ambiente Pad) no sale por MIDI. Con el MCP se creó la pista
+  de envío **AMB1** (índice 46): entrada "amb 1" Post FX, monitor In, salida RTX3090 (Port 2)
+  **canal 11** —el único libre: los envíos usan 1 DRUM, 2 PERC, 3 atractor, 4 BASS, 5 FOLEY,
+  6 foley2, 7 sub y clip cc, 8 sub(PAD), 10 scene—. Igual que DRUM y PERC. El primer intento en
+  batch expiró porque Live se colgó (Manuel lo reabrió; el set volvió con 46 pistas y el clip "26"
+  intacto) y se rehízo paso a paso, verificando el routing al final. En la web, `mappings.default.json`
+  v14: cualquier nota del canal 11 → `fluids.seq.amb` en modo `gate`. El `gate` del Mapper ahora
+  **cuenta notas sostenidas por fila**: en JEJE FLUID amb 1 toca Do6 y Re#6 superpuestas 32 negras
+  y soltar una no puede cerrar la compuerta.
+- **El glow:** `updateGlow` sigue la compuerta con ataque de 2,5 s y caída de 0,8 s ("que vaya
+  aumentando cuando suena, que se apague con un poco de decay"). Escribe el `mix` del `set-lamp`
+  de entrada —cuyo secundario pasó a ser el segundo material con más partículas, al final de la 25
+  un cuarto de la masa (histograma [684, 4014, 1530, 0])— hasta 0,7, y funde el color de ese
+  material al azul `0x3060ff` por encima del monocromo. Al 0,85 teñía la pared entera; Manuel pidió
+  "un poco". Consecuencia: ese cuarto de partículas ya no emite si amb 1 no suena (antes emitía al
+  0,85 siempre); en JEJE FLUID amb 1 suena casi todo el tiempo.
+- **Verificación:** `check-radiance` con las comprobaciones nuevas (paso de losetas, compuerta con
+  acorde, glow que sube y decae) en desarrollo y producción, 480 frames a 60 FPS; 49 tests de
+  node; `walk-scenes`; smokes; referencia regenerada (22 filas `fluids.seq`).
+- **Pendiente de Manuel:** el master de Live se lee en 0,0 después de reabrir (antes 0,74). No lo
+  tocó este trabajo (sólo se creó AMB1); revisar el fader.
+
+### Cuarto pedido del día: azules que emiten quietos, cuatro lámparas al azar, tamaños mezclados
+
+Manuel, textual: *"se ven los azules PERO NO SE VUELVEN EMISSIVE CON NOTA MIDI Q LES LLEGA"* y,
+enseguida: *"HACE QUE TAMBIEN CAMBIE QUE CUBOS TIENEN EMISSIVE Y CUALES NO. Y HACE Q LOS Q NO SON
+EMISSIVE QUE NO TENGAN EL BORDE BLANCO PORQ QUEDA MAL. [...] AL PRINCIPIO SE VEN CUADRADOS MAS
+GRANDES Y DESPUES SOLO SE VEN LOS CHICOS, PIERDE DINAMISMO. [...] LAS LINEAS ESAS BLANCAS CON
+EMISSIVE NO ME GUSTA. EN VEZ DE ESO HACE QUE ESOS FLASH SEAN DE LOS CUBOS. QUE VAS CAMBIANDO
+CUALES SON LOS QUE SON EMISSIVE, QUE SIEMPRE SEAN SOLO 4 CUBOS EMISSIVE, Q VAYA SIENDO RANDOM"*.
+
+- **Los azules no emitían.** La sonda (`mix` de la lámpara, `nextEmission` del render, dataset del
+  canvas) mostró que toda la cadena estaba bien: el material 2 era el secundario con peso 0,67. Lo
+  que faltaba estaba en el shader: la emisión de cada partícula va multiplicada por la **compuerta
+  de velocidad** (`velocityGain`), y una partícula quieta emite al piso, 12 %. El fluido del cierre
+  está quieto, así que los azules mostraban su pigmento (`bodies`) pero no luz. Uniform nuevo
+  `uNextSteady` en los dos shaders del render (fuente y visible): el material secundario reactivo
+  emite con ganancia ≥ 1 aunque esté parado, sólo mientras el overlay secundario está aplicado (un
+  crossfade de material principal no lo hereda). El principal conserva "lo quieto es tenue y lo que
+  corre flamea". Estado nuevo del render: `reactiveSecondarySteady`, que la 26 pone en 1.
+- **Cuatro lámparas al azar.** Las losetas ya no nacen blancas o negras: nacen negras y hay siempre
+  cuatro lámparas (o todas, si hay menos), elegidas con un generador determinista (mulberry32) para
+  que el ensayo se repita igual. El contratiempo (n2) pasó de estrobo de líneas a **relámpago**:
+  vuelve a sortear las cuatro y las hace destellar ×2 durante 120 ms. Con el contratiempo cada
+  negra, un cuarto de los cuadros son de destello; por eso no es más fuerte, y `telemetry().flash`
+  dice si una captura es de destello (dos de las cinco del ensayo lo eran, y parecían "la pared muy
+  clara" hasta que se miró el número). n38 (`flip`) ahora es otro sorteo sin destello. Se fueron
+  `strobe-lines`, la serie 1·2·4·8·12 y el marco blanco de las negras.
+- **Tamaños mezclados.** La grilla base pasó a 50 cm (16 × 6) y las losetas miden 1, 2 o 4 celdas
+  por la serie `2, 2, 1, 2, 4, 1`; la grande del bowl ride mide 2 m; `grid` > 0,5 achica todo a la
+  mitad. Se fue la subdivisión por cuenta de colocadas (a la 48.ª todo pasaba a 50 cm y "se pierde
+  dinamismo"). El paso es de una celda para las de 50 cm y de dos para las demás.
+- **Lo que se rompió con los tamaños:** la emisión de una loseta va por área, así que una de 2 m a
+  0,6 tiraba cuatro veces la luz y dejó la pared entera blanca; la emisión se normaliza al tamaño
+  (luz de una de 1 m a 0,4, techo 1,0 para las de 50 cm). Y una de 2 m creciendo en 0,4 s mandó
+  1 016 partículas al borde del dominio: el crecimiento escala con el tamaño (0,8 s las de 2 m) y
+  bajó a 139.
+- Ensayo de 40 s: tamaños `221` → `2412` → `241` → `2124` → `21241`, cuatro lámparas en cuanto hay
+  cuatro losetas, 0 adentro de toda loseta quieta y crecida, 60 FPS. Capturas en
+  `radiance-check/seq/lamparas3/`. `check-radiance` pasa en desarrollo y producción.
+
+### Quinto pedido del día: pistones industriales, lámparas chicas y glow rápido
+
+Manuel, textual: *"el release de la nota q hace el emissive azul tiene q durar 1 segundo [...] la
+potencia de emissive azul tiene q ser 40 porciento mas fuerte y el ataque [...] mas rapido y como
+con una vibracion [...] los cuadrados a veces son muy grandes y es como que no es tan frenetico al
+ritmo de la musica [...] son demasiados los prendidos. nunca tienen q prender los q son mas
+grandes. [...] a veces esta todo muy oscuro y solo un cuadrado o un par de cuadrados ilumina. y
+que se apaguen las particulas blancas [...] como si fuesen animaciones industriales que estan
+modificando un ambiente de laboratorio. mas mecanico industrial"*.
+
+- **Glow:** ataque con constante de 0,22 s (95 % en 0,7 s) y una vibración de 11 Hz en la emisión
+  cuya amplitud se apaga al llegar; release **lineal de 1 s**; techo del `mix` 0,85 (el de la
+  lámpara) y ganancia parada 1,15 (`GLOW_STEADY`, va en el uniform `uNextSteady`, que ahora lleva
+  la ganancia y no un booleano): 0,85 × 1,15 = +40 % sobre el 0,7 anterior. Medido cada 50 ms:
+  0 → 0,86 entre 2,00 y 2,70 s con el `mix` oscilando; 0,866 → 0 entre 14,00 y 14,85 s.
+- **Tamaños:** se fue la de 2 m; la serie es `1, 1, 2, 1, 1, 2` (dos de cada tres de 50 cm); el
+  bowl ride pone una de 1 m; `grid` > 0,5 las hace todas de 50 cm.
+- **Lámparas:** entre una y tres por sorteo (`1, 1, 2, 2, 3`), **sólo entre las de 50 cm**. Medido
+  en 40 s: una el 44 % del tiempo, dos el 44 %, tres el 9 %.
+- **Las blancas se apagan por compás:** cada cuatro kicks se sortea (40 %) si el material principal
+  emite; cuando no, la lámpara principal pasa al material 3, que al final de la 25 no tiene
+  partículas, y sólo alumbran los cubos y las azules. Hizo falta `instantEmissionRole` en la 26:
+  un cambio de material principal funde, y mientras funde el render suspende la lámpara secundaria
+  (el glow parpadeaba). Medido: blancas prendidas el 22 % del tiempo.
+- **Movimiento mecánico:** el paso pasó del 808 al **kick** (cada negra) y el deslizamiento de una
+  negra suavizada a **lineal, 0,18 s por celda** (arranque y frenada en seco, ~5 px por subpaso).
+  La mitad de las losetas son **pistones**: el signo del paso apunta al centro de masa del fluido y
+  al pasarlo vuelven, así que martillan la masa de un lado y del otro; la otra mitad patrulla y
+  rebota. El 808 sólo coloca la loseta nueva.
+- Ensayo de 40 s: 0 partículas adentro de toda loseta crecida, borde del dominio 4–84, 60 FPS.
+  Capturas en `radiance-check/seq/pistones/`: pared oscura con uno, dos o tres cubos chicos
+  alumbrando, blancas apagadas, azules encendidas con la nota, y los bloques de 1 m arando la masa.
+  `check-radiance` actualizado (paso con el kick, glow rápido, release de 1 s) pasa en desarrollo y
+  producción.
+
+### Sexto pedido del día: máquinas que no se pisan, atractor del canal 3, luz que late
+
+Manuel, textual: *"te falta q los cuadrados sean mecanicos y por lo tanto no pueden chocarse
+solaparse entre ellos, ademas le falta mas dinamismo a la iluminacion. y los fluidos no estan
+moviendose con los atractores q usamos en las otras escenas y antes estaban. [...] el emisor
+azul queda siempre prendido pero fijate q la nota deja de sonar osea el release es muy largo"*, y
+*"NO ESTA PASANDO Q CUANDO LAS PARTICULAS SE ACELERAN, Y SI SON EMISSIVE TENDRIAN Q ILUMINARSE
+MAS"*.
+
+- **No se pisan.** Las losetas ocupan rectángulos de celdas (`isFree`, que mira dónde está y a
+  dónde va cada una). Al nacer, la celda de van der Corput se prueba hasta 32 veces con un cursor
+  propio de la secuencia hasta encontrar una libre (si no hay, esa vez no nace). Al dar el paso,
+  si el destino está ocupado rebotan contra la otra y prueban para el otro lado; si tampoco,
+  esperan el golpe siguiente. Medido: 0 solapes en todo el ensayo y en `check-radiance`.
+- **Atractor del canal 3.** La pista de envío "atractor" (canal 3) es la que mueve las otras
+  escenas y en la 26 no hacía nada. Mapeo v15: cualquier nota del canal 3 → `fluids.seq.attract`
+  (gate). Mientras está abierta, un `attractor` del show vive desde un punto sorteado del centro
+  (radio 0,9, fuerza 3 × velocidad, `sustain` 1, paseo 0,12), alternando atracción y remolino con
+  cada nota; su `dur` se corre medio segundo por delante en cada frame (el director lo apaga con
+  `fade` en los últimos 0,3 s) y al soltar se lo deja terminar 0,3 s después. Medido:
+  desplazamiento medio del fluido en 350 ms de 38 px sin atractor, 73 con atracción, 226 con
+  remolino. En JEJE FLUID no hay clip de atractor: lo toca Manuel.
+- **Las blancas se apagan… sólo si están quietas.** Apagarlas cambiando la lámpara principal al
+  material vacío las dejaba muertas también en movimiento, y Manuel pidió que la aceleración
+  encienda. Ahora "apagadas" = piso de emisión por velocidad 0 (quietas, cuerpos negros; el kick
+  las hace relampaguear) y "prendidas" = piso 0,2. Además el techo de emisión por velocidad sube
+  de 3,4 a 5,5 y la sensibilidad de 1,4 a 2,6: lo que corre flamea, blancas y azules (las azules
+  parten de su ganancia parada 1,15 y de ahí para arriba).
+- **La luz late.** Cada kick pulsa las lámparas (+80 %, 150 ms), el relámpago volvió a ×2,5 y cada
+  lámpara sale del sorteo con intensidad propia (0,6–1,2).
+- **Release del azul a 0,5 s** (medido 0,43). Y lo que hay que saber: en JEJE FLUID la nota de amb 1
+  dura 32 negras con un corte de 0,15 s en el loop, así que mientras ese clip suene el azul va a
+  estar casi siempre prendido: la compuerta sigue a la nota, y "que se apague" depende de que la
+  nota se corte en Ableton.
+- Ensayo de 34 s con amb 1 y el atractor tocados por script: capturas en
+  `radiance-check/seq/maquinas/`; `check-radiance` (suma solapes = 0 tras seis golpes, atractor
+  que prende y apaga, release < 0,02 a 0,65 s) pasa en desarrollo y producción a 60 FPS; 49 tests;
+  build; referencia regenerada.
+
+### Séptimo pedido del día: esquive real y el barrido que invierte la iluminación
+
+Manuel, textual: *"TENES Q MEJORAR EL SISTEMA QUE LOS CUADRADOS NUNCA TIENEN Q SOLAPARSE. TIENE Q
+MOVERSE EVITANDO CHOCARSE Y PISARSE. ADEMAS LA LINEA Q PASA COMO UN BARRIDO NEGRO TIENE QUE
+ALTERAR LA ILUMINACION DE TODO SOBRE ELLA. OSEA INVERTIRLA [...] LO Q PASA POR AHI INVERTIDO POR
+EJEMPLO Q ES BLANCO EMISSIVE, PASA A SER NEGRO, Y LAS PARTICULAS Q ERAN NEGRAS PASAN A SER
+BLANCAS EMISSIVE, Y LAS AZULES PASAN A SER ROJO EMISSIVE"*.
+
+- **El solape que quedaba.** La comprobación anterior miraba las celdas: dos losetas nunca
+  terminaban en la misma, pero **a mitad del deslizamiento sí se pisaban** (dos que se cruzan pasan
+  una por encima de la otra). Ahora cada loseta ocupa su **caja barrida** —su celda, y mientras se
+  desliza también la de la que viene— y un paso sólo se acepta si esa caja no toca la de ninguna
+  otra. Con eso no hay solape en ningún instante, y se mide sobre los rectángulos DIBUJADOS
+  (`tilePos`), no sobre las celdas: 40 muestras por segundo durante 35 s con hasta 11 losetas,
+  cero solapes.
+- **Esquivar, no sólo rebotar.** Cada loseta prueba cuatro rumbos por orden: el pistón tira hacia
+  el centro de masa por su eje y después por el otro; la patrulla sigue derecho, si no puede
+  **dobla noventa grados** y recién después se vuelve. Si ningún rumbo está libre, se queda quieta
+  ese golpe. No se traban: 10 de 11 moviéndose al final del ensayo.
+- **Una carrera por vez.** Con seis kicks a 40 ms (un redoble) aparecía un solape: la loseta
+  arrancaba un paso nuevo mientras todavía viajaba, y su caja pasaba a ser [B,C] cuando visualmente
+  seguía entre A y B. Ahora un golpe que llega con el deslizamiento en curso no la mueve. En el
+  show no se notaba (kick cada 429 ms contra 180 ms de deslizamiento), pero un redoble existe.
+- **El barrido invierte.** Dejó de inyectar `shadow-bar`. Una barra negra **no se puede invertir**:
+  borra la luz, y debajo no queda imagen que dar vuelta (invertir una franja negra da una franja
+  blanca lisa). Ahora es una banda vertical de 1 m con borde duro que cruza en 0,8 s a velocidad
+  constante, y la inversión la hace el **paso de grade** (`postFragmentShader`), que ve la imagen
+  ya compuesta —campo de radiancia, partículas y cubos—: cubo blanco → negro, cubo negro → blanco,
+  partículas blancas → negras, pared iluminada → oscura. El runtime no dibuja nada, sólo manda
+  `invertX/Half/Tilt/Amount` en el estado de render; fuera de la 26 ese estado no existe.
+- **El azul al rojo.** El complemento crudo de un azul puro es amarillo. Restarle el verde en
+  proporción a lo azul que era el pixel lo lleva a rojo. Con un `clamp` lineal, el fondo —que tiene
+  tinte azul del glow— quedaba naranja de punta a punta; con `smoothstep(0.05, 0.3)` el fondo se
+  invierte a gris neutro y sólo lo francamente azul sale rojo.
+- Capturas en `radiance-check/seq/invert3/`: en el borde de la banda se ve un cubo partido al
+  medio, mitad blanco (invertido) mitad negro. `check-radiance` suma dos comprobaciones (sin
+  solapes a mitad del deslizamiento; la banda enciende, cruza y se apaga) y pasa en desarrollo y
+  producción a 60 FPS; 49 tests; build; 29 escenas a 60 FPS.
+
+### Octavo pedido del día: los dos kicks del rack y el azul al doble
+
+Manuel, textual: *"FIJATE CON ABLETON MCP QUE HAY 2 NOTAS DE KICK SINCOPADAS. TENES Q USAR AMBAS
+ASI LOS CUADRADOS SON MAS DINAMICOS"*, y después *"LA NOTA DEL CANAL AMB 1 [...] TIENE Q HACER
+AUMENTAR MAS LA LUZ DEL EMISSIVE AZUL [...] EL DOBLE DE LO Q HACE. TIPO EMPIEZA A SUBIR LA NOTA Y
+EMPIEZA DEL NIVEL MINIMO DE ESA EMISSIVE, HASTA EL DOBLE DE LO Q LLEGA AHORA. Y CDO DEJA DE SONAR
+LA NOTA, EN 1 SEGUNDO VUELVE A SU VALOR MINIMO"*.
+
+- **Los dos kicks.** Leído con el MCP (`get_drum_pads` del rack `amen_tearsofthekiller1`): el pad 0
+  es **"deep dark kick"** y el pad 2 es **"Instrument Rack"**, que adentro tiene el **"Cymatics -
+  Kick 69"**. En el loop del clip (beats 12–18) el 0 cae en cada negra y el 2 en cada contratiempo:
+  sincopados entre sí. Tenía el 2 sólo para el relámpago; ahora además dispara `fluids.seq.step`,
+  un paso más de todas las losetas. El del contratiempo es **cruzado**: empuja por el eje
+  perpendicular al del golpe de la negra, así el recorrido es una escalera en vez de una línea.
+  Medido en 34 s: **4,9 cambios de celda por segundo** (las corcheas de 140 son 4,67), contra 2,3
+  con un solo kick. Ninguna loseta se traba y cero solapes.
+- **El azul, del mínimo al doble.** Eran dos cosas separadas y ahora las dos se mueven con la
+  envolvente: cuánta lámpara azul reciben (el `mix`, de **0,2 a 0,85**) y cuánto emiten **paradas**
+  (`uNextSteady`, de 0 a **2,3**, el doble de la ganancia anterior de 1,15). El 0,2 es el mínimo que
+  Manuel pidió: sin nota las azules no se apagan del todo, quedan como gotas apagadas. El color del
+  material se queda azul aunque no suene (mezcla 0,6 a 1): si volviera al gris del monocromo
+  dejarían de ser "las azules" entre nota y nota.
+- **Release de 1 s al mínimo** (medido: 0,763 → 0,2 entre 17,95 y 18,85 s). Ojo con la vuelta
+  anterior: lo había bajado a 0,5 s porque Manuel dijo que "quedaba siempre prendido", pero eso era
+  por la nota de amb 1, que dura 32 negras. Ahora vuelve a 1 s **hasta el mínimo**, que es lo
+  pedido, y lo que hace que no parezca "siempre prendido" es el piso.
+- Capturas en `radiance-check/seq/glow/`: sin nota las gotas azules están ahí pero apagadas; con la
+  nota irradian y tiñen de azul la pared entera.
+- `check-radiance` suma dos comprobaciones (el segundo kick mueve las losetas; el glow llega arriba
+  de 0,7 y vuelve al mínimo, no a cero) y pasa en desarrollo y producción a 60 FPS; 49 tests; build;
+  29 escenas a 60 FPS; smokes; referencia regenerada (mapeos v16).
+- **Trampa de la prueba:** el bloque de losetas de `check-radiance` empezó a fallar al espaciar los
+  golpes 210 ms: con la vida de fábrica (4 negras = 1,7 s) las losetas se morían a mitad de la
+  tanda y no quedaba nada que mirar. La prueba ahora les pone vida larga y coloca dos antes.

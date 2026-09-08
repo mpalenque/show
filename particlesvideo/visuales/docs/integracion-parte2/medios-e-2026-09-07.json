@@ -1,0 +1,2173 @@
+{
+  "auditedAt": "2026-09-08T02:39:57.145Z",
+  "method": "Catalog resolved with E: as the ONLY DDS roots; file-name continuity checked for INK; representative DDS headers read. Payload hashes/copy fidelity and sustained GPU performance not verified.",
+  "source": "H:/BACKUP/desktop/ultra backup/001Set tecnopolis/milky-webgpu",
+  "catalog": {
+    "version": 1,
+    "source": "Ordenar secuencias dds.v4p ? nodos 45/46/47 efectivos",
+    "frameRate": 30,
+    "preloadFrames": 4,
+    "originalLoopPeriod": "(frameCount - 1) / 30 + masLento",
+    "preservePhaseOnClipChange": true,
+    "clips": [
+      {
+        "id": "clip-00",
+        "index": 0,
+        "name": "drone abajo fabric",
+        "frameCount": 536,
+        "fps": 30,
+        "startGlobal": 0,
+        "endGlobal": 535,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 536,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            535
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-01",
+        "index": 1,
+        "name": "drone arriba bosque IZ",
+        "frameCount": 254,
+        "fps": 30,
+        "startGlobal": 536,
+        "endGlobal": 789,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 254,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            253
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-02",
+        "index": 2,
+        "name": "drone arriba ciudad di",
+        "frameCount": 407,
+        "fps": 30,
+        "startGlobal": 790,
+        "endGlobal": 1196,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 407,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            406
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-03",
+        "index": 3,
+        "name": "drone arriba incendi",
+        "frameCount": 281,
+        "fps": 30,
+        "startGlobal": 1197,
+        "endGlobal": 1477,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 281,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            280
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-04",
+        "index": 4,
+        "name": "drone arriba mar piedr",
+        "frameCount": 747,
+        "fps": 30,
+        "startGlobal": 1478,
+        "endGlobal": 2224,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 747,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            746
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-05",
+        "index": 5,
+        "name": "drone arriba molino camp",
+        "frameCount": 248,
+        "fps": 30,
+        "startGlobal": 2225,
+        "endGlobal": 2472,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 248,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            247
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-06",
+        "index": 6,
+        "name": "drone arriba playa rio marro",
+        "frameCount": 658,
+        "fps": 30,
+        "startGlobal": 2473,
+        "endGlobal": 3130,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 658,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            657
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-07",
+        "index": 7,
+        "name": "drone arriba rio bosque verd",
+        "frameCount": 279,
+        "fps": 30,
+        "startGlobal": 3131,
+        "endGlobal": 3409,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 279,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            278
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-08",
+        "index": 8,
+        "name": "drone arriba rio bosqu",
+        "frameCount": 587,
+        "fps": 30,
+        "startGlobal": 3410,
+        "endGlobal": 3996,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 587,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            586
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-09",
+        "index": 9,
+        "name": "reactor nuclea",
+        "frameCount": 305,
+        "fps": 30,
+        "startGlobal": 3997,
+        "endGlobal": 4301,
+        "width": 1280,
+        "height": 720,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 460800,
+        "availableFrames": 305,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            304
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-10",
+        "index": 10,
+        "name": "drone arriba rio montañ",
+        "frameCount": 208,
+        "fps": 30,
+        "startGlobal": 4302,
+        "endGlobal": 4509,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 208,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            207
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-11",
+        "index": 11,
+        "name": "drone arriba rio niev",
+        "frameCount": 380,
+        "fps": 30,
+        "startGlobal": 4510,
+        "endGlobal": 4889,
+        "width": 3840,
+        "height": 2160,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 4147200,
+        "availableFrames": 380,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            379
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-12",
+        "index": 12,
+        "name": "drone arriba tractor campo",
+        "frameCount": 1403,
+        "fps": 30,
+        "startGlobal": 4890,
+        "endGlobal": 6292,
+        "width": 3840,
+        "height": 2160,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 4147200,
+        "availableFrames": 1403,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            1402
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-13",
+        "index": 13,
+        "name": "drone frente  bosque musg",
+        "frameCount": 488,
+        "fps": 30,
+        "startGlobal": 6293,
+        "endGlobal": 6780,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 488,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            487
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-14",
+        "index": 14,
+        "name": "drone frente bosque verd",
+        "frameCount": 366,
+        "fps": 30,
+        "startGlobal": 6781,
+        "endGlobal": 7146,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 366,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            365
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-15",
+        "index": 15,
+        "name": "drone frente ciudad noch",
+        "frameCount": 900,
+        "fps": 30,
+        "startGlobal": 7147,
+        "endGlobal": 8046,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 900,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            899
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-16",
+        "index": 16,
+        "name": "drone frente fabrica",
+        "frameCount": 979,
+        "fps": 30,
+        "startGlobal": 8047,
+        "endGlobal": 9025,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 979,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            978
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-17",
+        "index": 17,
+        "name": "drone frente montaña lago basur",
+        "frameCount": 856,
+        "fps": 30,
+        "startGlobal": 9026,
+        "endGlobal": 9881,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 856,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            855
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-18",
+        "index": 18,
+        "name": "drone frente rio montaña de",
+        "frameCount": 720,
+        "fps": 30,
+        "startGlobal": 9882,
+        "endGlobal": 10601,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 720,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            719
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-19",
+        "index": 19,
+        "name": "drone diag bosque niebl",
+        "frameCount": 578,
+        "fps": 30,
+        "startGlobal": 10602,
+        "endGlobal": 11179,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 578,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            577
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-20",
+        "index": 20,
+        "name": "drone diag ciudad noch",
+        "frameCount": 900,
+        "fps": 30,
+        "startGlobal": 11180,
+        "endGlobal": 12079,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 900,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            899
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-21",
+        "index": 21,
+        "name": "drone diag fabria-",
+        "frameCount": 1207,
+        "fps": 30,
+        "startGlobal": 12080,
+        "endGlobal": 13286,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 1207,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            1206
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-22",
+        "index": 22,
+        "name": "drone diag fabrica",
+        "frameCount": 1300,
+        "fps": 30,
+        "startGlobal": 13287,
+        "endGlobal": 14586,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 1300,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            1299
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-23",
+        "index": 23,
+        "name": "drone diag nuclear arriba",
+        "frameCount": 1002,
+        "fps": 30,
+        "startGlobal": 14587,
+        "endGlobal": 15588,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 1002,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            1001
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-24",
+        "index": 24,
+        "name": "drone diag ciudad H",
+        "frameCount": 390,
+        "fps": 30,
+        "startGlobal": 15589,
+        "endGlobal": 15978,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 390,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            389
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-25",
+        "index": 25,
+        "name": "drone gira ciudad noche le",
+        "frameCount": 831,
+        "fps": 30,
+        "startGlobal": 15979,
+        "endGlobal": 16809,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 831,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            830
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-26",
+        "index": 26,
+        "name": "drone gira edificio noche le",
+        "frameCount": 552,
+        "fps": 30,
+        "startGlobal": 16810,
+        "endGlobal": 17361,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 552,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            551
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-27",
+        "index": 27,
+        "name": "drone arriba fabrica gri",
+        "frameCount": 477,
+        "fps": 30,
+        "startGlobal": 17362,
+        "endGlobal": 17838,
+        "width": 2046,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1105920,
+        "availableFrames": 477,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            476
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-resize",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-28",
+        "index": 28,
+        "name": "drone arriba niev",
+        "frameCount": 744,
+        "fps": 30,
+        "startGlobal": 17839,
+        "endGlobal": 18582,
+        "width": 2046,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1105920,
+        "availableFrames": 744,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            743
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-resize",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-29",
+        "index": 29,
+        "name": "drone arriba playa verde aren",
+        "frameCount": 388,
+        "fps": 30,
+        "startGlobal": 18583,
+        "endGlobal": 18970,
+        "width": 2046,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1105920,
+        "availableFrames": 388,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            387
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-resize",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-30",
+        "index": 30,
+        "name": "drone frente bosque verde",
+        "frameCount": 886,
+        "fps": 30,
+        "startGlobal": 18971,
+        "endGlobal": 19856,
+        "width": 2046,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1105920,
+        "availableFrames": 886,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            885
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-resize",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-31",
+        "index": 31,
+        "name": "drone frente desierto roj",
+        "frameCount": 681,
+        "fps": 30,
+        "startGlobal": 19857,
+        "endGlobal": 20537,
+        "width": 2046,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1105920,
+        "availableFrames": 681,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            680
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-resize",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-32",
+        "index": 32,
+        "name": "1",
+        "frameCount": 709,
+        "fps": 30,
+        "startGlobal": 20538,
+        "endGlobal": 21246,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 709,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            708
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds2",
+        "mapping": "name-suffix-and-count",
+        "headerError": null
+      },
+      {
+        "id": "clip-33",
+        "index": 33,
+        "name": "arata",
+        "frameCount": 1433,
+        "fps": 30,
+        "startGlobal": 21247,
+        "endGlobal": 22679,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 1433,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            1432
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds2",
+        "mapping": "name-suffix-and-count",
+        "headerError": null
+      },
+      {
+        "id": "clip-34",
+        "index": 34,
+        "name": "e 1",
+        "frameCount": 540,
+        "fps": 30,
+        "startGlobal": 22680,
+        "endGlobal": 23219,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 540,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            539
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds2",
+        "mapping": "name-suffix-and-count",
+        "headerError": null
+      },
+      {
+        "id": "clip-35",
+        "index": 35,
+        "name": "e 2",
+        "frameCount": 870,
+        "fps": 30,
+        "startGlobal": 23220,
+        "endGlobal": 24089,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 870,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            869
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds2",
+        "mapping": "name-suffix-and-count",
+        "headerError": null
+      },
+      {
+        "id": "clip-36",
+        "index": 36,
+        "name": "e 4",
+        "frameCount": 389,
+        "fps": 30,
+        "startGlobal": 24090,
+        "endGlobal": 24478,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 389,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            388
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds2",
+        "mapping": "name-suffix-and-count",
+        "headerError": null
+      },
+      {
+        "id": "clip-37",
+        "index": 37,
+        "name": "ino",
+        "frameCount": 418,
+        "fps": 30,
+        "startGlobal": 24479,
+        "endGlobal": 24896,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 418,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            417
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds2",
+        "mapping": "name-suffix-and-count",
+        "headerError": null
+      },
+      {
+        "id": "clip-38",
+        "index": 38,
+        "name": "ion",
+        "frameCount": 298,
+        "fps": 30,
+        "startGlobal": 24897,
+        "endGlobal": 25194,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 298,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            297
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds2",
+        "mapping": "name-suffix-and-count",
+        "headerError": null
+      },
+      {
+        "id": "clip-39",
+        "index": 39,
+        "name": "opista circular dia",
+        "frameCount": 1024,
+        "fps": 30,
+        "startGlobal": 25195,
+        "endGlobal": 26218,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 1024,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            1023
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds2",
+        "mapping": "name-suffix-and-count",
+        "headerError": null
+      },
+      {
+        "id": "clip-40",
+        "index": 40,
+        "name": "opista circular noche",
+        "frameCount": 401,
+        "fps": 30,
+        "startGlobal": 26219,
+        "endGlobal": 26619,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 401,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            400
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds2",
+        "mapping": "name-suffix-and-count",
+        "headerError": null
+      },
+      {
+        "id": "clip-41",
+        "index": 41,
+        "name": "opista tarde",
+        "frameCount": 731,
+        "fps": 30,
+        "startGlobal": 26620,
+        "endGlobal": 27350,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 731,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            730
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds2",
+        "mapping": "name-suffix-and-count",
+        "headerError": null
+      },
+      {
+        "id": "clip-42",
+        "index": 42,
+        "name": "te dia",
+        "frameCount": 837,
+        "fps": 30,
+        "startGlobal": 27351,
+        "endGlobal": 28187,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 837,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            836
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds2",
+        "mapping": "name-suffix-and-count",
+        "headerError": null
+      },
+      {
+        "id": "clip-43",
+        "index": 43,
+        "name": "tpista noche 2",
+        "frameCount": 577,
+        "fps": 30,
+        "startGlobal": 28188,
+        "endGlobal": 28764,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 577,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            576
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds2",
+        "mapping": "name-suffix-and-count",
+        "headerError": null
+      },
+      {
+        "id": "clip-44",
+        "index": 44,
+        "name": "y noche",
+        "frameCount": 556,
+        "fps": 30,
+        "startGlobal": 28765,
+        "endGlobal": 29320,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 556,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            555
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds2",
+        "mapping": "name-suffix-and-count",
+        "headerError": null
+      },
+      {
+        "id": "clip-45",
+        "index": 45,
+        "name": "tinta amarillo naranj",
+        "frameCount": 907,
+        "fps": 30,
+        "startGlobal": 29321,
+        "endGlobal": 30227,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 907,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            906
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-46",
+        "index": 46,
+        "name": "tinta cyan violet",
+        "frameCount": 621,
+        "fps": 30,
+        "startGlobal": 30228,
+        "endGlobal": 30848,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 621,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            620
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-47",
+        "index": 47,
+        "name": "tinta espesa",
+        "frameCount": 404,
+        "fps": 30,
+        "startGlobal": 30849,
+        "endGlobal": 31252,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 404,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            403
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-48",
+        "index": 48,
+        "name": "tinta negra ce",
+        "frameCount": 869,
+        "fps": 30,
+        "startGlobal": 31253,
+        "endGlobal": 32121,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 869,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            868
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-49",
+        "index": 49,
+        "name": "tinta aceite metalic",
+        "frameCount": 601,
+        "fps": 30,
+        "startGlobal": 32122,
+        "endGlobal": 32722,
+        "width": 2046,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1105920,
+        "availableFrames": 601,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            600
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-resize",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-50",
+        "index": 50,
+        "name": "NV autopist",
+        "frameCount": 749,
+        "fps": 30,
+        "startGlobal": 32723,
+        "endGlobal": 33471,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 749,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            748
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-51",
+        "index": 51,
+        "name": "NV autos tel",
+        "frameCount": 436,
+        "fps": 30,
+        "startGlobal": 33472,
+        "endGlobal": 33907,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 436,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            435
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-52",
+        "index": 52,
+        "name": "2 globulo roj",
+        "frameCount": 483,
+        "fps": 30,
+        "startGlobal": 33908,
+        "endGlobal": 34390,
+        "width": 1280,
+        "height": 720,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 460800,
+        "availableFrames": 483,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            482
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-53",
+        "index": 53,
+        "name": "bacteria naranja",
+        "frameCount": 1739,
+        "fps": 30,
+        "startGlobal": 34391,
+        "endGlobal": 36129,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 1739,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            1738
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-54",
+        "index": 54,
+        "name": "bacteria negro",
+        "frameCount": 1059,
+        "fps": 30,
+        "startGlobal": 36130,
+        "endGlobal": 37188,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 1059,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            1058
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-55",
+        "index": 55,
+        "name": "celula blanco verd",
+        "frameCount": 801,
+        "fps": 30,
+        "startGlobal": 37189,
+        "endGlobal": 37989,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 801,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            800
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-56",
+        "index": 56,
+        "name": "celula burbuja blanc",
+        "frameCount": 450,
+        "fps": 30,
+        "startGlobal": 37990,
+        "endGlobal": 38439,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 450,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            449
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-57",
+        "index": 57,
+        "name": "celula descargand",
+        "frameCount": 264,
+        "fps": 30,
+        "startGlobal": 38440,
+        "endGlobal": 38703,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 264,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            263
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-58",
+        "index": 58,
+        "name": "celula rotand",
+        "frameCount": 359,
+        "fps": 30,
+        "startGlobal": 38704,
+        "endGlobal": 39062,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 359,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            358
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-59",
+        "index": 59,
+        "name": "celula verde blanco",
+        "frameCount": 1739,
+        "fps": 30,
+        "startGlobal": 39063,
+        "endGlobal": 40801,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 1739,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            1738
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-60",
+        "index": 60,
+        "name": "celul",
+        "frameCount": 570,
+        "fps": 30,
+        "startGlobal": 40802,
+        "endGlobal": 41371,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 570,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            569
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-61",
+        "index": 61,
+        "name": "celulas ocr",
+        "frameCount": 598,
+        "fps": 30,
+        "startGlobal": 41372,
+        "endGlobal": 41969,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 598,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            597
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-62",
+        "index": 62,
+        "name": "celulas rojo crec",
+        "frameCount": 425,
+        "fps": 30,
+        "startGlobal": 41970,
+        "endGlobal": 42394,
+        "width": 1920,
+        "height": 1080,
+        "format": "bc1-rgba-unorm",
+        "bytesPerFrame": 1036800,
+        "availableFrames": 425,
+        "complete": true,
+        "availableRanges": [
+          [
+            0,
+            424
+          ]
+        ],
+        "firstAvailableFrame": 0,
+        "rootId": "e-dds",
+        "mapping": "original-name-extraction",
+        "headerError": null
+      },
+      {
+        "id": "clip-63",
+        "index": 63,
+        "name": "INCENDIO00",
+        "frameCount": 222,
+        "fps": 30,
+        "startGlobal": 42395,
+        "endGlobal": 42616,
+        "availableFrames": 0,
+        "complete": false,
+        "availableRanges": [],
+        "firstAvailableFrame": null,
+        "rootId": null,
+        "mapping": null,
+        "headerError": null
+      },
+      {
+        "id": "clip-64",
+        "index": 64,
+        "name": "bosqu",
+        "frameCount": 361,
+        "fps": 30,
+        "startGlobal": 42617,
+        "endGlobal": 42977,
+        "availableFrames": 0,
+        "complete": false,
+        "availableRanges": [],
+        "firstAvailableFrame": null,
+        "rootId": null,
+        "mapping": null,
+        "headerError": null
+      },
+      {
+        "id": "clip-65",
+        "index": 65,
+        "name": "LOMBRIZ0",
+        "frameCount": 1319,
+        "fps": 30,
+        "startGlobal": 42978,
+        "endGlobal": 44296,
+        "availableFrames": 0,
+        "complete": false,
+        "availableRanges": [],
+        "firstAvailableFrame": null,
+        "rootId": null,
+        "mapping": null,
+        "headerError": null
+      },
+      {
+        "id": "clip-66",
+        "index": 66,
+        "name": "capulloalien0",
+        "frameCount": 1664,
+        "fps": 30,
+        "startGlobal": 44297,
+        "endGlobal": 45960,
+        "availableFrames": 0,
+        "complete": false,
+        "availableRanges": [],
+        "firstAvailableFrame": null,
+        "rootId": null,
+        "mapping": null,
+        "headerError": null
+      },
+      {
+        "id": "clip-67",
+        "index": 67,
+        "name": "mariposa",
+        "frameCount": 2069,
+        "fps": 30,
+        "startGlobal": 45961,
+        "endGlobal": 48029,
+        "availableFrames": 0,
+        "complete": false,
+        "availableRanges": [],
+        "firstAvailableFrame": null,
+        "rootId": null,
+        "mapping": null,
+        "headerError": null
+      }
+    ],
+    "revision": 1788835196093,
+    "roots": [
+      {
+        "id": "e-dds",
+        "path": "E:/PARTE2-MEDIA/dds",
+        "catalog": true,
+        "exists": true,
+        "fileCount": 33288,
+        "clips": 44
+      },
+      {
+        "id": "e-dds2",
+        "path": "E:/PARTE2-MEDIA/dds2",
+        "catalog": true,
+        "exists": true,
+        "fileCount": 8905,
+        "clips": 13
+      },
+      {
+        "id": "e-resize",
+        "path": "E:/PARTE2-MEDIA/resize",
+        "catalog": true,
+        "exists": true,
+        "fileCount": 3777,
+        "clips": 6
+      },
+      {
+        "id": "ink",
+        "label": "Tinta original · 1.067 frames",
+        "path": "E:\\PARTE2-MEDIA\\ink\\DDS",
+        "exists": true,
+        "clips": 0
+      },
+      {
+        "id": "package-root",
+        "label": "Carpeta del paquete",
+        "path": "H:/BACKUP/desktop/ultra backup/001Set tecnopolis/milky-webgpu",
+        "exists": true,
+        "clips": 0
+      },
+      {
+        "id": "workspace",
+        "label": "Carpeta del proyecto",
+        "path": "H:\\BACKUP\\desktop\\ultra backup\\001Set tecnopolis",
+        "exists": true,
+        "clips": 0
+      }
+    ],
+    "activeRootId": "e-dds",
+    "paths": {
+      "dds": "E:/PARTE2-MEDIA/dds",
+      "ink": "E:/PARTE2-MEDIA/ink",
+      "overlay": "H:\\BACKUP\\desktop\\ultra backup\\001Set tecnopolis\\milky-webgpu\\media\\overlay\\part2-overlay.png"
+    },
+    "totals": {
+      "clips": 68,
+      "expectedFrames": 48030,
+      "availableFrames": 42395,
+      "missingFrames": 5635,
+      "completeClips": 63,
+      "partialClips": 0
+    },
+    "warnings": [
+      "Faltan 5635 de 48030 frames referenciados por el patch. Las secuencias faltantes no se reemplazan por imágenes generadas; con media.fallback activo reproducen otra secuencia disponible."
+    ]
+  },
+  "ink": {
+    "dds": {
+      "directory": "E:\\PARTE2-MEDIA\\ink\\DDS",
+      "count": 1067,
+      "first": "INK000000.DDS",
+      "last": "INK001066.DDS",
+      "missing": []
+    },
+    "jpg": {
+      "directory": "E:/PARTE2-MEDIA/ink",
+      "count": 1067,
+      "first": "INK000000.jpg",
+      "last": "INK001066.jpg",
+      "missing": []
+    }
+  },
+  "destinationDisk": {
+    "bytesAvailable": 226743349248,
+    "bytesTotal": 629145595904
+  },
+  "sourceCode": {
+    "files": 74,
+    "bytes": 1059041,
+    "codeTreeSha256": "13b0efcfeb66a025d70425c8c46bac14f8218d520e53b2151d6dffb3d7b69580",
+    "changesSinceInitialInventory": [
+      {
+        "path": "ENTREGA_PARTE2_WEBGPU.md",
+        "bytes": 26761,
+        "sha256": "e2eedfac5222cc12a1000b59ad31e229fb518a08597e4c585f7c77f3e93be423",
+        "kind": "changed"
+      }
+    ],
+    "filesManifest": [
+      {
+        "path": ".gitignore",
+        "bytes": 293,
+        "sha256": "7ead935f3b09564b6261d1ae001175465f4e229636f1b99f63e58d7e0bfde58b"
+      },
+      {
+        "path": "ABRIR FINAL.cmd",
+        "bytes": 108,
+        "sha256": "8a7aa9afef67564a748e8c917ab97d692436ae296d68ba5e6a20ad8f2868738e"
+      },
+      {
+        "path": "ABRIR MILKY.cmd",
+        "bytes": 101,
+        "sha256": "87a2d7580184e68b06a072d721c69138153b9208a126f1b1a1a9203e98ae7397"
+      },
+      {
+        "path": "ABRIR PARTE 2.cmd",
+        "bytes": 109,
+        "sha256": "55ce6b90d8055ae0ae56dbb2cfc2d2673de26212331225c9d85d839a93a2e9a4"
+      },
+      {
+        "path": "app.js",
+        "bytes": 15855,
+        "sha256": "1ccfcac7db786c3b900367a1c8f0ebd10429d589596f1bd5041c75299d0c50f3"
+      },
+      {
+        "path": "engine.js",
+        "bytes": 19200,
+        "sha256": "08c03dae511231e9b45cdb202bc8e9efcec0182cce7339277f9ee6befdb020ae"
+      },
+      {
+        "path": "ENTREGA_PARTE2_WEBGPU.md",
+        "bytes": 26761,
+        "sha256": "e2eedfac5222cc12a1000b59ad31e229fb518a08597e4c585f7c77f3e93be423"
+      },
+      {
+        "path": "final-engine.js",
+        "bytes": 10981,
+        "sha256": "a3272e68944909187d92ed41ab674af170fd841a46d464b353e2e1d1eea57e8b"
+      },
+      {
+        "path": "final-live-test.mjs",
+        "bytes": 2842,
+        "sha256": "2eb2bc5dfe0e26ff13b9f4e515073422b6f688328125178ef5550870f3556c7d"
+      },
+      {
+        "path": "final-shaders.js",
+        "bytes": 8116,
+        "sha256": "ac47d409e0e976b28fb5a0de9e051c64d3f743890d6c85ce3dceeab5cf22b9b7"
+      },
+      {
+        "path": "final-ui-test.mjs",
+        "bytes": 9558,
+        "sha256": "fbacc35ef90deb83b6998895b7d9b3a4f1eb359da897293c6f1cfb4d0e999535"
+      },
+      {
+        "path": "index.html",
+        "bytes": 10279,
+        "sha256": "68ec8da0f71617d1fbf16ce444b9efe06a1526955c11510e0346ec0786577255"
+      },
+      {
+        "path": "ink-player.js",
+        "bytes": 8005,
+        "sha256": "e881e36794f2b26eb870468506b687fb4f4d6b53de1426c6a4fcdcaa4eabdb6c"
+      },
+      {
+        "path": "INTEGRACION_PARTE1.md",
+        "bytes": 11062,
+        "sha256": "2116dcb3519996de2cd20c79d0bfa93c0d2e789de153e63991f88468b6b8771a"
+      },
+      {
+        "path": "live-test.mjs",
+        "bytes": 2930,
+        "sha256": "d4808f60799c7291d77ecc051e67d7629f78f849de80d3f0d024b89d69e6b1e2"
+      },
+      {
+        "path": "output.html",
+        "bytes": 1530,
+        "sha256": "13985214c341a666bf02c2867fdf57bc00de706167908e841d5a138e9068c822"
+      },
+      {
+        "path": "package.json",
+        "bytes": 768,
+        "sha256": "b354c6cac5a5480d76d633e6d1602fb65862046d3399e04c8805c0463512e7d7"
+      },
+      {
+        "path": "presets.js",
+        "bytes": 7464,
+        "sha256": "cd3587d4f698f28e485807d8e98f30cc8be359c3eee9b7660bfc303334e73f08"
+      },
+      {
+        "path": "README.md",
+        "bytes": 9421,
+        "sha256": "8bef1750202f01ac6b7441ccf77c94799d4dde4376b3d9208447587ddadeb7dd"
+      },
+      {
+        "path": "server.mjs",
+        "bytes": 3561,
+        "sha256": "7a58d8669d9ae72984f2eb55a130ea6143352c8d8f8571b1ee2fc09c72b66c44"
+      },
+      {
+        "path": "shaders.js",
+        "bytes": 13675,
+        "sha256": "72ac7ca03794b6e013fc8e813e46333b0ac6549c1300879f8ed3e4391c2679c7"
+      },
+      {
+        "path": "smoke-test.mjs",
+        "bytes": 4491,
+        "sha256": "206b54858be283bf7282b1e37e480ede3f01d1c82bad7c9a8922f1acf47830ed"
+      },
+      {
+        "path": "start.ps1",
+        "bytes": 1527,
+        "sha256": "8f7b6b9dbc94be35cf8d5551fb54424007b9bf494957e7b401deadad2701cb11"
+      },
+      {
+        "path": "style.css",
+        "bytes": 15021,
+        "sha256": "0c9f968130b6e0d3d679f860a8e134ede9d047e5d0deae629521c7f540e59484"
+      },
+      {
+        "path": "system.html",
+        "bytes": 13503,
+        "sha256": "4ea19789cd0494c9174cf35c79b404235ad21ab59fd10f9c51e7e63b01a9e9ad"
+      },
+      {
+        "path": "system/app.js",
+        "bytes": 1666,
+        "sha256": "cfd793f8147ddf83a56cd4871f824bda95412cdffbb0c5b5d68b610398c9a5f2"
+      },
+      {
+        "path": "system/bc1-encoder.mjs",
+        "bytes": 6117,
+        "sha256": "727e14f7253dd38cd56e47680d24014b2dcb7f9782ce0dd679e729cb3d1718b0"
+      },
+      {
+        "path": "system/bc1-encoder.test.mjs",
+        "bytes": 5934,
+        "sha256": "1cedeb3407d14044136a7a51dacc1c0cef6a5cc5aeb4f07d5c6eb313f5142ec1"
+      },
+      {
+        "path": "system/catalog.json",
+        "bytes": 12782,
+        "sha256": "187f01c8c616d51eb462657468bbd517c57e41be89e92aa29eb3c3f3aec72a51"
+      },
+      {
+        "path": "system/composition-reference.md",
+        "bytes": 8473,
+        "sha256": "bbbba72ebfa34fb331b4b327deec9dfceda67329c2009a542012c112c8d4967b"
+      },
+      {
+        "path": "system/composition-shaders.js",
+        "bytes": 3808,
+        "sha256": "3e6491e0893d4b37ac62d353703787724f3ccd89101a7fa49f1b4be846218dbe"
+      },
+      {
+        "path": "system/composition-test.mjs",
+        "bytes": 5153,
+        "sha256": "f1891fea97bbe64787bfb467acf431572e876396eb063a841d527d263407c997"
+      },
+      {
+        "path": "system/compositor.js",
+        "bytes": 16299,
+        "sha256": "c2bf4f8417a279759e844a19220a046af7e1210f65eeb98274fdde3b86623853"
+      },
+      {
+        "path": "system/control-state.test.mjs",
+        "bytes": 4043,
+        "sha256": "e8bafa523763b73d92f2641c1deb0fcdb56a18da5728bbf00b8fcf60065aed67"
+      },
+      {
+        "path": "system/controller.js",
+        "bytes": 33966,
+        "sha256": "1f5c00acfbcdcf2117ba60043e203d5b0c9302898aa01e636decf3b3869c9458"
+      },
+      {
+        "path": "system/dds-format.js",
+        "bytes": 6225,
+        "sha256": "e10d6f5aea009a12ec7d4e2f266d7127fa912ec197a857a258ea0664637ee152"
+      },
+      {
+        "path": "system/dds-player.js",
+        "bytes": 17213,
+        "sha256": "c65fd47b4546e2585bbd6b089f566d1fb268a92b6db0ddb4d8b260217a389d35"
+      },
+      {
+        "path": "system/default-mappings.json",
+        "bytes": 279005,
+        "sha256": "ad5d163ad43bace1b9cb38685cc23c30b30beea0ce768a1b4ebbe9344eb60d25"
+      },
+      {
+        "path": "system/display-profile.js",
+        "bytes": 1626,
+        "sha256": "22c4da4167e2969229b587b481040a6c287ce9c96c8674e546d050f8bcc8e1b7"
+      },
+      {
+        "path": "system/display-profile.test.mjs",
+        "bytes": 1472,
+        "sha256": "641310cb30e22fdfef867cd3dd43b835077ab1b4714f53ec4f92c2064933115b"
+      },
+      {
+        "path": "system/full-presets.js",
+        "bytes": 9228,
+        "sha256": "14677bdaddbe6025d62a7a87ae42ef39c0632ba1ebaa27316000456091b45ab8"
+      },
+      {
+        "path": "system/full-presets.test.mjs",
+        "bytes": 4399,
+        "sha256": "c5e17d199b453b9ae8569ba64b6b156be3364ba61f68305898064e75959ace4f"
+      },
+      {
+        "path": "system/host-adapter.js",
+        "bytes": 9219,
+        "sha256": "900ff32d59e625221ff9014cf0b3919d4cc79d3874c776c64b9467cacfe872dd"
+      },
+      {
+        "path": "system/host-adapter.test.mjs",
+        "bytes": 8075,
+        "sha256": "f1ccf21a1e7ee293bfe6130ce484d2b5a31c2fdbf6cf13a2c3772d836fc25d88"
+      },
+      {
+        "path": "system/io-contract.md",
+        "bytes": 16083,
+        "sha256": "c448f34e0f0859bb4bdefa2bc24508961b236b9ca0422004b1894fbce2f26c77"
+      },
+      {
+        "path": "system/led-output-test.mjs",
+        "bytes": 11421,
+        "sha256": "41e51552df1ac970a7594075a7ade65f1dc8a7f9acb798e4e5f4e23c066fb304"
+      },
+      {
+        "path": "system/live-system-test.mjs",
+        "bytes": 10712,
+        "sha256": "06fa3be10eea47045954d3d89c94eef58a507f0416a9bdebaffaed2b9e9d2ff8"
+      },
+      {
+        "path": "system/mappings.js",
+        "bytes": 27232,
+        "sha256": "00645145765c10049176d5ab57db3f1778285e48b58e6c13a2fd24518a8f2d2d"
+      },
+      {
+        "path": "system/MEDIA_AND_FULL.md",
+        "bytes": 8196,
+        "sha256": "0315b0ba0ba5fdb84c3ab2506fae74a395aa5f3030ce4a558f59689f1c75aae2"
+      },
+      {
+        "path": "system/media-fallback.test.mjs",
+        "bytes": 7916,
+        "sha256": "d82752c6f4cb8fcee9d7971a13124675b9e09b2009a5edb78b106fe4fcec7a45"
+      },
+      {
+        "path": "system/media-paths.mjs",
+        "bytes": 6959,
+        "sha256": "e677672ad1c457f30daeaed2bc0feb1ac2e26b46fce00a47fd7cf9dd520af59d"
+      },
+      {
+        "path": "system/media-server.mjs",
+        "bytes": 14422,
+        "sha256": "54778f8012dba908f14c19f3fa233476410e32b98a5823fa4f7fb9cbcfe70361"
+      },
+      {
+        "path": "system/media.test.mjs",
+        "bytes": 12134,
+        "sha256": "14aa105c85e5bc24785c9644018264aad3affa82e1fe3e6350c718d897f50c83"
+      },
+      {
+        "path": "system/midi-mappings.test.mjs",
+        "bytes": 17624,
+        "sha256": "237b1f02c361e9ae364bc6958cd09e1faa6ff68c46f7136af5fa60cd9ed9bed6"
+      },
+      {
+        "path": "system/midi-native-probe.mjs",
+        "bytes": 1714,
+        "sha256": "2afd813a3e443b1ca7dd0ef1188e38235e23899c647a469350c9c036688be4d6"
+      },
+      {
+        "path": "system/midi-port.test.mjs",
+        "bytes": 10742,
+        "sha256": "59ee9f9511f205cb4e4d17862afba4e6095c06a93f379ca5217d84e918374b35"
+      },
+      {
+        "path": "system/midi-show-test.mjs",
+        "bytes": 8692,
+        "sha256": "e0fefc4f511bcb76cb8643034232e0c7a969bb53b4fdf4c94a5421252ab9b2bc"
+      },
+      {
+        "path": "system/midi-status.css",
+        "bytes": 992,
+        "sha256": "d895168f8bb69016003b58655e8a08f4040777d3d7ce1aa8388399e179b1e568"
+      },
+      {
+        "path": "system/midi.js",
+        "bytes": 12305,
+        "sha256": "e4a66f3b30d8bff58f05cf130e95a02805d4dde6d51c56edb850259452a3a3d6"
+      },
+      {
+        "path": "system/osc-server.mjs",
+        "bytes": 6249,
+        "sha256": "7ea848ee31ceab0a5050fcc449c3a1e59835ce5f1b28d70397b335356eeba0f9"
+      },
+      {
+        "path": "system/parameter-midi.js",
+        "bytes": 5226,
+        "sha256": "c0ab7ebfcbbe76a2be7f431aef302a539a18578b5c41cfc08a1ac5c3c7df7ead"
+      },
+      {
+        "path": "system/parameter-midi.test.mjs",
+        "bytes": 5271,
+        "sha256": "334e67e6007a0b9e47b20bf1e83b17ab8fc4edeb6316d083c34d3915df37bf7e"
+      },
+      {
+        "path": "system/parameters.js",
+        "bytes": 11971,
+        "sha256": "b768e170a288765c3a79a76cd31c05315d288fafcc484ca138cadb548e7b1750"
+      },
+      {
+        "path": "system/parte2-controles-midi.csv",
+        "bytes": 103379,
+        "sha256": "d16d2731509926838fc1d3dfa90cb053a24ba9cce82576fd34c069210769417f"
+      },
+      {
+        "path": "system/README.md",
+        "bytes": 15635,
+        "sha256": "7c3aa0970f27fa97ed151149b26b58460631fd68e32a3da43e82d9e555cf5991"
+      },
+      {
+        "path": "system/session.js",
+        "bytes": 1589,
+        "sha256": "350107df1cfaf209cc802f0d3abf7aee897f04819bf7c88983c7fb96fc5ae814"
+      },
+      {
+        "path": "system/show-midi.js",
+        "bytes": 1603,
+        "sha256": "bd91187abe70c8af1c2a02c3a522a0714a314469778b0d904e4b89ad85418c8a"
+      },
+      {
+        "path": "system/system-test.mjs",
+        "bytes": 17391,
+        "sha256": "19673c34d67f408423647fd4cb815b37a89e03f4bfde381a09872b041726c4c2"
+      },
+      {
+        "path": "system/system.css",
+        "bytes": 22117,
+        "sha256": "be5df4aa36b0e5411afb909dee154fb9054edbcaf824a7ac28b0e755464648f2"
+      },
+      {
+        "path": "system/test-browser.mjs",
+        "bytes": 1819,
+        "sha256": "474044515ad4704c24a546e078ea4aa5da58194ec39704c428c096d11a16a037"
+      },
+      {
+        "path": "system/ui-test.mjs",
+        "bytes": 8791,
+        "sha256": "c4d08c5e95871eb8369afbfdc2afb77f3842e23aae340ec45da6fc2c772a7f1d"
+      },
+      {
+        "path": "system/ui.js",
+        "bytes": 44716,
+        "sha256": "815d41d046a788e171389b9771154a91e97c2c761cef92df4dd9f7bba278b2da"
+      },
+      {
+        "path": "tools/import-sequence.mjs",
+        "bytes": 10539,
+        "sha256": "3b0d574fabcbfd48a78dbc6c892b15291e936627e449376c1906689d5fec65ce"
+      },
+      {
+        "path": "tools/media-benchmark.mjs",
+        "bytes": 3737,
+        "sha256": "d86ed330fd6674e61f39ded772da2c165ce7c029b940fb6b65f3d257591ffa9f"
+      }
+    ]
+  },
+  "overlay": {
+    "path": "H:\\BACKUP\\desktop\\ultra backup\\001Set tecnopolis\\milky-webgpu\\media\\overlay\\part2-overlay.png",
+    "bytes": 37626,
+    "status": "Still in source package; copy with code during integration."
+  },
+  "mediaStorage": {
+    "auditedAt": "2026-09-08T02:40:43.233Z",
+    "method": "File sizes only; includes all files in the four media directories, including frames not selected by the catalog.",
+    "directories": [
+      {
+        "directory": "E:/PARTE2-MEDIA/dds",
+        "files": 33288,
+        "bytes": 39427981824
+      },
+      {
+        "directory": "E:/PARTE2-MEDIA/dds2",
+        "files": 8905,
+        "bytes": 9242276480
+      },
+      {
+        "directory": "E:/PARTE2-MEDIA/resize",
+        "files": 3777,
+        "bytes": 4177543296
+      },
+      {
+        "directory": "E:/PARTE2-MEDIA/ink",
+        "files": 2134,
+        "bytes": 1038636565
+      }
+    ],
+    "files": 48104,
+    "bytes": 53886438165
+  }
+}

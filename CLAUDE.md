@@ -2,7 +2,7 @@
 
 **Entrada vigente para cualquier chat: [CONTEXTO.md](CONTEXTO.md) → [contexto canónico versionado](particlesvideo/visuales/docs/CONTEXTO-ACTUAL.md).** Leerlo antes de este resumen o de planes anteriores. La decisión más reciente de Manuel siempre prevalece.
 
-**Decisión actual de Fluids, 2026-09-06:** 24 = previa negra con sólo línea blanca, timeline en cero detenido y población vacía; 25 = PLAY de la secuencia completa desde cero; 26 = el motor libre, controlado por MIDI con `fluids.live.*`. **El audio del show lo reproduce la página** (por Ableton los dos relojes se separaban); Ableton manda sólo las notas. Al terminar la secuencia el fluido **sigue corriendo**. Fluids renderiza con supersampling 2×, que es lo que saca el rayado del campo de radiancia. Notas 24/25/26 del canal 10, sin reinicio por notas repetidas; 27–29 libres. [Sistemas](particlesvideo/visuales/docs/ARQUITECTURA-Y-SISTEMAS.md) · [Configuración](particlesvideo/visuales/docs/CONFIGURACION.md) · [Plan original Fluids preservado](particlesvideo/visuales/docs/origen-radiance/INDICE.md).
+**Decisión actual de Fluids, 2026-09-06:** 24 = previa negra con sólo línea blanca, timeline en cero detenido y población vacía; 25 = PLAY de la secuencia completa desde cero; 26 = **el final de la 25**: el mismo fluido sigue vivo y reacciona a las notas de JEJE FLUID (Ch1 kick/contratiempo/808, Ch2 acentos) y a los faders `fluids.seq.*`, con losetas de 50 cm y 1 m que son obstáculos duros (el fluido choca y rebota), dan un paso mecánico con cada uno de los dos kicks del rack (negra y contratiempo) sin solaparse nunca (pistones hacia la masa y patrullas que doblan para esquivar), el alarm keypad barre una banda que invierte la iluminación, una a tres de las chicas son lámparas sorteadas al azar que el contratiempo cambia y destella, las blancas por compás emiten quietas o sólo en movimiento, el canal 3 (atractor) tira del fluido o lo hace girar, y un glow azul que abre amb 1 por el canal 11 (pista de envío AMB1 en Ableton), onda Ikeda ([plan](PLAN-ESCENA-26.md)). La luz de la 25 es la del documento: contra la página original con el documento real es idéntica; lo que se recordaba más brillante era el original corriendo el documento vacío por un bug de arranque. **El audio del show lo reproduce la página** (por Ableton los dos relojes se separaban); Ableton manda sólo las notas. Al terminar la secuencia el fluido **sigue corriendo**. Fluids renderiza con supersampling 2×, que es lo que saca el rayado del campo de radiancia. Notas 24/25/26 del canal 10, sin reinicio por notas repetidas; 27–29 libres. [Sistemas](particlesvideo/visuales/docs/ARQUITECTURA-Y-SISTEMAS.md) · [Configuración](particlesvideo/visuales/docs/CONFIGURACION.md) · [Plan original Fluids preservado](particlesvideo/visuales/docs/origen-radiance/INDICE.md).
 
 Las secciones siguientes conservan el resumen histórico de Parte 1. Su diagrama de un solo motor no describe por sí solo la integración actual. Las métricas históricas no equivalen a una prueba nueva del flujo 24 previa / 25 PLAY.
 
@@ -18,7 +18,7 @@ el puntero y no la copia.
 
 Visuales en tiempo real para una **pantalla LED de 8 × 3 m (2688 × 1008 px)**, corriendo en
 Chrome con **WebGPU** (three.js + TSL), controladas en vivo por **MIDI desde Ableton** y por
-**OSC**. El registro tiene **29 IDs**: Parte 1 ocupa 1–23, Fluids usa 24 para previa, 25 para PLAY y 26 para el motor libre, y 27–29 permanecen libres.
+**OSC**. El registro tiene **29 IDs**: Parte 1 ocupa 1–23, Fluids usa 24 para previa, 25 para PLAY y 26 para el final reactivo de la 25, y 27–29 permanecen libres.
 
 El corazón visual son los "palitos": un fluido **MLS-MPM** de ~131 000 partículas simulado en
 GPU, que se dibujan como palitos alargados orientados según hacia dónde van.
@@ -293,7 +293,7 @@ Dos ruidos esperables que no son bugs:
 ## 8. Estado actual
 
 - Las **29 escenas** andan a 60 fps: 23 armadas de Parte 1 (ids 1 a 23), 3 de Fluids (24 previa,
-  25 secuencia, 26 motor libre) y **3 libres** (27 a 29), que existen y se pueden disparar por
+  25 secuencia, 26 final reactivo de la 25) y **3 libres** (27 a 29), que existen y se pueden disparar por
   nota pero dejan la pantalla en negro hasta que se defina qué va en cada una.
 - **Los ids son el ORDEN DEL SHOW, corridos y sin huecos** — no el número de imagen del
   storyboard, como eran hasta el 2026-09-05. De la 1 a la 15 coinciden; de la 16 a la 19 el número

@@ -5,3 +5,7 @@ nul
 performance-check/ray-lighting/
 performance-check/scene2/
 performance-check/grid-floor/
+performance-check/parte2/
+config/parte2-media.local.json
+vendor/parte2/media/dds/
+vendor/parte2/media/ink/

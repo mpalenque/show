@@ -1,0 +1,9 @@
+.midi-live-bar{display:flex;align-items:center;gap:13px;padding:12px 24px;border-bottom:1px solid var(--line);background:#151b12;min-width:0}
+.midi-live-led{width:9px;height:9px;flex:0 0 9px;border-radius:50%;background:#828776}
+.midi-live-led[data-state=listening]{background:var(--accent);box-shadow:0 0 8px #b5e48855}
+.midi-live-led[data-state=error],.midi-live-led[data-state=missing]{background:var(--warn)}
+.midi-live-connection,.midi-live-activity{display:flex;flex-direction:column;gap:3px;min-width:0}
+.midi-live-connection{flex:1}.midi-live-activity{flex:1.2}
+.midi-live-connection strong{font-size:12px}.midi-live-connection span,.midi-live-activity span{font-size:10px;line-height:1.45;overflow-wrap:anywhere;color:var(--muted)}
+#midi-live-mode{color:var(--text)}
+@media(max-width:760px){.midi-live-bar{flex-wrap:wrap;padding:12px 14px;gap:9px}.midi-live-connection{flex-basis:calc(100% - 26px)}.midi-live-activity{flex-basis:100%;padding-left:18px}.midi-live-bar button{flex:1}}

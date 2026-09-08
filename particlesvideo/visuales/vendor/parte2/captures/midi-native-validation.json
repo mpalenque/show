@@ -1,0 +1,157 @@
+{
+  "initial": {
+    "status": {
+      "state": "listening",
+      "preferredName": "loopMIDI Port",
+      "selectedNames": [
+        "loopMIDI Port"
+      ],
+      "received": 0,
+      "lastMessage": null,
+      "error": null
+    },
+    "ports": [
+      {
+        "id": "input-0",
+        "name": "RTX3090",
+        "manufacturer": "Microsoft Corporation",
+        "state": "connected",
+        "connection": "closed",
+        "enabled": false,
+        "listening": false,
+        "error": null
+      },
+      {
+        "id": "input-1",
+        "name": "loopMIDI Port",
+        "manufacturer": "Microsoft Corporation",
+        "state": "connected",
+        "connection": "open",
+        "enabled": true,
+        "listening": true,
+        "error": null
+      },
+      {
+        "id": "input-2",
+        "name": "ZOOM L6",
+        "manufacturer": "ZOOM Corporation",
+        "state": "connected",
+        "connection": "closed",
+        "enabled": false,
+        "listening": false,
+        "error": null
+      },
+      {
+        "id": "input-3",
+        "name": "MIDIIN2 (ZOOM L6)",
+        "manufacturer": "ZOOM Corporation",
+        "state": "connected",
+        "connection": "closed",
+        "enabled": false,
+        "listening": false,
+        "error": null
+      },
+      {
+        "id": "input-4",
+        "name": "MIDIIN3 (ZOOM L6)",
+        "manufacturer": "ZOOM Corporation",
+        "state": "connected",
+        "connection": "closed",
+        "enabled": false,
+        "listening": false,
+        "error": null
+      },
+      {
+        "id": "input-5",
+        "name": "APC MINI",
+        "manufacturer": "AKAI  Professional M.I. Corp.",
+        "state": "connected",
+        "connection": "closed",
+        "enabled": false,
+        "listening": false,
+        "error": null
+      }
+    ],
+    "mode": "show",
+    "scene": 0,
+    "mappingCount": 489
+  },
+  "result": {
+    "status": {
+      "state": "listening",
+      "preferredName": "loopMIDI Port",
+      "selectedNames": [
+        "loopMIDI Port"
+      ],
+      "received": 0,
+      "lastMessage": null,
+      "error": null
+    },
+    "ports": [
+      {
+        "id": "input-0",
+        "name": "RTX3090",
+        "manufacturer": "Microsoft Corporation",
+        "state": "connected",
+        "connection": "closed",
+        "enabled": false,
+        "listening": false,
+        "error": null
+      },
+      {
+        "id": "input-1",
+        "name": "loopMIDI Port",
+        "manufacturer": "Microsoft Corporation",
+        "state": "connected",
+        "connection": "open",
+        "enabled": true,
+        "listening": true,
+        "error": null
+      },
+      {
+        "id": "input-2",
+        "name": "ZOOM L6",
+        "manufacturer": "ZOOM Corporation",
+        "state": "connected",
+        "connection": "closed",
+        "enabled": false,
+        "listening": false,
+        "error": null
+      },
+      {
+        "id": "input-3",
+        "name": "MIDIIN2 (ZOOM L6)",
+        "manufacturer": "ZOOM Corporation",
+        "state": "connected",
+        "connection": "closed",
+        "enabled": false,
+        "listening": false,
+        "error": null
+      },
+      {
+        "id": "input-4",
+        "name": "MIDIIN3 (ZOOM L6)",
+        "manufacturer": "ZOOM Corporation",
+        "state": "connected",
+        "connection": "closed",
+        "enabled": false,
+        "listening": false,
+        "error": null
+      },
+      {
+        "id": "input-5",
+        "name": "APC MINI",
+        "manufacturer": "AKAI  Professional M.I. Corp.",
+        "state": "connected",
+        "connection": "closed",
+        "enabled": false,
+        "listening": false,
+        "error": null
+      }
+    ],
+    "fired": [],
+    "errors": []
+  },
+  "errors": [],
+  "note": "Read-only Web MIDI: no physical messages sent. Test-only browser context grants MIDI permissions."
+}

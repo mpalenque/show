@@ -1,0 +1,560 @@
+{
+  "started": "2026-09-07T03:12:51.496Z",
+  "environment": "Chrome headless / real system.html / native 2688x1008",
+  "note": "Simulation steps, effect steps and rAF intervals are measured separately. Values include media loading, UI and scheduling. These are not isolated GPU timestamps or a comparison against vvvv. Six Milky layers select four shared A presets.",
+  "errors": [],
+  "runs": {
+    "default-final": {
+      "elapsedSeconds": 10.009600000023841,
+      "controllerSteps": 600,
+      "controllerStepsPerSecond": 59.94245524282398,
+      "rafCallbacks": 601,
+      "rafCallbacksPerSecond": 60.04235933489535,
+      "rafP50ms": 16.699999999999818,
+      "rafP95ms": 16.800000000000182,
+      "rafP99ms": 16.899999999999636,
+      "effects": [
+        {
+          "id": "final",
+          "frame": 625,
+          "advanced": 600,
+          "stepsPerSecond": 59.94245524282398
+        }
+      ],
+      "decks": [
+        {
+          "clip": "clip-00",
+          "startFrame": 15,
+          "endFrame": 314,
+          "advancedFrames": 299,
+          "wraps": 0,
+          "framesPerSecond": 29.871323529340618,
+          "startPhase": 0.02803738317757011,
+          "endPhase": 0.5869158878504726,
+          "status": "playing",
+          "error": null
+        },
+        {
+          "clip": "clip-01",
+          "startFrame": 14,
+          "endFrame": 60,
+          "advancedFrames": 299,
+          "wraps": 1,
+          "framesPerSecond": 29.871323529340618,
+          "startPhase": 0.0573122529644269,
+          "endPhase": 0.237154150197623,
+          "status": "playing",
+          "error": null
+        },
+        {
+          "clip": "clip-02",
+          "startFrame": 14,
+          "endFrame": 312,
+          "advancedFrames": 298,
+          "wraps": 0,
+          "framesPerSecond": 29.77141943726924,
+          "startPhase": 0.03571428571428569,
+          "endPhase": 0.7697044334975477,
+          "status": "playing",
+          "error": null
+        },
+        {
+          "clip": "clip-03",
+          "startFrame": 14,
+          "endFrame": 31,
+          "advancedFrames": 297,
+          "wraps": 1,
+          "framesPerSecond": 29.671515345197868,
+          "startPhase": 0.051785714285714296,
+          "endPhase": 0.11249999999999673,
+          "status": "playing",
+          "error": null
+        },
+        {
+          "clip": "clip-04",
+          "startFrame": 14,
+          "endFrame": 310,
+          "advancedFrames": 296,
+          "wraps": 0,
+          "framesPerSecond": 29.571611253126495,
+          "startPhase": 0.01876675603217159,
+          "endPhase": 0.4162198391420914,
+          "status": "playing",
+          "error": null
+        },
+        {
+          "clip": "clip-05",
+          "startFrame": 14,
+          "endFrame": 63,
+          "advancedFrames": 296,
+          "wraps": 1,
+          "framesPerSecond": 29.571611253126495,
+          "startPhase": 0.056680161943319804,
+          "endPhase": 0.2570850202429076,
+          "status": "playing",
+          "error": null
+        },
+        {
+          "clip": "clip-06",
+          "startFrame": 13,
+          "endFrame": 308,
+          "advancedFrames": 295,
+          "wraps": 0,
+          "framesPerSecond": 29.47170716105512,
+          "startPhase": 0.020547945205479454,
+          "endPhase": 0.469558599695594,
+          "status": "playing",
+          "error": null
+        }
+      ],
+      "activeEffects": [
+        "final"
+      ],
+      "diagnostics": {
+        "fps": 60,
+        "frame": 632,
+        "gpu": "nvidia",
+        "cpuMs": 1.899999976158142,
+        "passes": 159,
+        "pending": 0,
+        "size": [
+          2688,
+          1008
+        ],
+        "media": {
+          "loads": 2189,
+          "hits": 24104,
+          "failures": 0,
+          "bytes": 132710400,
+          "cached": 128
+        },
+        "effects": [
+          {
+            "id": "final",
+            "frames": 625
+          }
+        ],
+        "decks": [
+          {
+            "clip": "clip-00",
+            "frame": 314,
+            "position": 0.5869158878504726,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 0,
+            "substitute": false
+          },
+          {
+            "clip": "clip-01",
+            "frame": 60,
+            "position": 0.237154150197623,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 1,
+            "substitute": false
+          },
+          {
+            "clip": "clip-02",
+            "frame": 312,
+            "position": 0.7697044334975477,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 2,
+            "substitute": false
+          },
+          {
+            "clip": "clip-03",
+            "frame": 31,
+            "position": 0.11249999999999673,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 3,
+            "substitute": false
+          },
+          {
+            "clip": "clip-04",
+            "frame": 310,
+            "position": 0.4162198391420914,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 4,
+            "substitute": false
+          },
+          {
+            "clip": "clip-05",
+            "frame": 63,
+            "position": 0.2570850202429076,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 5,
+            "substitute": false
+          },
+          {
+            "clip": "clip-06",
+            "frame": 308,
+            "position": 0.469558599695594,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 6,
+            "substitute": false
+          }
+        ],
+        "errors": [],
+        "warnings": [
+          "Permission to use Web MIDI API was not granted."
+        ],
+        "scene": 69,
+        "registryCount": 430,
+        "mappingCount": 490,
+        "catalog": {
+          "clips": 68,
+          "expectedFrames": 48030,
+          "availableFrames": 42395,
+          "missingFrames": 5635,
+          "completeClips": 63,
+          "partialClips": 0
+        },
+        "midiInputs": []
+      },
+      "cache": {
+        "loads": 2190,
+        "hits": 24104,
+        "failures": 0,
+        "bytes": 132710400,
+        "cached": 128,
+        "size": 128
+      },
+      "inkCache": 48,
+      "outputSize": [
+        2688,
+        1008
+      ],
+      "mappingCount": 490
+    },
+    "all-layers": {
+      "elapsedSeconds": 10.009699999928474,
+      "controllerSteps": 602,
+      "controllerStepsPerSecond": 60.141662587720084,
+      "rafCallbacks": 596,
+      "rafCallbacksPerSecond": 59.54224402372287,
+      "rafP50ms": 16.69999999999891,
+      "rafP95ms": 16.799999999999272,
+      "rafP99ms": 17,
+      "effects": [
+        {
+          "id": "final",
+          "frame": 1332,
+          "advanced": 597,
+          "stepsPerSecond": 59.64214711772241
+        },
+        {
+          "id": "inkdripping",
+          "frame": 684,
+          "advanced": 595,
+          "stepsPerSecond": 59.442340929723336
+        },
+        {
+          "id": "1a",
+          "frame": 693,
+          "advanced": 602,
+          "stepsPerSecond": 60.141662587720084
+        },
+        {
+          "id": "3a",
+          "frame": 693,
+          "advanced": 602,
+          "stepsPerSecond": 60.141662587720084
+        },
+        {
+          "id": "2a",
+          "frame": 693,
+          "advanced": 602,
+          "stepsPerSecond": 60.141662587720084
+        },
+        {
+          "id": "splash",
+          "frame": 693,
+          "advanced": 602,
+          "stepsPerSecond": 60.141662587720084
+        }
+      ],
+      "decks": [
+        {
+          "clip": "clip-00",
+          "startFrame": 42,
+          "endFrame": 332,
+          "advancedFrames": 290,
+          "wraps": 0,
+          "framesPerSecond": 28.971897259865155,
+          "startPhase": 0.07943925233644848,
+          "endPhase": 0.6205607476635571,
+          "status": "playing",
+          "error": null
+        },
+        {
+          "clip": "clip-01",
+          "startFrame": 42,
+          "endFrame": 76,
+          "advancedFrames": 287,
+          "wraps": 1,
+          "framesPerSecond": 28.67218797786655,
+          "startPhase": 0.1660079051383398,
+          "endPhase": 0.3023715415019705,
+          "status": "playing",
+          "error": null
+        },
+        {
+          "clip": "clip-02",
+          "startFrame": 41,
+          "endFrame": 327,
+          "advancedFrames": 286,
+          "wraps": 0,
+          "framesPerSecond": 28.572284883867017,
+          "startPhase": 0.10098522167487675,
+          "endPhase": 0.8066502463054303,
+          "status": "playing",
+          "error": null
+        },
+        {
+          "clip": "clip-03",
+          "startFrame": 39,
+          "endFrame": 45,
+          "advancedFrames": 286,
+          "wraps": 1,
+          "framesPerSecond": 28.572284883867017,
+          "startPhase": 0.14107142857142832,
+          "endPhase": 0.16071428571428228,
+          "status": "playing",
+          "error": null
+        },
+        {
+          "clip": "clip-04",
+          "startFrame": 39,
+          "endFrame": 324,
+          "advancedFrames": 285,
+          "wraps": 0,
+          "framesPerSecond": 28.47238178986748,
+          "startPhase": 0.05294906166219842,
+          "endPhase": 0.4343163538873997,
+          "status": "playing",
+          "error": null
+        },
+        {
+          "clip": "clip-05",
+          "startFrame": 37,
+          "endFrame": 73,
+          "advancedFrames": 283,
+          "wraps": 1,
+          "framesPerSecond": 28.27257560186841,
+          "startPhase": 0.14979757085020245,
+          "endPhase": 0.2955465587044464,
+          "status": "playing",
+          "error": null
+        },
+        {
+          "clip": "clip-06",
+          "startFrame": 36,
+          "endFrame": 318,
+          "advancedFrames": 282,
+          "wraps": 0,
+          "framesPerSecond": 28.172672507868874,
+          "startPhase": 0.05555555555555556,
+          "endPhase": 0.48477929984780155,
+          "status": "playing",
+          "error": null
+        }
+      ],
+      "activeEffects": [
+        "final",
+        "1a",
+        "3a",
+        "2a",
+        "splash",
+        "inkdripping"
+      ],
+      "diagnostics": {
+        "fps": 60,
+        "frame": 1344,
+        "gpu": "nvidia",
+        "cpuMs": 1.600000023841858,
+        "passes": 252,
+        "pending": 0,
+        "size": [
+          2688,
+          1008
+        ],
+        "media": {
+          "loads": 4542,
+          "hits": 48276,
+          "failures": 0,
+          "bytes": 132710400,
+          "cached": 128
+        },
+        "effects": [
+          {
+            "id": "final",
+            "frames": 1332
+          },
+          {
+            "id": "inkdripping",
+            "frames": 684
+          },
+          {
+            "id": "1a",
+            "frames": 693
+          },
+          {
+            "id": "3a",
+            "frames": 693
+          },
+          {
+            "id": "2a",
+            "frames": 693
+          },
+          {
+            "id": "splash",
+            "frames": 693
+          }
+        ],
+        "decks": [
+          {
+            "clip": "clip-00",
+            "frame": 332,
+            "position": 0.6205607476635571,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 0,
+            "substitute": false
+          },
+          {
+            "clip": "clip-01",
+            "frame": 76,
+            "position": 0.3023715415019705,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 1,
+            "substitute": false
+          },
+          {
+            "clip": "clip-02",
+            "frame": 327,
+            "position": 0.8066502463054303,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 2,
+            "substitute": false
+          },
+          {
+            "clip": "clip-03",
+            "frame": 45,
+            "position": 0.16071428571428228,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 3,
+            "substitute": false
+          },
+          {
+            "clip": "clip-04",
+            "frame": 324,
+            "position": 0.4343163538873997,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 4,
+            "substitute": false
+          },
+          {
+            "clip": "clip-05",
+            "frame": 73,
+            "position": 0.2955465587044464,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 5,
+            "substitute": false
+          },
+          {
+            "clip": "clip-06",
+            "frame": 318,
+            "position": 0.48477929984780155,
+            "status": "playing",
+            "error": null,
+            "requestedClip": 6,
+            "substitute": false
+          }
+        ],
+        "errors": [],
+        "warnings": [
+          "Permission to use Web MIDI API was not granted."
+        ],
+        "scene": 69,
+        "registryCount": 430,
+        "mappingCount": 490,
+        "catalog": {
+          "clips": 68,
+          "expectedFrames": 48030,
+          "availableFrames": 42395,
+          "missingFrames": 5635,
+          "completeClips": 63,
+          "partialClips": 0
+        },
+        "midiInputs": []
+      },
+      "cache": {
+        "loads": 4543,
+        "hits": 48276,
+        "failures": 0,
+        "bytes": 132710400,
+        "cached": 128,
+        "size": 128
+      },
+      "inkCache": 48,
+      "outputSize": [
+        2688,
+        1008
+      ],
+      "mappingCount": 490
+    }
+  },
+  "midiPermissionGranted": true,
+  "browser": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 20,
+    "gpu": {
+      "vendor": "nvidia",
+      "architecture": "ampere",
+      "device": "",
+      "description": ""
+    }
+  },
+  "midi": {
+    "supported": true,
+    "error": "Permission to use Web MIDI API was not granted.",
+    "physicalMessagesSent": 0
+  },
+  "outputWindow": {
+    "url": "http://127.0.0.1:8787/output.html",
+    "hasControllerOpener": true,
+    "metadata": [
+      2688,
+      1008
+    ],
+    "readyState": 4,
+    "paused": false,
+    "messageHidden": true,
+    "tracks": [
+      {
+        "kind": "video",
+        "readyState": "live",
+        "settings": {
+          "aspectRatio": 2.6666666666666665,
+          "deviceId": "EbMxVHJeHlMwpCc8GG199K9cYAUdotdVu6eYPk5P6qy90wLHBCl1gQFCHoyGFPp8M6IgfftEumoKsKYCdrxp5g==",
+          "frameRate": 60,
+          "height": 1008,
+          "resizeMode": "none",
+          "width": 2688
+        }
+      }
+    ]
+  },
+  "passed": true,
+  "finished": "2026-09-07T03:13:15.738Z"
+}

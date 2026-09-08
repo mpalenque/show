@@ -7,10 +7,15 @@
   <link rel="stylesheet" href="/src/editor/editor.css" />
 </head>
 <body>
+  <nav id="show-editor-nav" aria-label="Partes del show">
+    <button id="show-editor-primary" class="active" type="button" aria-pressed="true">Parte 1 / Fluids</button>
+    <button id="show-editor-parte2" type="button" aria-pressed="false">Parte 2</button>
+  </nav>
   <div id="waiting">Esperando la ventana de salida… abrí <a href="/" target="vis-salida">http://localhost:5173/</a> y dejala abierta.</div>
   <div id="app">
     <section class="col" id="col-scenes">
       <h1>Escenas</h1>
+      <p><a href="./parte2.html" target="vis-parte2-editor">Parte 2 ? mezclador, efectos y MIDI</a></p>
       <p><a href="./fluids.html" target="vis-fluids-editor">Abrir timeline Fluids · escena 24</a></p>
       <div id="scenes-list" class="scenes-list"></div>
       <label class="field">Transición (s)
@@ -73,6 +78,9 @@
       </div>
     </section>
   </div>
+  <section id="parte2-workspace" hidden aria-label="Mezclador de Parte 2">
+    <iframe id="parte2-editor" title="Parte 2: mezclador, efectos y MIDI"></iframe>
+  </section>
   <script type="module" src="/src/editor/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#10110f" />
+    <title>Milky — Laboratorio visual</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Milky, inicio"><span class="brand-mark" aria-hidden="true">m.</span><span>MILKY<span class="brand-subtitle">LABORATORIO VISUAL</span></span></a>
+      <div class="session-status"><span class="status-dot" aria-hidden="true"></span><span id="status-text" role="status">Preparando el lienzo</span></div>
+      <a class="edition" href="./system.html" style="color:inherit;text-decoration:none">PARTE 2 COMPLETA<span>ABRIR SISTEMA →</span></a>
+    </header>
+
+    <main class="workspace">
+      <section class="viewer" aria-label="Vista del efecto">
+        <div class="viewer-topline">
+          <div class="view-title"><span class="eyebrow">EN VIVO</span><span id="preset-name">Milky 1A</span></div>
+          <label class="gallery-control" for="gallery-toggle"><input type="checkbox" id="gallery-toggle" /><span class="grid-icon" aria-hidden="true">⊞</span>Ver todos</label>
+        </div>
+
+        <div class="stage">
+          <canvas id="milky-canvas" width="800" height="1280" aria-label="Animación del efecto Milky. Activá Dibujar para intervenir con el cursor."></canvas>
+          <div id="ink-status" class="ink-status" role="status" hidden>Preparando tinta…</div>
+          <div class="stage-corner corner-tl" aria-hidden="true"></div><div class="stage-corner corner-tr" aria-hidden="true"></div><div class="stage-corner corner-bl" aria-hidden="true"></div><div class="stage-corner corner-br" aria-hidden="true"></div>
+          <div id="loading-panel" class="stage-overlay"><span class="loader" aria-hidden="true"></span><p>Iniciando GPU</p><span>Preparando el primer frame…</span></div>
+          <div id="error-panel" class="stage-overlay error-overlay" hidden><span class="error-symbol" aria-hidden="true">!</span><h2>No pudimos iniciar el efecto</h2><p id="error-message">Verificá que tu navegador permita usar WebGPU.</p><button id="retry-button" class="button primary" type="button">Volver a intentar</button></div>
+        </div>
+
+        <div class="transport">
+          <div class="transport-group"><button class="button play-button" id="pause-button" type="button" title="Pausar o continuar · Espacio">Pausar</button><button class="button icon-button" id="reset-button" type="button" title="Reiniciar · R" aria-label="Reiniciar efecto"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.2 6.5a6.5 6.5 0 1 1-.5 6M4 2.5v4.5h4.5" /></svg></button><span class="transport-divider" aria-hidden="true"></span><span class="fps-readout"><strong id="fps-value">—</strong> FPS</span><span class="frame-readout"><span id="frame-value">0</span> frames</span></div>
+          <div class="transport-group"><button class="button icon-button" id="export-button" type="button" title="Guardar imagen PNG" aria-label="Guardar imagen PNG"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h3l1.5-2h5L14 6h3v10H3z" /><circle cx="10" cy="10.5" r="3" /></svg></button><button class="button icon-button" id="fullscreen-button" type="button" title="Pantalla completa · F" aria-label="Pantalla completa"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7V3h4m6 0h4v4m0 6v4h-4m-6 0H3v-4" /></svg></button></div>
+        </div>
+      </section>
+
+      <aside class="inspector" aria-label="Controles del efecto">
+        <section class="control-section preset-section">
+          <div class="section-label"><span>01 / PRESET</span><span class="small-tag">5 VARIANTES</span></div>
+          <label class="sr-only" for="preset-select">Elegir preset</label>
+          <select id="preset-select" class="preset-select"><option value="1a">Milky 1A</option><option value="3a">Milky 3A</option><option value="2a">Milky 2A</option><option value="splash">Milky SPLASHA</option><option value="final">MILKY FINAL · INK</option></select>
+          <p id="preset-description" class="preset-description">Feedback, trama y desplazamiento. Una imagen que transforma su propio rastro.</p>
+        </section>
+
+        <section id="material-controls" class="control-section material-controls">
+          <div class="section-label"><span>02 / MATERIA</span></div>
+          <div class="range-control"><label for="feedback-input">Persistencia <output id="feedback-value" for="feedback-input">—</output></label><input id="feedback-input" type="range" min="0" max="1" step="0.01" value="0.97" /></div>
+          <div class="range-control"><label for="warp-input">Deformación <output id="warp-value" for="warp-input">1.00</output></label><input id="warp-input" type="range" min="0" max="2" step="0.01" value="1" /></div>
+          <div class="range-control"><label for="detail-input">Detalle <output id="detail-value" for="detail-input">1.00</output></label><input id="detail-input" type="range" min="0" max="2" step="0.01" value="1" /></div>
+          <label class="toggle-row" for="auto-seed"><span>Semilla automática</span><input id="auto-seed" type="checkbox" checked /><span class="switch" aria-hidden="true"></span></label>
+          <label class="toggle-row" for="brush-input"><span>Dibujar en el lienzo</span><input id="brush-input" type="checkbox" /><span class="switch" aria-hidden="true"></span></label>
+          <button id="seed-button" class="button seed-button" type="button" title="Inyectar forma · B"><span>+ Inyectar forma</span><kbd>B</kbd></button>
+        </section>
+
+        <section id="final-controls" class="control-section final-controls" hidden>
+          <div class="section-label"><span>02 / MILKY FINAL</span><span class="small-tag">INK</span></div>
+          <button id="final-explode" class="button primary seed-button" type="button" title="Reiniciar la explosión de tinta · B"><span>Disparar explosión</span><kbd>B</kbd></button>
+          <p class="control-hint">Una secuencia de tinta alimenta la deformación.</p>
+          <div class="range-control"><label for="final-fx1">FX1 · desplazamiento <output id="final-fx1-value" for="final-fx1">0.00</output></label><input id="final-fx1" type="range" min="0" max="1" step="0.001" value="0" /></div>
+          <div class="range-control"><label for="final-fx2">FX2 · escala <output id="final-fx2-value" for="final-fx2">0.00</output></label><input id="final-fx2" type="range" min="0" max="1" step="0.001" value="0" /></div>
+          <div class="range-control"><label for="final-fx4">FX4 · dirección <output id="final-fx4-value" for="final-fx4">0.00</output></label><input id="final-fx4" type="range" min="0" max="1" step="0.001" value="0" /></div>
+          <label class="toggle-row" for="final-button"><span>Feedback activo</span><input id="final-button" type="checkbox" checked /><span class="switch" aria-hidden="true"></span></label>
+          <label class="toggle-row" for="final-loop"><span>Repetir tinta</span><input id="final-loop" type="checkbox" checked /><span class="switch" aria-hidden="true"></span></label>
+          <label class="toggle-row" for="final-flash"><span>Contraste pulsante</span><input id="final-flash" type="checkbox" checked /><span class="switch" aria-hidden="true"></span></label>
+          <div class="range-control ink-progress-control"><label for="ink-progress">Posición de la tinta <output id="ink-progress-value" for="ink-progress">Auto</output></label><input id="ink-progress" type="range" min="0" max="1" step="0.001" value="0" /></div>
+          <button id="ink-play-button" class="button ink-play-button" type="button">Reproducir tinta</button>
+          <label class="final-view-label" for="final-view">Ver<select id="final-view"><option value="output">Resultado final</option><option value="ink">Tinta original</option><option value="distort">Tinta expandida</option></select></label>
+        </section>
+
+        <section id="impulse-controls" class="control-section impulse-controls">
+          <div class="section-label"><span>03 / IMPULSOS</span></div>
+          <div class="beat-buttons"><button id="kick-button" class="button beat-button" type="button" title="Disparar kick · K"><span>Kick</span><kbd>K</kbd></button><button id="snare-button" class="button beat-button" type="button" title="Disparar snare · S"><span>Snare</span><kbd>S</kbd></button></div>
+          <div class="rhythm-row"><label class="toggle-row" for="auto-beat"><span>Ritmo automático</span><input id="auto-beat" type="checkbox" /><span class="switch" aria-hidden="true"></span></label><label class="bpm-control" for="bpm-input"><input id="bpm-input" type="number" value="120" min="30" max="300" step="1" inputmode="numeric" /><span>BPM</span></label></div>
+        </section>
+
+        <section class="control-section output-section">
+          <div class="section-label"><span>04 / SALIDA</span></div>
+          <div class="output-controls"><label for="resolution-select">Resolución<select id="resolution-select"><option value="400x640">400 × 640</option><option value="800x1280" selected>800 × 1280</option><option value="1200x1920">1200 × 1920</option></select></label><label for="rate-select">Cadencia<select id="rate-select"><option value="30">30 FPS</option><option value="60" selected>60 FPS</option><option value="120">120 FPS</option></select></label></div>
+          <div class="gpu-info"><span class="gpu-chip" aria-hidden="true"></span><span id="gpu-value">Detectando GPU…</span></div>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="footer"><p>Demo de los presets Milky y FINAL · INK. Comparación con vvvv pendiente.</p><details class="shortcuts"><summary>Atajos de teclado <span aria-hidden="true">↗</span></summary><div class="shortcut-panel"><span><kbd>Espacio</kbd> Pausar</span><span><kbd>R</kbd> Reiniciar</span><span><kbd>B</kbd> Inyectar / explotar</span><span><kbd>K</kbd> Kick</span><span><kbd>S</kbd> Snare</span><span><kbd>F</kbd> Pantalla completa</span><span><kbd>1–5</kbd> Cambiar preset</span><span><kbd>G</kbd> Ver todos</span></div></details></footer>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

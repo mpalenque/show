@@ -1,0 +1,9 @@
+{
+  "final25": {
+    "t": 152.694,
+    "particles": 9000
+  },
+  "errors": [
+    "[vis] no se pudo abrir MIDI: Error: MIDI apagado\n    at navigator.requestMIDIAccess (<anonymous>:2:54)\n    at MidiInput.init (http://127.0.0.1:5191/src/io/MidiInput.js:19:37)\n    at boot (http://127.0.0.1:5191/src/main.js:82:14)"
+  ]
+}

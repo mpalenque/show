@@ -241,6 +241,19 @@ function refreshCount() {
   count = sim ? runtime._pvfs_get_particle_count(sim) : 0;
 }
 
+// Un obstáculo rectangular DURO con el colisionador de rectángulo del solver,
+// que el worker no cableaba (sólo el círculo). `hw`/`hh` son los medios lados
+// en px, centrados en (x, y). Los cuatro números del WASM son las DOS ESQUINAS
+// (x0, y0, x1, y1): medido con las tres lecturas posibles sobre una masa de
+// 2 900 partículas, sólo ésta vacía el cuadrado (0 adentro a los 120 ms);
+// centro+medios lados y centro+lados no mueven nada.
+function collideRect(interaction, x, y) {
+  const hw = finiteNumber(interaction.hw, 0);
+  const hh = finiteNumber(interaction.hh, 0);
+  if (hw <= 0 || hh <= 0) return;
+  runtime._pvfs_collide_particles_rect(sim, x - hw, y - hh, x + hw, y + hh);
+}
+
 function applyInteraction(interaction, steps, collisionPhase) {
   const x = finiteNumber(interaction.x, 0);
   const y = finiteNumber(interaction.y, 0);
@@ -250,9 +263,10 @@ function applyInteraction(interaction, steps, collisionPhase) {
 
   if (collisionPhase) {
     if (mode === 'collide') runtime._pvfs_collide_particles_circle(sim, x, y, radius);
+    else if (mode === 'collide-rect') collideRect(interaction, x, y);
     return;
   }
-  if (mode === 'collide') return;
+  if (mode === 'collide' || mode === 'collide-rect') return;
   if (mode === 'drag') {
     runtime._pvfs_drag_particles(
       sim,
@@ -395,7 +409,7 @@ function advance(substeps, interactions) {
     for (const interaction of interactions) applyInteraction(interaction, steps, false);
     runtime._pvfs_update_sim_before_collisions(sim, 1);
     for (const interaction of interactions) {
-      if (interaction.mode === 'collide') applyInteraction(interaction, steps, true);
+      if (interaction.mode === 'collide' || interaction.mode === 'collide-rect') applyInteraction(interaction, steps, true);
     }
     runtime._pvfs_update_sim_after_collisions(sim, 1);
   }

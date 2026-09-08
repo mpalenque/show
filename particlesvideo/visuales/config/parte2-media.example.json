@@ -1,0 +1,6 @@
+{
+  "ddsRoots": ["E:/PARTE2-MEDIA/dds", "E:/PARTE2-MEDIA/dds2", "E:/PARTE2-MEDIA/resize"],
+  "inkRoot": "E:/PARTE2-MEDIA/ink",
+  "placeholderDDSRoot": "placeholder/parte2/dds",
+  "placeholderInkRoot": "placeholder/parte2/ink"
+}

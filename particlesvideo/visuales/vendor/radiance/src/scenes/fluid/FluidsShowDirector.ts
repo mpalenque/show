@@ -234,6 +234,9 @@ export interface FluidsShowInteraction {
   strength: number;
   materialId: number;
   emitCount: number;
+  /** Medios lados de un `collide-rect`, en fracción del alto (como `w`/`h` de la geometría). */
+  hw?: number;
+  hh?: number;
 }
 
 export interface FluidsShowPhysics {

@@ -189,7 +189,10 @@ export class KotFluidWorkerClient {
     if (this._disposed) return this;
     // Bound input latency/memory if the physics worker temporarily falls
     // behind. Recent pointer samples are more useful than stale ones.
-    if (this._pendingInteractions.length >= 32) this._pendingInteractions.shift();
+    // 32 alcanzaba para punteros; las losetas de la 26 son hasta 48 obstáculos
+    // por frame más los 13 círculos de la línea, y si el tope los tira, las
+    // losetas más viejas dejan de chocar sin aviso.
+    if (this._pendingInteractions.length >= 128) this._pendingInteractions.shift();
     this._pendingInteractions.push({ ...interaction });
     return this;
   }

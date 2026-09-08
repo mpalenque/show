@@ -1,7 +1,8 @@
 import { spawn } from 'node:child_process';
-import { mkdtempSync, readFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, readFileSync, existsSync, mkdirSync, writeFileSync, realpathSync } from 'node:fs';
+import { rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { join, resolve, dirname } from 'node:path';
+import { join, resolve, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createServer, preview } from 'vite';
 import WebSocket from 'ws';
@@ -15,18 +16,21 @@ export function metrics(samples) {
     worst: values.at(-1), over20ms: values.filter(v => v > 20).length };
 }
 
-export async function browser({ directory = root, production = false, port = 5191, base = '/', original = false, mount, initScript } = {}) {
+export async function browser({ directory = root, production = false, port = 5191, base = '/', original = false, mount, initScript, configLoader,
+  profilePrefix = 'vis-radiance-', cleanupProfile = false, disableCache = false } = {}) {
   const options = { root: directory, server: { host: '127.0.0.1', port, strictPort: true, hmr: false },
+    ...(configLoader ? { configLoader } : {}),
     preview: { host: '127.0.0.1', port, strictPort: true },
     ...(mount ? { base: mount } : {}),
     ...(original ? { configFile: false, esbuild: { jsx: 'automatic' } } : {}) };
   const server = production ? await preview(options) : await createServer(options);
   if (!production) await server.listen();
-  const profile = mkdtempSync(join(tmpdir(), 'vis-radiance-'));
+  const profile = mkdtempSync(join(tmpdir(), profilePrefix));
   const chrome = spawn('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', [
     '--headless=new', '--remote-debugging-port=0', `--user-data-dir=${profile}`,
     '--enable-unsafe-webgpu', '--no-first-run', '--no-default-browser-check',
     '--disable-background-timer-throttling', '--disable-renderer-backgrounding',
+    ...(disableCache ? ['--disk-cache-size=1048576', '--media-cache-size=1048576'] : []),
     '--window-size=2688,1008', 'about:blank',
   ], { stdio: 'ignore', windowsHide: true });
   let socket;
@@ -34,6 +38,12 @@ export async function browser({ directory = root, production = false, port = 519
     socket?.close(); chrome.kill();
     if (production) await new Promise(resolve => server.httpServer.close(resolve));
     else await server.close();
+    if (cleanupProfile && existsSync(profile)) {
+      // Only the exact mkdtemp directory owned by this browser invocation.
+      const target = realpathSync(profile), parent = realpathSync(tmpdir());
+      if (dirname(target) !== parent || !basename(target).startsWith(profilePrefix)) throw new Error('Unexpected temporary browser profile path');
+      await rm(target, { recursive: true, force: true, maxRetries: 20, retryDelay: 100 });
+    }
   };
   try {
     let debugPort;
@@ -81,6 +91,7 @@ export async function browser({ directory = root, production = false, port = 519
     };
     await send('Runtime.enable');
     await send('Page.enable');
+    if (disableCache) { await send('Network.enable'); await send('Network.setCacheDisabled', { cacheDisabled: true }); }
     if (initScript) await send('Page.addScriptToEvaluateOnNewDocument', { source: initScript });
     await send('Emulation.setDeviceMetricsOverride', { width: 2688, height: 1008, deviceScaleFactor: 1, mobile: false });
     const url = `http://127.0.0.1:${port}${base}`;

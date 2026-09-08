@@ -1,0 +1,9 @@
+*.log
+server.pid
+node_modules/
+
+# Medios del show copiados dentro del paquete (ver media/README.md).
+# Son ~6,7 GB: viajan por copia de archivos o Git LFS, no como blobs normales de git.
+# Quitá estas dos líneas si el repositorio destino sí va a versionar los medios.
+media/dds/
+media/ink/

@@ -60,3 +60,18 @@ const askHello = () => {
   if (!connected) setTimeout(askHello, 1500);
 };
 askHello();
+
+// Both editors operate the same output; the second tab creates no renderer.
+const primaryTab = document.getElementById('show-editor-primary');
+const parte2Tab = document.getElementById('show-editor-parte2');
+const parte2Frame = document.getElementById('parte2-editor');
+function selectPart2(selected) {
+  document.getElementById('app').hidden = selected;
+  document.getElementById('parte2-workspace').hidden = !selected;
+  primaryTab.classList.toggle('active', !selected); parte2Tab.classList.toggle('active', selected);
+  primaryTab.setAttribute('aria-pressed', String(!selected)); parte2Tab.setAttribute('aria-pressed', String(selected));
+  if (selected && !parte2Frame.getAttribute('src')) parte2Frame.src = './parte2.html';
+  parte2Frame.contentWindow?.postMessage({ t: 'parte2:visibility', visible: selected }, location.origin);
+}
+primaryTab.onclick = () => selectPart2(false);
+parte2Tab.onclick = () => selectPart2(true);

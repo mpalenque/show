@@ -284,16 +284,27 @@ fluids.audioMode,Audio del show (web = desde la página),fluids,enum,web | exter
 fluids.volume,Volumen del track,fluids,float,0 .. 1,1,/p/fluids/volume,/pn/fluids/volume,
 fluids.gain,Ganancia de luz · Fluids,fluids,float,0.4 .. 2.5,1.25,/p/fluids/gain,/pn/fluids/gain,
 fluids.supersample,Supersampling (2 = sin rayado),fluids,float,1 .. 2,2,/p/fluids/supersample,/pn/fluids/supersample,
-fluids.live.emission,Emisión · Fluids live (escena 26),fluids.live,float,0 .. 0.25,0.018,/p/fluids/live/emission,/pn/fluids/live/emission,
-fluids.live.x,Emisor X · Fluids live (escena 26),fluids.live,float,0 .. 1,0.5,/p/fluids/live/x,/pn/fluids/live/x,
-fluids.live.y,Emisor Y · Fluids live (escena 26),fluids.live,float,0 .. 1,0.5,/p/fluids/live/y,/pn/fluids/live/y,
-fluids.live.hue,Color del emisor · Fluids live (escena 26),fluids.live,float,0 .. 1,0,/p/fluids/live/hue,/pn/fluids/live/hue,
-fluids.live.gravity,Gravedad · Fluids live (escena 26),fluids.live,float,-1 .. 1,0,/p/fluids/live/gravity,/pn/fluids/live/gravity,
-fluids.live.viscosity,Viscosidad · Fluids live (escena 26),fluids.live,float,0 .. 1,0.5,/p/fluids/live/viscosity,/pn/fluids/live/viscosity,
-fluids.live.cohesion,Cohesión · Fluids live (escena 26),fluids.live,float,0 .. 1,0.5,/p/fluids/live/cohesion,/pn/fluids/live/cohesion,
-fluids.live.light,Luz · Fluids live (escena 26),fluids.live,float,0 .. 3,1,/p/fluids/live/light,/pn/fluids/live/light,
-fluids.live.forceX,Fuerza X · Fluids live (escena 26),fluids.live,float,-1 .. 1,0,/p/fluids/live/forceX,/pn/fluids/live/forceX,
-fluids.live.forceY,Fuerza Y · Fluids live (escena 26),fluids.live,float,-1 .. 1,0,/p/fluids/live/forceY,/pn/fluids/live/forceY,
+fluids.live.emission,Emisión · motor libre (sin escena),fluids.live,float,0 .. 0.25,0.018,/p/fluids/live/emission,/pn/fluids/live/emission,
+fluids.live.x,Emisor X · motor libre (sin escena),fluids.live,float,0 .. 1,0.5,/p/fluids/live/x,/pn/fluids/live/x,
+fluids.live.y,Emisor Y · motor libre (sin escena),fluids.live,float,0 .. 1,0.5,/p/fluids/live/y,/pn/fluids/live/y,
+fluids.live.hue,Color del emisor · motor libre (sin escena),fluids.live,float,0 .. 1,0,/p/fluids/live/hue,/pn/fluids/live/hue,
+fluids.live.gravity,Gravedad · motor libre (sin escena),fluids.live,float,-1 .. 1,0,/p/fluids/live/gravity,/pn/fluids/live/gravity,
+fluids.live.viscosity,Viscosidad · motor libre (sin escena),fluids.live,float,0 .. 1,0.5,/p/fluids/live/viscosity,/pn/fluids/live/viscosity,
+fluids.live.cohesion,Cohesión · motor libre (sin escena),fluids.live,float,0 .. 1,0.5,/p/fluids/live/cohesion,/pn/fluids/live/cohesion,
+fluids.live.light,Luz · motor libre (sin escena),fluids.live,float,0 .. 3,1,/p/fluids/live/light,/pn/fluids/live/light,
+fluids.live.forceX,Fuerza X · motor libre (sin escena),fluids.live,float,-1 .. 1,0,/p/fluids/live/forceX,/pn/fluids/live/forceX,
+fluids.live.forceY,Fuerza Y · motor libre (sin escena),fluids.live,float,-1 .. 1,0,/p/fluids/live/forceY,/pn/fluids/live/forceY,
+fluids.seq.gravity,Gravedad (curva) · final reactivo (26),fluids.seq,float,-1 .. 1,0,/p/fluids/seq/gravity,/pn/fluids/seq/gravity,
+fluids.seq.cohesion,Atasco (curva) · final reactivo (26),fluids.seq,float,0 .. 1,0.62,/p/fluids/seq/cohesion,/pn/fluids/seq/cohesion,
+fluids.seq.viscosity,Viscosidad (curva) · final reactivo (26),fluids.seq,float,0 .. 1,1,/p/fluids/seq/viscosity,/pn/fluids/seq/viscosity,
+fluids.seq.light,Luz de las partículas (curva) · final reactivo (26),fluids.seq,float,0 .. 1,1,/p/fluids/seq/light,/pn/fluids/seq/light,
+fluids.seq.exposure,Exposición (curva) · final reactivo (26),fluids.seq,float,0 .. 2,1.2,/p/fluids/seq/exposure,/pn/fluids/seq/exposure,
+fluids.seq.bodies,Cuerpos (curva) · final reactivo (26),fluids.seq,float,0 .. 1,0.15,/p/fluids/seq/bodies,/pn/fluids/seq/bodies,
+fluids.seq.grid,"Losetas todas chicas (> 0,5) · final reactivo (26)",fluids.seq,float,0 .. 1,0,/p/fluids/seq/grid,/pn/fluids/seq/grid,
+fluids.seq.mono,Monocromo · final reactivo (26),fluids.seq,float,0 .. 1,1,/p/fluids/seq/mono,/pn/fluids/seq/mono,
+fluids.seq.tileLife,Vida de las losetas y del congelado (negras) · final reactivo (26),fluids.seq,float,0.25 .. 32,4,/p/fluids/seq/tileLife,/pn/fluids/seq/tileLife,
+fluids.seq.amb,amb 1 sostenido → glow azul · final reactivo (26),fluids.seq,float,0 .. 1,0,/p/fluids/seq/amb,/pn/fluids/seq/amb,Cualquier nota ch11
+fluids.seq.attract,atractor sostenido (canal 3) · final reactivo (26),fluids.seq,float,0 .. 1,0,/p/fluids/seq/attract,/pn/fluids/seq/attract,Cualquier nota ch3
 scene.goto,Ir a escena,scene,accion,id de escena,,/a/scene/goto,,Nota 1 ch10 + Nota 2 ch10 + Nota 3 ch10 + Nota 4 ch10 + Nota 5 ch10 + Nota 6 ch10 + Nota 7 ch10 + Nota 8 ch10 + Nota 9 ch10 + Nota 10 ch10 + Nota 11 ch10 + Nota 12 ch10 + Nota 13 ch10 + Nota 14 ch10 + Nota 15 ch10 + Nota 16 ch10 + Nota 17 ch10 + Nota 18 ch10 + Nota 19 ch10 + Nota 20 ch10 + Nota 21 ch10 + Nota 22 ch10 + Nota 23 ch10 + Nota 24 ch10 + Nota 25 ch10 + Nota 26 ch10 + Nota 27 ch10 + Nota 28 ch10 + Nota 29 ch10
 scene.next,Escena siguiente,scene,accion,,,/a/scene/next,,
 scene.prev,Escena anterior,scene,accion,,,/a/scene/prev,,
@@ -348,7 +359,19 @@ fluids.play,Play · escena 25,fluids,accion,,,/a/fluids/play,,
 fluids.pause,Pausa · escena 25,fluids,accion,,,/a/fluids/pause,,
 fluids.restart,Reiniciar · escena 25,fluids,accion,,,/a/fluids/restart,,
 fluids.seek,Buscar · escena 25,fluids,accion,segundos,,/a/fluids/seek,,
-fluids.live,Fluids live · escena 26,fluids,accion,,,/a/fluids/live,,
-fluids.live.burst,Ráfaga · escena 26,fluids.live,accion,cantidad de partículas,,/a/fluids/live/burst,,
-fluids.live.attractor,Atractor · escena 26,fluids.live,accion,,,/a/fluids/live/attractor,,
-fluids.live.reset,Reiniciar fluido · escena 26,fluids.live,accion,,,/a/fluids/live/reset,,
+fluids.live,Final reactivo · escena 26,fluids,accion,,,/a/fluids/live,,
+fluids.live.burst,Ráfaga · motor libre,fluids.live,accion,cantidad de partículas,,/a/fluids/live/burst,,
+fluids.live.attractor,Atractor · motor libre,fluids.live,accion,,,/a/fluids/live/attractor,,
+fluids.live.reset,Reiniciar fluido · motor libre,fluids.live,accion,,,/a/fluids/live/reset,,
+fluids.seq.pulse,Pulso · flash + empujón desde el centro · final reactivo (26),fluids.seq,accion,,,/a/fluids/seq/pulse,,Nota 0 ch1
+fluids.seq.strobe,Relámpago · sortea y destella las 4 losetas emisivas · final reactivo (26),fluids.seq,accion,,,/a/fluids/seq/strobe,,Nota 2 ch1
+fluids.seq.step,Paso cruzado de las losetas · segundo kick · final reactivo (26),fluids.seq,accion,,,/a/fluids/seq/step,,Nota 2 ch1
+fluids.seq.tile,Loseta · 50 cm o 1 m según la serie · final reactivo (26),fluids.seq,accion,,,/a/fluids/seq/tile,,Nota 4 ch1
+fluids.seq.tileBig,Loseta · 1 m · final reactivo (26),fluids.seq,accion,,,/a/fluids/seq/tileBig,,Nota 40 ch2
+fluids.seq.sweep,Barrido de sombra · final reactivo (26),fluids.seq,accion,,,/a/fluids/seq/sweep,,Nota 38 ch2
+fluids.seq.crack,Fractura en el centro de masa · final reactivo (26),fluids.seq,accion,,,/a/fluids/seq/crack,,Nota 39 ch2 + Nota 49 ch2
+fluids.seq.dark,"Apagón 0,3 s · final reactivo (26)",fluids.seq,accion,,,/a/fluids/seq/dark,,Nota 47 ch2
+fluids.seq.freeze,Congelar el fluido (vida de loseta) · final reactivo (26),fluids.seq,accion,,,/a/fluids/seq/freeze,,Nota 45 ch2
+fluids.seq.flip,Sortear qué losetas emiten (sin destello) · final reactivo (26),fluids.seq,accion,,,/a/fluids/seq/flip,,Nota 38 ch2
+fluids.seq.clear,Borrar losetas · final reactivo (26),fluids.seq,accion,,,/a/fluids/seq/clear,,
+fluids.seq.reset,Vaciar el fluido · final reactivo (26),fluids.seq,accion,,,/a/fluids/seq/reset,,

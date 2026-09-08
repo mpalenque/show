@@ -21,7 +21,7 @@ export class SceneBar {
     title.textContent = 'Escenas';
     bar.appendChild(title);
 
-    for (const scene of SCENES) {
+    for (const scene of this.scenes.list()) {
       const b = document.createElement('button');
       b.innerHTML = `<b>${scene.id}</b><span>${scene.name ?? ''}</span>`;
       b.title = scene.name ?? scene.id;

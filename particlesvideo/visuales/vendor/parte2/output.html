@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Parte 2 — Salida</title>
+<style>html,body{width:100%;height:100%;margin:0;background:#000;overflow:hidden}video{width:100%;height:100%;object-fit:contain;background:#000}#message{position:fixed;inset:0;display:grid;place-content:center;color:#e6eadb;font:15px system-ui;text-align:center}#message[hidden]{display:none}a{color:#d6eba0}button{position:fixed;right:15px;bottom:15px;background:#111b;border:1px solid #777;color:#ddd;padding:9px 14px;border-radius:5px;opacity:0;transition:opacity .15s}body:hover button{opacity:1}</style></head>
+<body><video autoplay muted playsinline></video><div id="message">Conectando la salida…</div><button id="fullscreen">Pantalla completa</button>
+<script type="module">
+  const message = document.getElementById('message');
+  if (window.opener?.parte2?.attachOutputWindow(window)) message.hidden = true;
+  else { message.textContent = 'Abrí esta ventana con “Salida” desde el sistema Parte 2.'; const link = document.createElement('a'); link.href = './system.html'; link.textContent = 'Ir al sistema'; message.append(link); }
+  document.getElementById('fullscreen').onclick = () => document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen();
+  document.addEventListener('keydown', event => { if (event.key.toLowerCase() === 'f') document.getElementById('fullscreen').click(); });
+</script></body></html>

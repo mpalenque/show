@@ -66,7 +66,7 @@ export class Settings {
     const deEscena = [];      // los maneja la escena, nunca debieron guardarse
     for (const [id, guardado] of Object.entries(entradas)) {
       if (id === '__formato') continue;
-      if (!this.params.has(id) || NO_GUARDAR.has(id)) continue;   // params que ya no existen
+      if (!this.params.has(id) || NO_GUARDAR.has(id) || id.startsWith('parte2.') || this.params.def(id)?.transient) continue;
       if (this.esDeEscena(id)) { deEscena.push(id); continue; }   // lo maneja la escena
 
       const fabrica = this.fabrica.get(id);
@@ -98,7 +98,7 @@ export class Settings {
   }
 
   record(id, value) {
-    if (!this.params.has(id) || NO_GUARDAR.has(id)) return;
+    if (!this.params.has(id) || NO_GUARDAR.has(id) || id.startsWith('parte2.') || this.params.def(id)?.transient) return;
     // El valor ya se aplicó en vivo (Bridge hace `set` antes de llamar acá); lo único que no
     // pasa es que sobreviva al cambio de escena, porque de eso manda la escena.
     if (this.esDeEscena(id)) return;

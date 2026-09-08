@@ -16,6 +16,11 @@ import { STAGE } from './config/stage.js';
 import { SCENES } from './scenes/index.js';
 import { BASE } from './scenes/base.js';
 import { RadianceController } from './radiance/RadianceController.js';
+import { Parte2Controller } from './parte2/Parte2Controller.js';
+import { PARTE2_SCENES } from './parte2/scenes.js';
+import { ShowInputRouter } from './io/ShowInputRouter.js';
+
+const SHOW_SCENES = [...SCENES, ...PARTE2_SCENES];
 
 async function boot() {
   window.name = 'vis-salida';
@@ -25,10 +30,11 @@ async function boot() {
   // El registro tiene que estar completo antes de crear nada (el editor pide el listado al arrancar).
   const params = new Params();
   Compositor.defineParams(params);
-  SceneManager.defineParams(params, SCENES);
+  SceneManager.defineParams(params, SHOW_SCENES);
   Layer2D.defineParams(params);
   Layer3D.defineParams(params);
   RadianceController.defineParams(params);
+  Parte2Controller.defineParams(params);
 
   const ctx = { params, stage: STAGE, renderer, scenes: null, mapper: null, bridge: null, settings: null };
 
@@ -37,7 +43,7 @@ async function boot() {
   settings.load();
   ctx.settings = settings;
 
-  const scenes = new SceneManager(ctx, SCENES, BASE);
+  const scenes = new SceneManager(ctx, SHOW_SCENES, BASE);
   ctx.scenes = scenes;
   scenes.init();
 
@@ -59,24 +65,29 @@ async function boot() {
   // Preparar shaders, Worker, WASM y WAV antes de habilitar los cues del show.
   // Un fallo de Radiance se informa y permite seguir operando las escenas 1–23.
   await radiance.prepare().catch(() => {});
+  const parte2 = new Parte2Controller(ctx);
+  ctx.parte2 = parte2;
+  await parte2.prepare().catch(() => {});
 
   // IO: todo lo que entra pasa por el Mapper, que solo escribe en Params.
   const mapper = new Mapper(ctx);
   ctx.mapper = mapper;
   await mapper.init();
   scenes.onSceneChange((id) => mapper.onSceneChange(id));
+  ctx.input = new ShowInputRouter(ctx);
 
   const midi = new MidiInput({
-    onMessage: (msg) => { mapper.dispatch(msg); bridge.midiActivity(msg); },
+    onMessage: (msg) => ctx.input.dispatch(msg),
     onInputsChange: (list) => bridge.midiInputs(list),
   });
   const osc = new OscClient({
-    onMessage: (msg) => { mapper.dispatch(msg); bridge.midiActivity(msg); },
+    onMessage: (msg) => ctx.input.dispatch(msg),
     onStatus: (status) => bridge.oscStatus(status),
   });
 
   const bridge = new Bridge(ctx, { midi, osc, mapper });
   ctx.bridge = bridge;
+  Object.assign(ctx, { midi, osc });
   bridge.init();
 
   await midi.init();

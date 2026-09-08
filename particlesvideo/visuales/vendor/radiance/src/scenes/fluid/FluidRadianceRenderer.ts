@@ -187,6 +187,7 @@ const sourceFragmentShader = /* glsl */ `
   uniform float uVelocityEmission;
   uniform float uVelocityEmissionFloor;
   uniform float uVelocityEmissionRange;
+  uniform float uNextSteady;
   uniform float uAmbientVelocityEmission;
   uniform float uAmbientEmissionScale;
   uniform float uAmbientRedBlueOnly;
@@ -205,6 +206,14 @@ const sourceFragmentShader = /* glsl */ `
       smoothstep(0.02, 1.0, vMotionEnergy)
     );
     float velocityGain = mix(1.0, velocityCurve, uVelocityEmission);
+    // El material secundario reactivo puede emitir PARADO (uNextSteady): la
+    // compuerta de velocidad deja a una partícula quieta en el piso, y hay
+    // usos (el glow de amb 1 en la 26) donde tiene que prenderse igual.
+    velocityGain = mix(
+      velocityGain,
+      max(velocityGain, uNextSteady),
+      (1.0 - step(0.45, abs(vMaterial - uNextEmissiveMaterial))) * step(0.001, uNextSteady)
+    );
     float specialEmitter = step(0.000001, vEmitter);
     float primaryWeight = emissionWeight(vMaterial) * vEmitter * velocityGain;
     float redMatch = 1.0 - step(0.45, abs(vMaterial));
@@ -287,6 +296,7 @@ const visibleFragmentShader = /* glsl */ `
   uniform float uVelocityEmission;
   uniform float uVelocityEmissionFloor;
   uniform float uVelocityEmissionRange;
+  uniform float uNextSteady;
   uniform float uAmbientVelocityEmission;
   uniform float uAmbientEmissionScale;
   uniform float uAmbientRedBlueOnly;
@@ -329,6 +339,14 @@ const visibleFragmentShader = /* glsl */ `
       smoothstep(0.02, 1.0, vMotionEnergy)
     );
     float velocityGain = mix(1.0, velocityCurve, uVelocityEmission);
+    // El material secundario reactivo puede emitir PARADO (uNextSteady): la
+    // compuerta de velocidad deja a una partícula quieta en el piso, y hay
+    // usos (el glow de amb 1 en la 26) donde tiene que prenderse igual.
+    velocityGain = mix(
+      velocityGain,
+      max(velocityGain, uNextSteady),
+      (1.0 - step(0.45, abs(vMaterial - uNextEmissiveMaterial))) * step(0.001, uNextSteady)
+    );
     float selectedWeight = mix(
       vEmitter,
       1.0,
@@ -424,8 +442,31 @@ const postFragmentShader = /* glsl */ `
   uniform float uContrast;
   uniform float uBrightness;
   uniform float uBlackPoint;
+  /**
+   * La banda que INVIERTE: x = centro en uv, y = medio ancho, z = inclinación
+   * (corrimiento en x por unidad de alto), w = cuánto invierte (0..1).
+   * Es el barrido de la escena 26: lo que queda debajo se ve al revés.
+   */
+  uniform vec4 uInvertBand;
 
   const vec3 LUMA = vec3(0.2126, 0.7152, 0.0722);
+
+  /**
+   * Invierte el brillo y manda el azul al rojo. El complemento crudo de un
+   * azul puro es amarillo; restarle el verde en proporción a lo azul que era
+   * el pixel lo lleva a rojo, sin tocar grises ni blancos (que sólo se dan
+   * vuelta). Blanco emisivo → negro, cuerpo negro → blanco, azul → rojo.
+   */
+  vec3 invertLighting(vec3 colour) {
+    vec3 inverted = 1.0 - colour;
+    // El umbral (no un clamp lineal) deja el fondo, que tiene un tinte azul
+    // del glow, invirtiéndose a gris neutro; sólo lo francamente azul —las
+    // partículas de amb 1— se va al rojo. Con el clamp, media pared quedaba
+    // naranja y las gotas rojas no resaltaban.
+    float blueness = smoothstep(0.05, 0.3, colour.b - max(colour.r, colour.g));
+    inverted.g *= 1.0 - blueness;
+    return inverted;
+  }
 
   vec3 hueRotate(vec3 colour, float angle) {
     float s = sin(angle);
@@ -468,6 +509,14 @@ const postFragmentShader = /* glsl */ `
       * (1.0 - smoothstep(0.94, 1.0, finalLuma));
     float dither = (gradientNoise(gl_FragCoord.xy) - 0.5) / 255.0;
     colour = clamp(colour + vec3(dither * gradientMask), 0.0, 1.0);
+    // La banda del barrido: borde duro, sin degradé (el ojo necesita el corte).
+    float bandDistance = abs(
+      gl_FragCoord.x / uSceneResolution.x - uInvertBand.x
+        + uInvertBand.z * (gl_FragCoord.y / uSceneResolution.y - 0.5)
+    );
+    float insideBand = uInvertBand.w * (1.0 - step(uInvertBand.y, bandDistance));
+    colour = mix(colour, invertLighting(colour), insideBand);
+
     gl_FragColor = vec4(colour, 1.0);
   }
 `;
@@ -485,6 +534,7 @@ const makeUniforms = () => ({
   uNextEmissiveMaterial: { value: 0 },
   uCurrentEmission: { value: 1 },
   uNextEmission: { value: 0 },
+  uNextSteady: { value: 0 },
   uEmission: { value: 0.82 },
   uSparseEmissionGain: { value: SPARSE_HRC_EMISSION_GAIN },
   uFluidEmissionGain: { value: FLUID_HRC_EMISSION_GAIN },
@@ -573,6 +623,7 @@ export class ParticleRenderer {
   private readonly sourceTarget = makeTransportTarget(HRC_SOURCE_EXTENT);
   private readonly compositionTarget = makeCompositionTarget();
   private readonly postUniforms = {
+    uInvertBand: { value: new THREE.Vector4(0.5, 0, 0, 0) },
     uScene: { value: this.compositionTarget.texture as THREE.Texture },
     uSceneResolution: { value: new THREE.Vector2(1, 1) },
     uHue: { value: 0 },
@@ -1025,6 +1076,17 @@ export class ParticleRenderer {
     this.visibleUniforms.uVelocityEmissionFloor.value = velocityEmissionFloor;
     this.sourceUniforms.uVelocityEmissionRange.value = velocityEmissionRange;
     this.visibleUniforms.uVelocityEmissionRange.value = velocityEmissionRange;
+    // El material secundario reactivo puede emitir PARADO: la 26 lo usa para el
+    // glow de amb 1, donde las partículas azules tienen que prenderse con la
+    // nota aunque el fluido esté quieto (con la compuerta de velocidad quedaban
+    // al 12 %: se veían azules pero no encendidas). Sólo mientras el overlay
+    // secundario está aplicado, así un crossfade de material principal no lo
+    // hereda.
+    // El valor es la ganancia con la que emite parado (0 = compuerta normal).
+    const nextSteady = this.reactiveOverlayApplied
+      ? Math.max(0, Math.min(4, Number(state.reactiveSecondarySteady ?? 0))) : 0;
+    this.sourceUniforms.uNextSteady.value = nextSteady;
+    this.visibleUniforms.uNextSteady.value = nextSteady;
     this.sourceUniforms.uAmbientVelocityEmission.value = ambientVelocityEmission ? 1 : 0;
     this.visibleUniforms.uAmbientVelocityEmission.value = ambientVelocityEmission ? 1 : 0;
     this.sourceUniforms.uAmbientEmissionScale.value = ambientEmissionScale;
@@ -1050,6 +1112,14 @@ export class ParticleRenderer {
     this.postUniforms.uContrast.value = contrast;
     this.postUniforms.uBrightness.value = brightness;
     this.postUniforms.uBlackPoint.value = blackPoint;
+    // La banda que invierte la iluminación (escena 26). Sin `invertAmount` no
+    // existe: el resto del show no la ve.
+    this.postUniforms.uInvertBand.value.set(
+      Number(state.invertX ?? 0.5),
+      Math.max(0, Number(state.invertHalf ?? 0)),
+      Number(state.invertTilt ?? 0),
+      Math.max(0, Math.min(1, Number(state.invertAmount ?? 0))),
+    );
 
     // Publish all four directional frusta atomically every display frame.
     // At 512² the measured HRC cost stays inside the GPU budget, and removing

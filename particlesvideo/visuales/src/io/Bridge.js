@@ -37,6 +37,7 @@ export class Bridge {
   post(obj) { this.channel.postMessage(obj); }
 
   _onMessage(m) {
+    if (m?.t?.startsWith('parte2:')) { void this.ctx.parte2?.receive(m); return; }
     if (m?.t?.startsWith('fluids:')) { void this.ctx.radiance?.receive(m); return; }
     switch (m.t) {
       case 'hi': this.post(this.hello()); break;
@@ -45,10 +46,10 @@ export class Bridge {
       case 'trigger': this.params.trigger(m.id, m.arg); break;
       case 'scene': this.params.trigger('scene.goto', m.id); break;
       case 'mappings': this.mapper?.setMappings(m.mappings); this.mapper?.save(); break;
-      case 'learn': this.mapper?.learn(m.rowId); break;
+      case 'learn': this.ctx.parte2?.system?.mapper.cancelLearn(); this.mapper?.learn(m.rowId); break;
       case 'midiInputs': this.midi?.setEnabled(m.enabledIds); break;
       case 'oscPort': this.osc?.setPort(m.port); break;
-      case 'fakeMidi': this.mapper?.dispatch(m.msg); this.midiActivity(m.msg, true); break;
+      case 'fakeMidi': if (this.ctx.input) this.ctx.input.dispatch(m.msg); else this.mapper?.dispatch(m.msg); this.midiActivity(m.msg, true); break;
       case 'save': this.mapper?.save(); break;
       case 'resetSettings': this.ctx.settings?.clear(); break;
       case 'resetMappings': this.mapper?.resetToDefault(); break;
@@ -72,6 +73,7 @@ export class Bridge {
   tick(engine) {
     const now = performance.now();
     this.ctx.radiance?.tick(now);
+    this.ctx.parte2?.tick(now);
     if (now - this._lastValues >= 100) {          // valores 10 Hz, solo los que cambiaron
       this._lastValues = now;
       const dirty = this.params.consumeDirty();

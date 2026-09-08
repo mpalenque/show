@@ -11,7 +11,10 @@
     "build": "vite build",
     "preview": "vite preview --port 5173",
     "osc": "node tools/osc-bridge.mjs",
-    "start": "concurrently -k \"npm:dev\" \"npm:osc\""
+    "start": "concurrently -k \"npm:dev\" \"npm:osc\"",
+    "test:parte2": "node --test vendor/parte2/system/*.test.mjs tools/parte2.test.mjs",
+    "check:parte2": "node tools/check-parte2.mjs",
+    "check:parte2:osc": "node tools/check-parte2-osc.mjs"
   },
   "dependencies": {
     "three": "0.176.0",

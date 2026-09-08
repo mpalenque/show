@@ -1,66 +1,922 @@
 {
-  "version": 12,
+  "version": 16,
   "mappings": [
-    { "id": "sc01", "source": { "kind": "note", "channel": 10, "note": 1 }, "mode": "trigger", "target": "scene.goto", "arg": "1" },
-    { "id": "sc02", "source": { "kind": "note", "channel": 10, "note": 2 }, "mode": "trigger", "target": "scene.goto", "arg": "2" },
-    { "id": "sc03", "source": { "kind": "note", "channel": 10, "note": 3 }, "mode": "trigger", "target": "scene.goto", "arg": "3" },
-    { "id": "sc04", "source": { "kind": "note", "channel": 10, "note": 4 }, "mode": "trigger", "target": "scene.goto", "arg": "4" },
-    { "id": "sc05", "source": { "kind": "note", "channel": 10, "note": 5 }, "mode": "trigger", "target": "scene.goto", "arg": "5" },
-    { "id": "sc06", "source": { "kind": "note", "channel": 10, "note": 6 }, "mode": "trigger", "target": "scene.goto", "arg": "6" },
-    { "id": "sc07", "source": { "kind": "note", "channel": 10, "note": 7 }, "mode": "trigger", "target": "scene.goto", "arg": "7" },
-    { "id": "sc08", "source": { "kind": "note", "channel": 10, "note": 8 }, "mode": "trigger", "target": "scene.goto", "arg": "8" },
-    { "id": "sc09", "source": { "kind": "note", "channel": 10, "note": 9 }, "mode": "trigger", "target": "scene.goto", "arg": "9" },
-    { "id": "sc10", "source": { "kind": "note", "channel": 10, "note": 10 }, "mode": "trigger", "target": "scene.goto", "arg": "10" },
-    { "id": "sc11", "source": { "kind": "note", "channel": 10, "note": 11 }, "mode": "trigger", "target": "scene.goto", "arg": "11" },
-    { "id": "sc12", "source": { "kind": "note", "channel": 10, "note": 12 }, "mode": "trigger", "target": "scene.goto", "arg": "12" },
-    { "id": "sc13", "source": { "kind": "note", "channel": 10, "note": 13 }, "mode": "trigger", "target": "scene.goto", "arg": "13" },
-    { "id": "sc14", "source": { "kind": "note", "channel": 10, "note": 14 }, "mode": "trigger", "target": "scene.goto", "arg": "14" },
-    { "id": "sc15", "source": { "kind": "note", "channel": 10, "note": 15 }, "mode": "trigger", "target": "scene.goto", "arg": "15" },
-    { "id": "sc16", "source": { "kind": "note", "channel": 10, "note": 16 }, "mode": "trigger", "target": "scene.goto", "arg": "16" },
-    { "id": "sc17", "source": { "kind": "note", "channel": 10, "note": 17 }, "mode": "trigger", "target": "scene.goto", "arg": "17" },
-    { "id": "sc18", "source": { "kind": "note", "channel": 10, "note": 18 }, "mode": "trigger", "target": "scene.goto", "arg": "18" },
-    { "id": "sc19", "source": { "kind": "note", "channel": 10, "note": 19 }, "mode": "trigger", "target": "scene.goto", "arg": "19" },
-    { "id": "sc20", "source": { "kind": "note", "channel": 10, "note": 20 }, "mode": "trigger", "target": "scene.goto", "arg": "20" },
-    { "id": "sc21", "source": { "kind": "note", "channel": 10, "note": 21 }, "mode": "trigger", "target": "scene.goto", "arg": "21" },
-    { "id": "sc22", "source": { "kind": "note", "channel": 10, "note": 22 }, "mode": "trigger", "target": "scene.goto", "arg": "22" },
-    { "id": "sc23", "source": { "kind": "note", "channel": 10, "note": 23 }, "mode": "trigger", "target": "scene.goto", "arg": "23" },
-    { "id": "sc24", "source": { "kind": "note", "channel": 10, "note": 24 }, "mode": "trigger", "target": "scene.goto", "arg": "24", "addedIn": 11 },
-    { "id": "sc25", "source": { "kind": "note", "channel": 10, "note": 25 }, "mode": "trigger", "target": "scene.goto", "arg": "25", "addedIn": 11 },
-    { "id": "sc26", "source": { "kind": "note", "channel": 10, "note": 26 }, "mode": "trigger", "target": "scene.goto", "arg": "26" },
-    { "id": "sc27", "source": { "kind": "note", "channel": 10, "note": 27 }, "mode": "trigger", "target": "scene.goto", "arg": "27" },
-    { "id": "sc28", "source": { "kind": "note", "channel": 10, "note": 28 }, "mode": "trigger", "target": "scene.goto", "arg": "28" },
-    { "id": "sc29", "source": { "kind": "note", "channel": 10, "note": 29 }, "mode": "trigger", "target": "scene.goto", "arg": "29" },
-    { "id": "ej01", "source": {}, "mode": "trigger", "target": "warning.bgOff" },
-    { "id": "ej02", "source": {}, "mode": "trigger", "target": "line.strike", "arg": "edge" },
-    { "id": "ej03", "source": {}, "mode": "trigger", "target": "line.flip" },
-    { "id": "ej04", "source": {}, "mode": "trigger", "target": "sweep.blue", "arg": "random" },
-    { "id": "ej05", "source": {}, "mode": "trigger", "target": "sweep.white", "arg": "random" },
-    { "id": "ej06", "source": {}, "mode": "trigger", "target": "sweep.solid", "arg": "random" },
-    { "id": "ej07", "source": { "kind": "note", "channel": 1, "note": 0 }, "mode": "trigger", "target": "ray.spawn", "arg": "random", "scenes": ["16", "17", "18", "19", "20", "21", "22", "23"], "updatedIn": 7 },
-    { "id": "ej08", "source": {}, "mode": "toggle", "target": "grid.b1.enabled", "scenes": ["4", "5", "6", "7"] },
-    { "id": "ej09", "source": {}, "mode": "toggle", "target": "grid.b3.enabled", "scenes": ["4", "5", "6", "7"] },
-    { "id": "ej10", "source": {}, "mode": "gate", "target": "box.flicker" },
-    { "id": "ej11", "source": {}, "mode": "set", "target": "box.preset", "value": "left" },
-    { "id": "ej12", "source": {}, "mode": "set", "target": "box.preset", "value": "center" },
-    { "id": "ej13", "source": {}, "mode": "set", "target": "box.preset", "value": "right" },
-    { "id": "ej14", "source": {}, "mode": "range", "target": "particles.turbulence", "min": 0, "max": 2, "curve": "linear" },
-    { "id": "ej15", "source": {}, "mode": "range", "target": "box.yaw", "min": -180, "max": 180, "curve": "linear" },
-    { "id": "ej16", "source": {}, "mode": "range", "target": "grid.scrollSpeed", "min": 0, "max": 400, "curve": "linear" },
-    { "id": "ej17", "source": {}, "mode": "range", "target": "vortex.swirl", "min": 0, "max": 4, "curve": "linear" },
-    { "id": "ej18", "source": { "kind": "note", "channel": 1, "note": 0 }, "mode": "trigger", "target": "particles.colorKickRandom", "scenes": ["22", "23"], "updatedIn": 10 },
-    { "id": "foley2-grid-offset", "source": { "kind": "note", "channel": 6 }, "mode": "trigger", "target": "grid.nudgeRandom", "scenes": ["3", "4", "5", "6"], "addedIn": 2 },
-    { "id": "drum-grid-visibility", "source": { "kind": "note", "channel": 1, "note": 0 }, "mode": "trigger", "target": "grid.visibilityRandom", "scenes": ["3", "4", "5", "6", "7", "8", "9"], "addedIn": 3 },
-    { "id": "full-grid-offset", "source": { "kind": "note", "channel": 2, "note": 41 }, "mode": "trigger", "target": "grid.nudgeRandom", "scenes": ["3", "4", "5", "6", "7", "8", "9"], "addedIn": 3 },
-    { "id": "full-line", "source": { "kind": "note", "channel": 4, "note": 33 }, "mode": "trigger", "target": "line.strike", "arg": "random", "scenes": ["3", "4", "5", "6", "9"], "addedIn": 3, "updatedIn": 12 },
-    { "id": "full-sweep-solid", "source": { "kind": "note", "channel": 4, "note": 24 }, "mode": "trigger", "target": "sweep.solid", "arg": "random", "scenes": ["6", "8"], "addedIn": 3 },
-    { "id": "full-sweep-blue", "source": { "kind": "note", "channel": 8, "note": 48 }, "mode": "trigger", "target": "sweep.blue", "arg": "random", "scenes": ["6", "8"], "addedIn": 3 },
-    { "id": "full-sweep-white", "source": { "kind": "note", "channel": 8, "note": 51 }, "mode": "trigger", "target": "sweep.white", "arg": "random", "scenes": ["6", "8"], "addedIn": 3 },
-    { "id": "perc-creepy-bell-line-flip", "source": { "kind": "note", "channel": 2, "note": 36 }, "mode": "trigger", "target": "line.flip", "scenes": ["2"], "addedIn": 4 },
-    { "id": "sub-prendo-cara-sweeps", "source": { "kind": "note", "channel": 7, "note": 36 }, "mode": "trigger", "target": "sweep.solid", "arg": "random", "scenes": ["5", "6", "7", "8", "9"], "addedIn": 5, "updatedIn": 6 },
-    { "id": "perc-sweep-blue", "source": { "kind": "note", "channel": 2, "note": 44 }, "mode": "trigger", "target": "sweep.blue", "arg": "random", "scenes": ["5", "6", "7", "8", "9"], "addedIn": 6 },
-    { "id": "perc-sweep-white", "source": { "kind": "note", "channel": 2, "note": 39 }, "mode": "trigger", "target": "sweep.white", "arg": "random", "scenes": ["5", "6", "7", "8", "9"], "addedIn": 6 },
-    { "id": "drum-vortex-axis-21", "source": { "kind": "note", "channel": 1, "note": 0 }, "mode": "trigger", "target": "vortex.axisFlipXY", "scenes": ["21"], "addedIn": 8, "updatedIn": 10 },
-    { "id": "perc-beep-local-push", "source": { "kind": "note", "channel": 2, "note": 43 }, "mode": "trigger", "target": "particles.localPush", "scenes": ["10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"], "addedIn": 9 },
-    { "id": "drum-vortex-kick-21", "source": { "kind": "note", "channel": 1, "note": 0 }, "mode": "trigger", "target": "particles.kick", "scenes": ["21"], "addedIn": 10 }
+    {
+      "id": "sc01",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 1
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "1"
+    },
+    {
+      "id": "sc02",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 2
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "2"
+    },
+    {
+      "id": "sc03",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 3
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "3"
+    },
+    {
+      "id": "sc04",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 4
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "4"
+    },
+    {
+      "id": "sc05",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 5
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "5"
+    },
+    {
+      "id": "sc06",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 6
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "6"
+    },
+    {
+      "id": "sc07",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 7
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "7"
+    },
+    {
+      "id": "sc08",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 8
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "8"
+    },
+    {
+      "id": "sc09",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 9
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "9"
+    },
+    {
+      "id": "sc10",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 10
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "10"
+    },
+    {
+      "id": "sc11",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 11
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "11"
+    },
+    {
+      "id": "sc12",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 12
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "12"
+    },
+    {
+      "id": "sc13",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 13
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "13"
+    },
+    {
+      "id": "sc14",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 14
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "14"
+    },
+    {
+      "id": "sc15",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 15
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "15"
+    },
+    {
+      "id": "sc16",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 16
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "16"
+    },
+    {
+      "id": "sc17",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 17
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "17"
+    },
+    {
+      "id": "sc18",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 18
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "18"
+    },
+    {
+      "id": "sc19",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 19
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "19"
+    },
+    {
+      "id": "sc20",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 20
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "20"
+    },
+    {
+      "id": "sc21",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 21
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "21"
+    },
+    {
+      "id": "sc22",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 22
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "22"
+    },
+    {
+      "id": "sc23",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 23
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "23"
+    },
+    {
+      "id": "sc24",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 24
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "24",
+      "addedIn": 11
+    },
+    {
+      "id": "sc25",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 25
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "25",
+      "addedIn": 11
+    },
+    {
+      "id": "sc26",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 26
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "26"
+    },
+    {
+      "id": "sc27",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 27
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "27"
+    },
+    {
+      "id": "sc28",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 28
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "28"
+    },
+    {
+      "id": "sc29",
+      "source": {
+        "kind": "note",
+        "channel": 10,
+        "note": 29
+      },
+      "mode": "trigger",
+      "target": "scene.goto",
+      "arg": "29"
+    },
+    {
+      "id": "ej01",
+      "source": {},
+      "mode": "trigger",
+      "target": "warning.bgOff"
+    },
+    {
+      "id": "ej02",
+      "source": {},
+      "mode": "trigger",
+      "target": "line.strike",
+      "arg": "edge"
+    },
+    {
+      "id": "ej03",
+      "source": {},
+      "mode": "trigger",
+      "target": "line.flip"
+    },
+    {
+      "id": "ej04",
+      "source": {},
+      "mode": "trigger",
+      "target": "sweep.blue",
+      "arg": "random"
+    },
+    {
+      "id": "ej05",
+      "source": {},
+      "mode": "trigger",
+      "target": "sweep.white",
+      "arg": "random"
+    },
+    {
+      "id": "ej06",
+      "source": {},
+      "mode": "trigger",
+      "target": "sweep.solid",
+      "arg": "random"
+    },
+    {
+      "id": "ej07",
+      "source": {
+        "kind": "note",
+        "channel": 1,
+        "note": 0
+      },
+      "mode": "trigger",
+      "target": "ray.spawn",
+      "arg": "random",
+      "scenes": [
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23"
+      ],
+      "updatedIn": 7
+    },
+    {
+      "id": "ej08",
+      "source": {},
+      "mode": "toggle",
+      "target": "grid.b1.enabled",
+      "scenes": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "id": "ej09",
+      "source": {},
+      "mode": "toggle",
+      "target": "grid.b3.enabled",
+      "scenes": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "id": "ej10",
+      "source": {},
+      "mode": "gate",
+      "target": "box.flicker"
+    },
+    {
+      "id": "ej11",
+      "source": {},
+      "mode": "set",
+      "target": "box.preset",
+      "value": "left"
+    },
+    {
+      "id": "ej12",
+      "source": {},
+      "mode": "set",
+      "target": "box.preset",
+      "value": "center"
+    },
+    {
+      "id": "ej13",
+      "source": {},
+      "mode": "set",
+      "target": "box.preset",
+      "value": "right"
+    },
+    {
+      "id": "ej14",
+      "source": {},
+      "mode": "range",
+      "target": "particles.turbulence",
+      "min": 0,
+      "max": 2,
+      "curve": "linear"
+    },
+    {
+      "id": "ej15",
+      "source": {},
+      "mode": "range",
+      "target": "box.yaw",
+      "min": -180,
+      "max": 180,
+      "curve": "linear"
+    },
+    {
+      "id": "ej16",
+      "source": {},
+      "mode": "range",
+      "target": "grid.scrollSpeed",
+      "min": 0,
+      "max": 400,
+      "curve": "linear"
+    },
+    {
+      "id": "ej17",
+      "source": {},
+      "mode": "range",
+      "target": "vortex.swirl",
+      "min": 0,
+      "max": 4,
+      "curve": "linear"
+    },
+    {
+      "id": "ej18",
+      "source": {
+        "kind": "note",
+        "channel": 1,
+        "note": 0
+      },
+      "mode": "trigger",
+      "target": "particles.colorKickRandom",
+      "scenes": [
+        "22",
+        "23"
+      ],
+      "updatedIn": 10
+    },
+    {
+      "id": "foley2-grid-offset",
+      "source": {
+        "kind": "note",
+        "channel": 6
+      },
+      "mode": "trigger",
+      "target": "grid.nudgeRandom",
+      "scenes": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "addedIn": 2
+    },
+    {
+      "id": "drum-grid-visibility",
+      "source": {
+        "kind": "note",
+        "channel": 1,
+        "note": 0
+      },
+      "mode": "trigger",
+      "target": "grid.visibilityRandom",
+      "scenes": [
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "addedIn": 3
+    },
+    {
+      "id": "full-grid-offset",
+      "source": {
+        "kind": "note",
+        "channel": 2,
+        "note": 41
+      },
+      "mode": "trigger",
+      "target": "grid.nudgeRandom",
+      "scenes": [
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "addedIn": 3
+    },
+    {
+      "id": "full-line",
+      "source": {
+        "kind": "note",
+        "channel": 4,
+        "note": 33
+      },
+      "mode": "trigger",
+      "target": "line.strike",
+      "arg": "random",
+      "scenes": [
+        "3",
+        "4",
+        "5",
+        "6",
+        "9"
+      ],
+      "addedIn": 3,
+      "updatedIn": 12
+    },
+    {
+      "id": "full-sweep-solid",
+      "source": {
+        "kind": "note",
+        "channel": 4,
+        "note": 24
+      },
+      "mode": "trigger",
+      "target": "sweep.solid",
+      "arg": "random",
+      "scenes": [
+        "6",
+        "8"
+      ],
+      "addedIn": 3
+    },
+    {
+      "id": "full-sweep-blue",
+      "source": {
+        "kind": "note",
+        "channel": 8,
+        "note": 48
+      },
+      "mode": "trigger",
+      "target": "sweep.blue",
+      "arg": "random",
+      "scenes": [
+        "6",
+        "8"
+      ],
+      "addedIn": 3
+    },
+    {
+      "id": "full-sweep-white",
+      "source": {
+        "kind": "note",
+        "channel": 8,
+        "note": 51
+      },
+      "mode": "trigger",
+      "target": "sweep.white",
+      "arg": "random",
+      "scenes": [
+        "6",
+        "8"
+      ],
+      "addedIn": 3
+    },
+    {
+      "id": "perc-creepy-bell-line-flip",
+      "source": {
+        "kind": "note",
+        "channel": 2,
+        "note": 36
+      },
+      "mode": "trigger",
+      "target": "line.flip",
+      "scenes": [
+        "2"
+      ],
+      "addedIn": 4
+    },
+    {
+      "id": "sub-prendo-cara-sweeps",
+      "source": {
+        "kind": "note",
+        "channel": 7,
+        "note": 36
+      },
+      "mode": "trigger",
+      "target": "sweep.solid",
+      "arg": "random",
+      "scenes": [
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "addedIn": 5,
+      "updatedIn": 6
+    },
+    {
+      "id": "perc-sweep-blue",
+      "source": {
+        "kind": "note",
+        "channel": 2,
+        "note": 44
+      },
+      "mode": "trigger",
+      "target": "sweep.blue",
+      "arg": "random",
+      "scenes": [
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "addedIn": 6
+    },
+    {
+      "id": "perc-sweep-white",
+      "source": {
+        "kind": "note",
+        "channel": 2,
+        "note": 39
+      },
+      "mode": "trigger",
+      "target": "sweep.white",
+      "arg": "random",
+      "scenes": [
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "addedIn": 6
+    },
+    {
+      "id": "drum-vortex-axis-21",
+      "source": {
+        "kind": "note",
+        "channel": 1,
+        "note": 0
+      },
+      "mode": "trigger",
+      "target": "vortex.axisFlipXY",
+      "scenes": [
+        "21"
+      ],
+      "addedIn": 8,
+      "updatedIn": 10
+    },
+    {
+      "id": "perc-beep-local-push",
+      "source": {
+        "kind": "note",
+        "channel": 2,
+        "note": 43
+      },
+      "mode": "trigger",
+      "target": "particles.localPush",
+      "scenes": [
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23"
+      ],
+      "addedIn": 9
+    },
+    {
+      "id": "drum-vortex-kick-21",
+      "source": {
+        "kind": "note",
+        "channel": 1,
+        "note": 0
+      },
+      "mode": "trigger",
+      "target": "particles.kick",
+      "scenes": [
+        "21"
+      ],
+      "addedIn": 10
+    },
+    {
+      "id": "seq-pulse",
+      "source": {
+        "kind": "note",
+        "channel": 1,
+        "note": 0
+      },
+      "mode": "trigger",
+      "target": "fluids.seq.pulse",
+      "scenes": [
+        "26"
+      ],
+      "addedIn": 13
+    },
+    {
+      "id": "seq-strobe",
+      "source": {
+        "kind": "note",
+        "channel": 1,
+        "note": 2
+      },
+      "mode": "trigger",
+      "target": "fluids.seq.strobe",
+      "scenes": [
+        "26"
+      ],
+      "addedIn": 13
+    },
+    {
+      "id": "seq-tile",
+      "source": {
+        "kind": "note",
+        "channel": 1,
+        "note": 4
+      },
+      "mode": "trigger",
+      "target": "fluids.seq.tile",
+      "scenes": [
+        "26"
+      ],
+      "addedIn": 13
+    },
+    {
+      "id": "seq-sweep",
+      "source": {
+        "kind": "note",
+        "channel": 2,
+        "note": 38
+      },
+      "mode": "trigger",
+      "target": "fluids.seq.sweep",
+      "scenes": [
+        "26"
+      ],
+      "addedIn": 13
+    },
+    {
+      "id": "seq-crack-39",
+      "source": {
+        "kind": "note",
+        "channel": 2,
+        "note": 39
+      },
+      "mode": "trigger",
+      "target": "fluids.seq.crack",
+      "scenes": [
+        "26"
+      ],
+      "addedIn": 13
+    },
+    {
+      "id": "seq-crack-49",
+      "source": {
+        "kind": "note",
+        "channel": 2,
+        "note": 49
+      },
+      "mode": "trigger",
+      "target": "fluids.seq.crack",
+      "scenes": [
+        "26"
+      ],
+      "addedIn": 13
+    },
+    {
+      "id": "seq-dark",
+      "source": {
+        "kind": "note",
+        "channel": 2,
+        "note": 47
+      },
+      "mode": "trigger",
+      "target": "fluids.seq.dark",
+      "scenes": [
+        "26"
+      ],
+      "addedIn": 13
+    },
+    {
+      "id": "seq-freeze",
+      "source": {
+        "kind": "note",
+        "channel": 2,
+        "note": 45
+      },
+      "mode": "trigger",
+      "target": "fluids.seq.freeze",
+      "scenes": [
+        "26"
+      ],
+      "addedIn": 13
+    },
+    {
+      "id": "seq-tile-big",
+      "source": {
+        "kind": "note",
+        "channel": 2,
+        "note": 40
+      },
+      "mode": "trigger",
+      "target": "fluids.seq.tileBig",
+      "scenes": [
+        "26"
+      ],
+      "addedIn": 13
+    },
+    {
+      "id": "seq-amb",
+      "source": {
+        "kind": "note",
+        "channel": 11
+      },
+      "mode": "gate",
+      "target": "fluids.seq.amb",
+      "scenes": [
+        "26"
+      ],
+      "addedIn": 14
+    },
+    {
+      "id": "seq-flip",
+      "source": {
+        "kind": "note",
+        "channel": 2,
+        "note": 38
+      },
+      "mode": "trigger",
+      "target": "fluids.seq.flip",
+      "scenes": [
+        "26"
+      ],
+      "addedIn": 14
+    },
+    {
+      "id": "seq-attract",
+      "source": {
+        "kind": "note",
+        "channel": 3
+      },
+      "mode": "gate",
+      "target": "fluids.seq.attract",
+      "scenes": [
+        "26"
+      ],
+      "addedIn": 15
+    },
+    {
+      "id": "seq-step",
+      "source": {
+        "kind": "note",
+        "channel": 1,
+        "note": 2
+      },
+      "mode": "trigger",
+      "target": "fluids.seq.step",
+      "scenes": [
+        "26"
+      ],
+      "addedIn": 16
+    }
   ]
 }

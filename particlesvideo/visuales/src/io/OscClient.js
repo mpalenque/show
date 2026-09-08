@@ -27,7 +27,7 @@ export class OscClient {
     this.ws.onmessage = (e) => {
       let m;
       try { m = JSON.parse(e.data); } catch { return; }
-      if (m.t === 'osc') this.onMessage?.({ kind: 'osc', address: m.address, args: m.args ?? [] });
+      if (m.t === 'osc') this.onMessage?.({ kind: 'osc', address: m.address, args: m.args ?? [], udpPort: m.udpPort });
       else if (m.t === 'status') { this.udpPort = m.udpPort; this._status(); }
       else if (m.t === 'error') console.error('[vis] osc-bridge:', m.message);
     };

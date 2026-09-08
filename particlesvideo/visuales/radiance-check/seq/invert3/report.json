@@ -1,0 +1,16 @@
+{
+  "errors": [
+    "[vis] no se pudo abrir MIDI: Error: MIDI apagado\n    at navigator.requestMIDIAccess (<anonymous>:2:54)\n    at MidiInput.init (http://127.0.0.1:5191/src/io/MidiInput.js:19:37)\n    at boot (http://127.0.0.1:5191/src/main.js:82:14)"
+  ],
+  "fin": {
+    "tiles": 11,
+    "lit": 1,
+    "invert": 0,
+    "invertX": -1,
+    "glow": 0.87,
+    "moving": 10,
+    "peor": 0,
+    "solverMs": 5.3,
+    "fps": 60
+  }
+}

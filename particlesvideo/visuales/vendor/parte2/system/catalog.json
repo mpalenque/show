@@ -1,0 +1,622 @@
+{
+  "version": 1,
+  "source": "Ordenar secuencias dds.v4p ? nodos 45/46/47 efectivos",
+  "frameRate": 30,
+  "preloadFrames": 4,
+  "originalLoopPeriod": "(frameCount - 1) / 30 + masLento",
+  "preservePhaseOnClipChange": true,
+  "clips": [
+    {
+      "id": "clip-00",
+      "index": 0,
+      "name": "drone abajo fabric",
+      "frameCount": 536,
+      "fps": 30,
+      "startGlobal": 0,
+      "endGlobal": 535
+    },
+    {
+      "id": "clip-01",
+      "index": 1,
+      "name": "drone arriba bosque IZ",
+      "frameCount": 254,
+      "fps": 30,
+      "startGlobal": 536,
+      "endGlobal": 789
+    },
+    {
+      "id": "clip-02",
+      "index": 2,
+      "name": "drone arriba ciudad di",
+      "frameCount": 407,
+      "fps": 30,
+      "startGlobal": 790,
+      "endGlobal": 1196
+    },
+    {
+      "id": "clip-03",
+      "index": 3,
+      "name": "drone arriba incendi",
+      "frameCount": 281,
+      "fps": 30,
+      "startGlobal": 1197,
+      "endGlobal": 1477
+    },
+    {
+      "id": "clip-04",
+      "index": 4,
+      "name": "drone arriba mar piedr",
+      "frameCount": 747,
+      "fps": 30,
+      "startGlobal": 1478,
+      "endGlobal": 2224
+    },
+    {
+      "id": "clip-05",
+      "index": 5,
+      "name": "drone arriba molino camp",
+      "frameCount": 248,
+      "fps": 30,
+      "startGlobal": 2225,
+      "endGlobal": 2472
+    },
+    {
+      "id": "clip-06",
+      "index": 6,
+      "name": "drone arriba playa rio marro",
+      "frameCount": 658,
+      "fps": 30,
+      "startGlobal": 2473,
+      "endGlobal": 3130
+    },
+    {
+      "id": "clip-07",
+      "index": 7,
+      "name": "drone arriba rio bosque verd",
+      "frameCount": 279,
+      "fps": 30,
+      "startGlobal": 3131,
+      "endGlobal": 3409
+    },
+    {
+      "id": "clip-08",
+      "index": 8,
+      "name": "drone arriba rio bosqu",
+      "frameCount": 587,
+      "fps": 30,
+      "startGlobal": 3410,
+      "endGlobal": 3996
+    },
+    {
+      "id": "clip-09",
+      "index": 9,
+      "name": "reactor nuclea",
+      "frameCount": 305,
+      "fps": 30,
+      "startGlobal": 3997,
+      "endGlobal": 4301
+    },
+    {
+      "id": "clip-10",
+      "index": 10,
+      "name": "drone arriba rio montañ",
+      "frameCount": 208,
+      "fps": 30,
+      "startGlobal": 4302,
+      "endGlobal": 4509
+    },
+    {
+      "id": "clip-11",
+      "index": 11,
+      "name": "drone arriba rio niev",
+      "frameCount": 380,
+      "fps": 30,
+      "startGlobal": 4510,
+      "endGlobal": 4889
+    },
+    {
+      "id": "clip-12",
+      "index": 12,
+      "name": "drone arriba tractor campo",
+      "frameCount": 1403,
+      "fps": 30,
+      "startGlobal": 4890,
+      "endGlobal": 6292
+    },
+    {
+      "id": "clip-13",
+      "index": 13,
+      "name": "drone frente  bosque musg",
+      "frameCount": 488,
+      "fps": 30,
+      "startGlobal": 6293,
+      "endGlobal": 6780
+    },
+    {
+      "id": "clip-14",
+      "index": 14,
+      "name": "drone frente bosque verd",
+      "frameCount": 366,
+      "fps": 30,
+      "startGlobal": 6781,
+      "endGlobal": 7146
+    },
+    {
+      "id": "clip-15",
+      "index": 15,
+      "name": "drone frente ciudad noch",
+      "frameCount": 900,
+      "fps": 30,
+      "startGlobal": 7147,
+      "endGlobal": 8046
+    },
+    {
+      "id": "clip-16",
+      "index": 16,
+      "name": "drone frente fabrica",
+      "frameCount": 979,
+      "fps": 30,
+      "startGlobal": 8047,
+      "endGlobal": 9025
+    },
+    {
+      "id": "clip-17",
+      "index": 17,
+      "name": "drone frente montaña lago basur",
+      "frameCount": 856,
+      "fps": 30,
+      "startGlobal": 9026,
+      "endGlobal": 9881
+    },
+    {
+      "id": "clip-18",
+      "index": 18,
+      "name": "drone frente rio montaña de",
+      "frameCount": 720,
+      "fps": 30,
+      "startGlobal": 9882,
+      "endGlobal": 10601
+    },
+    {
+      "id": "clip-19",
+      "index": 19,
+      "name": "drone diag bosque niebl",
+      "frameCount": 578,
+      "fps": 30,
+      "startGlobal": 10602,
+      "endGlobal": 11179
+    },
+    {
+      "id": "clip-20",
+      "index": 20,
+      "name": "drone diag ciudad noch",
+      "frameCount": 900,
+      "fps": 30,
+      "startGlobal": 11180,
+      "endGlobal": 12079
+    },
+    {
+      "id": "clip-21",
+      "index": 21,
+      "name": "drone diag fabria-",
+      "frameCount": 1207,
+      "fps": 30,
+      "startGlobal": 12080,
+      "endGlobal": 13286
+    },
+    {
+      "id": "clip-22",
+      "index": 22,
+      "name": "drone diag fabrica",
+      "frameCount": 1300,
+      "fps": 30,
+      "startGlobal": 13287,
+      "endGlobal": 14586
+    },
+    {
+      "id": "clip-23",
+      "index": 23,
+      "name": "drone diag nuclear arriba",
+      "frameCount": 1002,
+      "fps": 30,
+      "startGlobal": 14587,
+      "endGlobal": 15588
+    },
+    {
+      "id": "clip-24",
+      "index": 24,
+      "name": "drone diag ciudad H",
+      "frameCount": 390,
+      "fps": 30,
+      "startGlobal": 15589,
+      "endGlobal": 15978
+    },
+    {
+      "id": "clip-25",
+      "index": 25,
+      "name": "drone gira ciudad noche le",
+      "frameCount": 831,
+      "fps": 30,
+      "startGlobal": 15979,
+      "endGlobal": 16809
+    },
+    {
+      "id": "clip-26",
+      "index": 26,
+      "name": "drone gira edificio noche le",
+      "frameCount": 552,
+      "fps": 30,
+      "startGlobal": 16810,
+      "endGlobal": 17361
+    },
+    {
+      "id": "clip-27",
+      "index": 27,
+      "name": "drone arriba fabrica gri",
+      "frameCount": 477,
+      "fps": 30,
+      "startGlobal": 17362,
+      "endGlobal": 17838
+    },
+    {
+      "id": "clip-28",
+      "index": 28,
+      "name": "drone arriba niev",
+      "frameCount": 744,
+      "fps": 30,
+      "startGlobal": 17839,
+      "endGlobal": 18582
+    },
+    {
+      "id": "clip-29",
+      "index": 29,
+      "name": "drone arriba playa verde aren",
+      "frameCount": 388,
+      "fps": 30,
+      "startGlobal": 18583,
+      "endGlobal": 18970
+    },
+    {
+      "id": "clip-30",
+      "index": 30,
+      "name": "drone frente bosque verde",
+      "frameCount": 886,
+      "fps": 30,
+      "startGlobal": 18971,
+      "endGlobal": 19856
+    },
+    {
+      "id": "clip-31",
+      "index": 31,
+      "name": "drone frente desierto roj",
+      "frameCount": 681,
+      "fps": 30,
+      "startGlobal": 19857,
+      "endGlobal": 20537
+    },
+    {
+      "id": "clip-32",
+      "index": 32,
+      "name": "1",
+      "frameCount": 709,
+      "fps": 30,
+      "startGlobal": 20538,
+      "endGlobal": 21246
+    },
+    {
+      "id": "clip-33",
+      "index": 33,
+      "name": "arata",
+      "frameCount": 1433,
+      "fps": 30,
+      "startGlobal": 21247,
+      "endGlobal": 22679
+    },
+    {
+      "id": "clip-34",
+      "index": 34,
+      "name": "e 1",
+      "frameCount": 540,
+      "fps": 30,
+      "startGlobal": 22680,
+      "endGlobal": 23219
+    },
+    {
+      "id": "clip-35",
+      "index": 35,
+      "name": "e 2",
+      "frameCount": 870,
+      "fps": 30,
+      "startGlobal": 23220,
+      "endGlobal": 24089
+    },
+    {
+      "id": "clip-36",
+      "index": 36,
+      "name": "e 4",
+      "frameCount": 389,
+      "fps": 30,
+      "startGlobal": 24090,
+      "endGlobal": 24478
+    },
+    {
+      "id": "clip-37",
+      "index": 37,
+      "name": "ino",
+      "frameCount": 418,
+      "fps": 30,
+      "startGlobal": 24479,
+      "endGlobal": 24896
+    },
+    {
+      "id": "clip-38",
+      "index": 38,
+      "name": "ion",
+      "frameCount": 298,
+      "fps": 30,
+      "startGlobal": 24897,
+      "endGlobal": 25194
+    },
+    {
+      "id": "clip-39",
+      "index": 39,
+      "name": "opista circular dia",
+      "frameCount": 1024,
+      "fps": 30,
+      "startGlobal": 25195,
+      "endGlobal": 26218
+    },
+    {
+      "id": "clip-40",
+      "index": 40,
+      "name": "opista circular noche",
+      "frameCount": 401,
+      "fps": 30,
+      "startGlobal": 26219,
+      "endGlobal": 26619
+    },
+    {
+      "id": "clip-41",
+      "index": 41,
+      "name": "opista tarde",
+      "frameCount": 731,
+      "fps": 30,
+      "startGlobal": 26620,
+      "endGlobal": 27350
+    },
+    {
+      "id": "clip-42",
+      "index": 42,
+      "name": "te dia",
+      "frameCount": 837,
+      "fps": 30,
+      "startGlobal": 27351,
+      "endGlobal": 28187
+    },
+    {
+      "id": "clip-43",
+      "index": 43,
+      "name": "tpista noche 2",
+      "frameCount": 577,
+      "fps": 30,
+      "startGlobal": 28188,
+      "endGlobal": 28764
+    },
+    {
+      "id": "clip-44",
+      "index": 44,
+      "name": "y noche",
+      "frameCount": 556,
+      "fps": 30,
+      "startGlobal": 28765,
+      "endGlobal": 29320
+    },
+    {
+      "id": "clip-45",
+      "index": 45,
+      "name": "tinta amarillo naranj",
+      "frameCount": 907,
+      "fps": 30,
+      "startGlobal": 29321,
+      "endGlobal": 30227
+    },
+    {
+      "id": "clip-46",
+      "index": 46,
+      "name": "tinta cyan violet",
+      "frameCount": 621,
+      "fps": 30,
+      "startGlobal": 30228,
+      "endGlobal": 30848
+    },
+    {
+      "id": "clip-47",
+      "index": 47,
+      "name": "tinta espesa",
+      "frameCount": 404,
+      "fps": 30,
+      "startGlobal": 30849,
+      "endGlobal": 31252
+    },
+    {
+      "id": "clip-48",
+      "index": 48,
+      "name": "tinta negra ce",
+      "frameCount": 869,
+      "fps": 30,
+      "startGlobal": 31253,
+      "endGlobal": 32121
+    },
+    {
+      "id": "clip-49",
+      "index": 49,
+      "name": "tinta aceite metalic",
+      "frameCount": 601,
+      "fps": 30,
+      "startGlobal": 32122,
+      "endGlobal": 32722
+    },
+    {
+      "id": "clip-50",
+      "index": 50,
+      "name": "NV autopist",
+      "frameCount": 749,
+      "fps": 30,
+      "startGlobal": 32723,
+      "endGlobal": 33471
+    },
+    {
+      "id": "clip-51",
+      "index": 51,
+      "name": "NV autos tel",
+      "frameCount": 436,
+      "fps": 30,
+      "startGlobal": 33472,
+      "endGlobal": 33907
+    },
+    {
+      "id": "clip-52",
+      "index": 52,
+      "name": "2 globulo roj",
+      "frameCount": 483,
+      "fps": 30,
+      "startGlobal": 33908,
+      "endGlobal": 34390
+    },
+    {
+      "id": "clip-53",
+      "index": 53,
+      "name": "bacteria naranja",
+      "frameCount": 1739,
+      "fps": 30,
+      "startGlobal": 34391,
+      "endGlobal": 36129
+    },
+    {
+      "id": "clip-54",
+      "index": 54,
+      "name": "bacteria negro",
+      "frameCount": 1059,
+      "fps": 30,
+      "startGlobal": 36130,
+      "endGlobal": 37188
+    },
+    {
+      "id": "clip-55",
+      "index": 55,
+      "name": "celula blanco verd",
+      "frameCount": 801,
+      "fps": 30,
+      "startGlobal": 37189,
+      "endGlobal": 37989
+    },
+    {
+      "id": "clip-56",
+      "index": 56,
+      "name": "celula burbuja blanc",
+      "frameCount": 450,
+      "fps": 30,
+      "startGlobal": 37990,
+      "endGlobal": 38439
+    },
+    {
+      "id": "clip-57",
+      "index": 57,
+      "name": "celula descargand",
+      "frameCount": 264,
+      "fps": 30,
+      "startGlobal": 38440,
+      "endGlobal": 38703
+    },
+    {
+      "id": "clip-58",
+      "index": 58,
+      "name": "celula rotand",
+      "frameCount": 359,
+      "fps": 30,
+      "startGlobal": 38704,
+      "endGlobal": 39062
+    },
+    {
+      "id": "clip-59",
+      "index": 59,
+      "name": "celula verde blanco",
+      "frameCount": 1739,
+      "fps": 30,
+      "startGlobal": 39063,
+      "endGlobal": 40801
+    },
+    {
+      "id": "clip-60",
+      "index": 60,
+      "name": "celul",
+      "frameCount": 570,
+      "fps": 30,
+      "startGlobal": 40802,
+      "endGlobal": 41371
+    },
+    {
+      "id": "clip-61",
+      "index": 61,
+      "name": "celulas ocr",
+      "frameCount": 598,
+      "fps": 30,
+      "startGlobal": 41372,
+      "endGlobal": 41969
+    },
+    {
+      "id": "clip-62",
+      "index": 62,
+      "name": "celulas rojo crec",
+      "frameCount": 425,
+      "fps": 30,
+      "startGlobal": 41970,
+      "endGlobal": 42394
+    },
+    {
+      "id": "clip-63",
+      "index": 63,
+      "name": "INCENDIO00",
+      "frameCount": 222,
+      "fps": 30,
+      "startGlobal": 42395,
+      "endGlobal": 42616
+    },
+    {
+      "id": "clip-64",
+      "index": 64,
+      "name": "bosqu",
+      "frameCount": 361,
+      "fps": 30,
+      "startGlobal": 42617,
+      "endGlobal": 42977
+    },
+    {
+      "id": "clip-65",
+      "index": 65,
+      "name": "LOMBRIZ0",
+      "frameCount": 1319,
+      "fps": 30,
+      "startGlobal": 42978,
+      "endGlobal": 44296
+    },
+    {
+      "id": "clip-66",
+      "index": 66,
+      "name": "capulloalien0",
+      "frameCount": 1664,
+      "fps": 30,
+      "startGlobal": 44297,
+      "endGlobal": 45960
+    },
+    {
+      "id": "clip-67",
+      "index": 67,
+      "name": "mariposa",
+      "frameCount": 2069,
+      "fps": 30,
+      "startGlobal": 45961,
+      "endGlobal": 48029
+    }
+  ]
+}

@@ -1,0 +1,1157 @@
+{
+  "auditedAt": "2026-09-07",
+  "method": "Read-only Ableton MCP: session snapshot, track information/routing and get_clip_notes. No launch, transport or set edits.",
+  "session": {
+    "tempo": 180,
+    "track_count": 47,
+    "scene_count": 90,
+    "is_playing": false
+  },
+  "routing": [
+    {
+      "track_index": 30,
+      "name": "VIDS",
+      "port": "RTX3090 (Port 2)",
+      "channel": "Ch. 13"
+    },
+    {
+      "track_index": 31,
+      "name": "scene",
+      "port": "RTX3090 (Port 2)",
+      "channel": "Ch. 10"
+    }
+  ],
+  "notes": [
+    {
+      "slot": 37,
+      "clip_name": "26",
+      "length": 0.5,
+      "note_count": 4,
+      "notes": [
+        {
+          "pitch": 26,
+          "start_time": 0,
+          "duration": 0.059999895937395936,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 26,
+          "start_time": 0.059999895937395936,
+          "duration": 0.059999895937395936,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 26,
+          "start_time": 0.12000005203130203,
+          "duration": 0.059999895937395936,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 26,
+          "start_time": 0.17999994796869798,
+          "duration": 0.059999895937395936,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        26
+      ]
+    },
+    {
+      "slot": 39,
+      "clip_name": "",
+      "length": 0.5,
+      "note_count": 5,
+      "notes": [
+        {
+          "pitch": 49,
+          "start_time": 0,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 49,
+          "start_time": 0.11589686355311356,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 49,
+          "start_time": 0.23179372710622712,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 49,
+          "start_time": 0.34769059065934066,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 49,
+          "start_time": 0.46358745421245423,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        49
+      ]
+    },
+    {
+      "slot": 40,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 67,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        67
+      ]
+    },
+    {
+      "slot": 41,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 67,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        67
+      ]
+    },
+    {
+      "slot": 42,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 72,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        72
+      ]
+    },
+    {
+      "slot": 43,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 72,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        72
+      ]
+    },
+    {
+      "slot": 44,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 72,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        72
+      ]
+    },
+    {
+      "slot": 45,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 72,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        72
+      ]
+    },
+    {
+      "slot": 46,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 47,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 48,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 49,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 50,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 51,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 52,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 53,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 54,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 55,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 56,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 57,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 58,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 59,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 60,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 61,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 62,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 63,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 64,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 65,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 66,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 67,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 68,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 69,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 70,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 68,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        68
+      ]
+    },
+    {
+      "slot": 71,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 69,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        69
+      ]
+    },
+    {
+      "slot": 72,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 70,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        70
+      ]
+    },
+    {
+      "slot": 73,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 69,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        69
+      ]
+    },
+    {
+      "slot": 78,
+      "clip_name": "",
+      "length": 0.5,
+      "note_count": 5,
+      "notes": [
+        {
+          "pitch": 49,
+          "start_time": 0,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 49,
+          "start_time": 0.11589686355311356,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 49,
+          "start_time": 0.23179372710622712,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 49,
+          "start_time": 0.34769059065934066,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 49,
+          "start_time": 0.46358745421245423,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        49
+      ]
+    },
+    {
+      "slot": 79,
+      "clip_name": "",
+      "length": 0.5,
+      "note_count": 5,
+      "notes": [
+        {
+          "pitch": 49,
+          "start_time": 0,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 49,
+          "start_time": 0.11589686355311356,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 49,
+          "start_time": 0.23179372710622712,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 49,
+          "start_time": 0.34769059065934066,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 49,
+          "start_time": 0.46358745421245423,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        49
+      ]
+    },
+    {
+      "slot": 80,
+      "clip_name": "",
+      "length": 0.5,
+      "note_count": 5,
+      "notes": [
+        {
+          "pitch": 49,
+          "start_time": 0,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 49,
+          "start_time": 0.11589686355311356,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 49,
+          "start_time": 0.23179372710622712,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 49,
+          "start_time": 0.34769059065934066,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        },
+        {
+          "pitch": 49,
+          "start_time": 0.46358745421245423,
+          "duration": 0.11589686355311356,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        49
+      ]
+    },
+    {
+      "slot": 81,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 60,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        60
+      ]
+    },
+    {
+      "slot": 82,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 60,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        60
+      ]
+    },
+    {
+      "slot": 83,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 60,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        60
+      ]
+    },
+    {
+      "slot": 84,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 60,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        60
+      ]
+    },
+    {
+      "slot": 85,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 60,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        60
+      ]
+    },
+    {
+      "slot": 86,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 60,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        60
+      ]
+    },
+    {
+      "slot": 87,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 60,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        60
+      ]
+    },
+    {
+      "slot": 88,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 60,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        60
+      ]
+    },
+    {
+      "slot": 89,
+      "clip_name": "",
+      "length": 4,
+      "note_count": 1,
+      "notes": [
+        {
+          "pitch": 66,
+          "start_time": 0,
+          "duration": 2.3658968635531137,
+          "velocity": 127,
+          "mute": false,
+          "probability": 1,
+          "velocity_deviation": 0
+        }
+      ],
+      "activePitches": [
+        66
+      ]
+    }
+  ]
+}

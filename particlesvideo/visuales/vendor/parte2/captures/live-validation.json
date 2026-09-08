@@ -1,0 +1,52 @@
+{
+  "measurement": {
+    "gpu": "nvidia",
+    "size": [
+      800,
+      1280
+    ],
+    "preset": "1a",
+    "frames": 603,
+    "states": [
+      {
+        "id": "1a",
+        "frames": 603
+      },
+      {
+        "id": "3a",
+        "frames": 603
+      },
+      {
+        "id": "2a",
+        "frames": 603
+      },
+      {
+        "id": "splash",
+        "frames": 603
+      },
+      {
+        "id": "final",
+        "frames": 599,
+        "inkFrame": 226
+      }
+    ],
+    "errors": [],
+    "fps": 60.006487187804055,
+    "lostSteps": 0,
+    "stats": {
+      "frames": 603,
+      "passes": 213,
+      "cpuMs": 1.600000023841858
+    },
+    "rafP50ms": 16.699999999999818,
+    "rafP95ms": 16.800000000000182,
+    "rafP99ms": 16.899999999999636
+  },
+  "checks": [
+    "10s realtime 5 presets, four at 800x1280 + FINAL at 3840x1200",
+    "pause freezes simulation",
+    "PNG export",
+    "390px responsive layout"
+  ],
+  "note": "Chrome headless; rAF timings are presentation callback intervals, not isolated GPU execution times or a vvvv comparison."
+}
